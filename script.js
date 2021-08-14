@@ -1338,15 +1338,346 @@
 //         ]
 //     ]
 
-let arr = [];
+// let arr1 = [];
+// let counter = 1;
 
-for (let i = 0; i < 3; i++) {
-    arr[i] = [];
+// for (let i = 0; i < 1; i++) {
+//     arr1[i] = [];
+//     console.log(arr1);
+//     for (let j = 0; j < 2; j++) {
+//         arr1[i][j] = counter;
+//         counter++;
+//     }
+// }
 
-    for (let j = 0, k = 1; j < 3; j++) {
-        arr[i][j] = k;
-        k++;
-    }
+// console.log(arr1);
+
+
+// Дан следующий объект:
+
+//     let obj = {
+//         key1: {
+//             key1: 1,
+//             key2: 2,
+//             key3: 3,
+//         },
+//         key2: {
+//             key1: 4,
+//             key2: 5,
+//             key3: 6,
+//         },
+//         key3: {
+//             key1: 7,
+//             key2: 8,
+//             key3: 9,
+//         },
+//     }
+// // Найдите сумму элементов приведенного объекта.
+
+// let sum = 0;
+// for (let elem in obj) {
+//     for (let innerElem in obj[elem]) {
+//         sum += obj[elem][innerElem];
+//     }
+
+// }
+// console.log(sum);
+
+// Задача 68.2
+
+// Дан следующий объект:
+
+//     let obj = {
+//         1: {
+//             1: 'a1',
+//             2: 'a2',
+//             3: 'a3',
+//         },
+//         2: {
+//             1: 'b1',
+//             2: 'b2',
+//             3: 'b3',
+//         },
+//         3: {
+//             1: 'c1',
+//             2: 'c2',
+//             3: 'c3',
+//         },
+//     }
+
+// console.log(obj[`2`][`2`]);
+// console.log(obj[`3`][`1`]);
+// Выведите на экран элемент 'b2'
+// и элемент 'c1'.
+
+// Задача 68.3
+
+// Дан следующий объект:
+
+//     let obj = {
+//         key1: {
+//             a: 1,
+//             b: 2,
+//             c: {
+//                 d: 3,
+//                 e: 4,
+//             },
+//             f: 5,
+//         },
+//         key2: {
+//             g: 6,
+//             h: 7,
+//         },
+//     }
+
+
+// let sum = 0;
+
+// for (let elem in obj) {
+//     if (typeof obj[elem] === `object`) {
+//         for (let innerElem in obj[elem]) {
+//             if (typeof obj[elem][innerElem] === `object`) {
+//                 for (let innerInnerObject in obj[elem][innerElem]) {
+//                     sum += obj[elem][innerElem][innerInnerObject];
+//                 }
+//             } else {
+//                 sum += obj[elem][innerElem];
+//             }
+
+//         }
+//     } else {
+//         sum += obj[elem];
+//     }
+// }
+
+// console.log(sum);
+// Найдите сумму всех элементов - чисел.
+
+// Задача 69.1
+
+// Дан следующий объект:
+
+//     let obj = {
+//         1: {
+//             1: 11,
+//             2: 12,
+//             3: 13,
+//         },
+//         2: {
+//             1: 21,
+//             2: 22,
+//             3: 23,
+//         },
+//         3: {
+//             1: 24,
+//             2: 25,
+//             3: 26,
+//         },
+//     }
+
+// let sum = 0;
+
+// for (let elem in obj) {
+//     for (let innerElem in obj[elem]) {
+//         sum += obj[elem][innerElem];
+//     }
+// }
+
+// console.log(sum);
+
+
+// Дан следующий объект с названиями месяцев:
+
+// let months = {
+//     'ru': [
+//         'январь',
+//         'февраль',
+//         'март',
+//         'апрель',
+//         'май',
+//         'июнь',
+//         'июль',
+//         'август',
+//         'сентябрь',
+//         'октябрь',
+//         'ноябрь',
+//         'декабрь',
+//     ],
+//     'en': [
+//         'january',
+//         'february',
+//         'march',
+//         'april',
+//         'may',
+//         'june',
+//         'july',
+//         'august',
+//         'september',
+//         'october',
+//         'november',
+//         'december',
+//     ],
+// };
+// // Даны также следующие переменные:
+
+// let lang = 'ru'; // может быть или 'ru' или 'en'
+// let month = 5; // число от 0 до 11
+
+// console.log(months[lang][month]);
+
+// Задача 71.1
+
+// Дан следующий массив работников:
+
+//     let employees = [{
+//             name: 'name1',
+//             salary: 300,
+//         },
+//         {
+//             name: 'name2',
+//             salary: 400,
+//         },
+//         {
+//             name: 'name3',
+//             salary: 500,
+//         },
+//     ];
+
+// console.log(employees[0][`salary`] + employees[1][`salary`]);
+// Выведите на экран сумму зарплат первого и второго работников.
+
+// Задача 71.2
+
+// Дан следующий объект со студентами:
+
+//     let students = {
+//         'boys': ['Коля', 'Вася', 'Петя'],
+//         'girls': ['Даша', 'Маша', 'Лена'],
+//     };
+
+// console.log(students[`boys`][1]);
+// console.log(students[`girls`][2]);
+// Выведите на экран элемент 'Вася'
+// и элемент 'Лена'.
+
+Задача 72.1
+
+Дан следующий массив работников:
+
+    let employees = [{
+            name: 'name1',
+            salary: 300,
+        },
+        {
+            name: 'name2',
+            salary: 400,
+        },
+        {
+            name: 'name3',
+            salary: 500,
+        },
+    ];
+
+for (let elem of employees) {
+    console.log(elem[`name`] + ` ` + elem[`salary`]);
+}
+Выведите на экран данные каждого работника в формате имя - зарплата.
+
+Задача 72.2
+
+Дан следующий массив работников:
+
+
+    let employees = [{
+            name: 'name1',
+            salary: 300,
+        },
+        {
+            name: 'name2',
+            salary: 400,
+        },
+        {
+            name: 'name3',
+            salary: 500,
+        },
+    ];
+
+for (let elem of employees) {
+    sum += elem[`salary`];
 }
 
-console.log(arr);
+console.log(sum);
+Выведите на экран сумму зарплат всех работников.
+
+Задача 72.3
+
+Дан следующий массив работников:
+    let sum = 0;
+let employees = [{
+        name: 'name1',
+        salary: 300,
+        age: 28,
+    },
+    {
+        name: 'name2',
+        salary: 400,
+        age: 29,
+    },
+    {
+        name: 'name3',
+        salary: 500,
+        age: 30,
+    },
+    {
+        name: 'name4',
+        salary: 600,
+        age: 31,
+    },
+    {
+        name: 'name5',
+        salary: 700,
+        age: 32,
+    },
+];
+
+for (let elem of employees) {
+    if (elem[`age`] >= 30) {
+        sum += elem[`salary`];
+    }
+
+}
+
+console.log(sum);
+Выведите на экран сумму зарплат тех работников, возраст которых равен или более 30 лет.
+
+Задача 72.4
+
+Дан следующий массив работников, в котором поле dismissed хранит в себе информацию о том, уволен работник или нет(true - уволен):
+
+    let employees = [{
+            name: 'name1',
+            salary: 300,
+            dismissed: false,
+        },
+        {
+            name: 'name2',
+            salary: 400,
+            dismissed: true,
+        },
+        {
+            name: 'name3',
+            salary: 500,
+            dismissed: false,
+        },
+        {
+            name: 'name4',
+            salary: 600,
+            dismissed: true,
+        },
+        {
+            name: 'name5',
+            salary: 700,
+            dismissed: false,
+        },
+    ];
+Выведите на экран имена и зарплаты неуволенных работников.

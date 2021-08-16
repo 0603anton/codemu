@@ -1560,95 +1560,496 @@
 // Выведите на экран элемент 'Вася'
 // и элемент 'Лена'.
 
-Задача 72.1
+// Задача 72.1
 
-Дан следующий массив работников:
+// Дан следующий массив работников:
 
-    let employees = [{
-            name: 'name1',
-            salary: 300,
-        },
-        {
-            name: 'name2',
-            salary: 400,
-        },
-        {
-            name: 'name3',
-            salary: 500,
-        },
-    ];
+//     let employees = [{
+//             name: 'name1',
+//             salary: 300,
+//         },
+//         {
+//             name: 'name2',
+//             salary: 400,
+//         },
+//         {
+//             name: 'name3',
+//             salary: 500,
+//         },
+//     ];
 
-for (let elem of employees) {
-    console.log(elem[`name`] + ` ` + elem[`salary`]);
-}
-Выведите на экран данные каждого работника в формате имя - зарплата.
+// for (let elem of employees) {
+//     console.log(elem[`name`] + ` ` + elem[`salary`]);
+// }
+// Выведите на экран данные каждого работника в формате имя - зарплата.
 
-Задача 72.2
+// Задача 72.2
 
-Дан следующий массив работников:
+// Дан следующий массив работников:
 
 
-    let employees = [{
-            name: 'name1',
-            salary: 300,
-        },
-        {
-            name: 'name2',
-            salary: 400,
-        },
-        {
-            name: 'name3',
-            salary: 500,
-        },
-    ];
+//     let employees = [{
+//             name: 'name1',
+//             salary: 300,
+//         },
+//         {
+//             name: 'name2',
+//             salary: 400,
+//         },
+//         {
+//             name: 'name3',
+//             salary: 500,
+//         },
+//     ];
 
-for (let elem of employees) {
-    sum += elem[`salary`];
-}
+// for (let elem of employees) {
+//     sum += elem[`salary`];
+// }
 
-console.log(sum);
-Выведите на экран сумму зарплат всех работников.
+// console.log(sum);
+// Выведите на экран сумму зарплат всех работников.
 
-Задача 72.3
+// Задача 72.3
 
-Дан следующий массив работников:
-    let sum = 0;
-let employees = [{
-        name: 'name1',
-        salary: 300,
-        age: 28,
-    },
-    {
-        name: 'name2',
-        salary: 400,
-        age: 29,
-    },
-    {
-        name: 'name3',
-        salary: 500,
-        age: 30,
-    },
-    {
-        name: 'name4',
-        salary: 600,
-        age: 31,
-    },
-    {
-        name: 'name5',
-        salary: 700,
-        age: 32,
-    },
-];
+// Дан следующий массив работников:
+//     let sum = 0;
+// let employees = [{
+//         name: 'name1',
+//         salary: 300,
+//         age: 28,
+//     },
+//     {
+//         name: 'name2',
+//         salary: 400,
+//         age: 29,
+//     },
+//     {
+//         name: 'name3',
+//         salary: 500,
+//         age: 30,
+//     },
+//     {
+//         name: 'name4',
+//         salary: 600,
+//         age: 31,
+//     },
+//     {
+//         name: 'name5',
+//         salary: 700,
+//         age: 32,
+//     },
+// ];
 
-for (let elem of employees) {
-    if (elem[`age`] >= 30) {
-        sum += elem[`salary`];
-    }
+// for (let elem of employees) {
+//     if (elem[`age`] >= 30) {
+//         sum += elem[`salary`];
+//     }
 
-}
+// }
 
-console.log(sum);
-Выведите на экран сумму зарплат тех работников, возраст которых равен или более 30 лет.
+// console.log(sum);
+// Выведите на экран сумму зарплат тех работников, возраст которых равен или более 30 лет.
 
-Задача 72.4
+// Задача 72.4
 
+// Дан следующий массив работников, в котором поле dismissed хранит в себе информацию о том, уволен работник или нет(true - уволен):
+
+//     let employees = [{
+//             name: 'name1',
+//             salary: 300,
+//             dismissed: false,
+//         },
+//         {
+//             name: 'name2',
+//             salary: 400,
+//             dismissed: true,
+//         },
+//         {
+//             name: 'name3',
+//             salary: 500,
+//             dismissed: false,
+//         },
+//         {
+//             name: 'name4',
+//             salary: 600,
+//             dismissed: true,
+//         },
+//         {
+//             name: 'name5',
+//             salary: 700,
+//             dismissed: false,
+//         },
+//     ];
+// Выведите на экран имена и зарплаты неуволенных работников.
+
+
+// Задача 72.5
+
+// Дана следующая структура с данными:
+
+//     let data = {
+//         1: [
+//             'data11',
+//             'data12',
+//             'data13',
+//         ],
+//         2: [
+//             'data21',
+//             'data22',
+//             'data23',
+//         ],
+//         3: [
+//             'data31',
+//             'data32',
+//             'data33',
+//             'data34',
+//             'data35',
+//         ],
+//         4: [
+//             'data41',
+//             'data42',
+//         ],
+//     };
+
+
+// for (let elem in data) {
+//     for (let innerElem of data[elem])
+//         console.log(innerElem);
+// }
+// С помощью вложенных циклов выведите на экран все строки с данными.
+
+// Задача 72.6
+
+// Дана следующая структура с данными:
+
+//     let data = [{
+//             1: 'data11',
+//             2: 'data12',
+//             3: 'data13',
+//             4: 'data14',
+//         },
+//         {
+//             1: 'data21',
+//             2: 'data22',
+//             3: 'data33',
+//         },
+//         {
+//             1: 'data31',
+//             2: 'data32',
+//         },
+//     ];
+
+
+// for (let elem of data) {
+//     for (let innerElem in elem)
+//         console.log(elem[innerElem]);
+// }
+// Количество объектов в массиве и количество элементов в объекте может быть произвольным.
+
+// С помощью вложенных циклов выведите на экран все строки с данными.
+
+// Задача 72.7
+
+// Дана следующая структура с данными:
+
+//     let data = [{
+//             1: [
+//                 'data111',
+//                 'data112',
+//                 'data113',
+//             ],
+//             2: [
+//                 'data121',
+//                 'data122',
+//                 'data123',
+//             ],
+//         },
+//         {
+//             1: [
+//                 'data211',
+//                 'data212',
+//                 'data213',
+//             ],
+//             2: [
+//                 'data221',
+//                 'data222',
+//                 'data223',
+//                 'data224',
+//             ],
+//             3: [
+//                 'data231',
+//                 'data232',
+//                 'data233',
+//                 'data234',
+//                 'data235',
+//             ],
+//         },
+//         {
+//             1: [
+//                 'data411',
+//                 'data412',
+//                 'data413',
+//             ],
+//             2: [
+//                 'data421',
+//             ],
+//         },
+//     ];
+
+
+// for (let elem of data) {
+//     for (let innerElem in elem) {
+//         for (let innerInnerElem of elem[innerElem]) {
+//             console.log(innerInnerElem);
+//         }
+//     }
+
+// }
+// С помощью вложенных циклов выведите на экран все строки с данными.
+
+// Задача 73.1
+
+// Возведите 2 в 10 степень.
+
+// console.log(Math.pow(2, 10));
+
+// Задача 73.2
+
+// Найдите квадратный корень из 245.
+
+// console.log(Math.sqrt(245));
+
+// Задача 73.3
+
+// Дан массив с элементами 4, 2, 5, 19, 13, 0, 10. Найдите квадратный корень из суммы кубов его элементов.Для решения воспользуйтесь циклом
+// for.
+
+
+// let smt = 0;
+// let sum = 0;
+
+// let arr = [4, 2, 5, 19, 13, 0, 10];
+// for (let i = 0; i < arr.length; i++) {
+
+//     sum += Math.pow(arr[i], 3);
+// }
+// let result = Math.sqrt(sum)
+// console.log(result);
+
+// const renderLine = function () {
+//     let iterator = 1;
+//     return () => {
+//         console.log(`-------------------------${iterator}--------------------------`);
+//         iterator += 1;
+//     };
+// }();
+
+// (function () {
+//     const arr = [4, 2, 5, 19, 13, 0, 10];
+//     const result = Math.sqrt(arr.reduce((previous, current) => previous + Math.pow(current, 3), 0));
+//     console.log(result);
+//     renderLine();
+// })();
+
+// Задача 72.4
+
+// Дан следующий массив работников, в котором поле dismissed хранит в себе информацию о том, уволен работник или нет(true - уволен):
+
+//     let employees = [{
+//             name: 'name1',
+//             salary: 300,
+//             dismissed: false,
+//         },
+//         {
+//             name: 'name2',
+//             salary: 400,
+//             dismissed: true,
+//         },
+//         {
+//             name: 'name3',
+//             salary: 500,
+//             dismissed: false,
+//         },
+//         {
+//             name: 'name4',
+//             salary: 600,
+//             dismissed: true,
+//         },
+//         {
+//             name: 'name5',
+//             salary: 700,
+//             dismissed: false,
+//         },
+//     ];
+// Выведите на экран имена и зарплаты неуволенных работников.
+
+// Задача 73.4
+
+// Найдите квадратный корень из 379. Результат округлите до целых, до десятых, до сотых.
+
+// console.log(Math.sqrt(379));
+// console.log(Math.round(Math.sqrt(379)));
+// console.log(Math.sqrt(379).toFixed(1));
+// console.log(Math.sqrt(379).toFixed(2));
+
+// Задача 73.5
+
+// Найдите квадратный корень из 587. Округлите результат в большую и меньшую стороны, запишите результаты округления в объект с ключами 'floor'
+// и 'ceil'.
+
+// console.log(Math.ceil(Math.sqrt(587)));
+// console.log(Math.floor(Math.sqrt(587)));
+
+// Задача 73.6
+
+// Даны числа 4, -2, 5, 19, -130, 0, 10. Найдите минимальное и максимальное число.
+
+// console.log(Math.max(4, -2, 5, 19, -130, 0, 10));
+// console.log(Math.min(4, -2, 5, 19, -130, 0, 10));
+
+// Задача 74.3
+
+// Дана строка 'я учу javascript!'.Вырежьте из нее слово 'учу'
+// и слово 'javascript'
+// тремя разными способами(через substr, substring, slice).
+
+// let str = `я учу javascript!`;
+// console.log(str.slice(2, 6));
+// console.log(str.slice(-11, -1));
+
+// console.log(str.substr(2, 3)); // начальная позиция а затем второй аргумент, сколько резать символов после этого.
+// console.log(str.substr(-10, 9));
+
+// console.log(str.substring(2, 6)); // не принмиает оторицательные
+// console.log(str.substring(7, 16));
+
+// Задача 74.4
+
+// Дана строка 'abcde'.Определите позицию буквы 'c'
+// в этой строке.
+
+// let str = 'abcde';
+// console.log(str.indexOf(`c`));
+
+// Задача 74.5
+
+// Дана строка.Проверьте, есть ли в этой строке символ 'a'.
+
+// let str = 'abcde';
+// console.log(str.indexOf(`a`));
+
+// Задача 74.6
+
+// Дана строка.Проверьте, начинается ли эта строка с символа 'a'.
+
+// Задача 74.7
+
+// Дана строка.Проверьте, заканчивается ли эта строка на символ 'a'.
+
+// let str = 'abcde';
+// console.log(str.indexOf(`a`));
+// console.log(str.length);
+// console.log((str.length - 1) == str.lastIndexOf(`e`));
+
+// Задача 74.8
+
+// Дана строка.Проверьте, начинается ли эта строка на http: aaaaa //.
+
+// let str = 'aaaaaaaa.html';
+
+// console.log(str.endsWith(`.html`));
+// console.log((str.length - 5) == str.lastIndexOf(`.html`));
+
+// Задача 74.9
+
+// Дана строка.Проверьте, заканчивается ли эта строка на aaaaaaaa.html.
+
+
+// Задача 74.12
+
+// Дана строка '1-2-3-4-5'.С помощью метода split запишите каждое число этой строки в отдельный элемент массива.
+
+// let str = '1-2-3-4-5';
+// let arr = str.split(`-`);
+// console.log(arr);
+
+// Задача 74.13
+
+// Дана строка '12345'.С помощью метода split запишите каждый символ этой строки в отдельный элемент массива.
+
+// Задача 74.14
+
+// Дан следующий массив:
+
+//     let arr = [1, 2, 3, 4, 5];
+// console.log(arr.join(`-`));
+
+// Задача 75.1
+
+// Дан массив[1, 2, 3].Добавьте ему в конец элементы 4, 5, 6.
+
+// let arr = [1, 2, 3];
+// arr.push(4, 5);
+// console.log(arr);
+
+// Задача 75.2
+
+// Дан массив[1, 2, 3].Добавьте ему в начало элементы 4, 5, 6.
+
+// let arr = [1, 2, 3];
+// arr.unshift(4, 5, 6);
+// console.log(arr);
+
+// Задача 75.3
+
+// Дан массив['js', 'css', 'jq'].Выведите на экран первый элемент.
+
+// let arr = ['js', 'css', 'jq'];
+// console.log(arr.shift());
+// console.log(arr.pop());
+
+// Задача 75.4
+
+// Дан массив['js', 'css', 'jq'].Выведите на экран последний элемент.
+
+// Задача 75.5
+
+// Дан массив[1, 2, 3, 4, 5].С помощью метода slice запишите в новый элементы[1, 2, 3].
+
+// let arr = [1, 2, 3, 4, 5];
+// let newArr = arr.slice(0, 3);
+// console.log(newArr);
+
+// Задача 75.6
+
+// Дан массив[1, 2, 3, 4, 5].С помощью метода slice запишите в новый элементы[4, 5].
+
+// let arr = [1, 2, 3, 4, 5];
+// let newArr = arr.slice(3);
+// console.log(newArr);
+
+Задача 75.7
+
+Дан массив[1, 2, 3, 4, 5].С помощью метода splice преобразуйте массив в[1, 4, 5].
+
+let arr = [1, 2, 3, 4, 5];
+let newArr = arr.splice(1, 2);
+console.log(arr);
+
+Задача 75.8
+
+Дан массив[1, 2, 3, 4, 5].С помощью метода splice запишите в новый массив элементы[2, 3, 4].
+
+Задача 75.9
+
+Дан массив[1, 2, 3, 4, 5].С помощью метода splice сделайте из него массив[1, 2, 3, 'a', 'b', 'c', 4, 5].
+
+let arr = [1, 2, 3, 4, 5];
+arr.splice(1, 0, `a`, `b`);
+arr.splice(6, 0, `c`);
+arr.splice(8, 0, `e`);
+console.log(arr);
+
+Задача 75.10
+
+Дан массив[1, 2, 3, 4, 5].С помощью метода splice сделайте из него массив[1, 'a', 'b', 2, 3, 4, 'c', 5, 'e'].

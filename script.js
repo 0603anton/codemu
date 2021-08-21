@@ -2028,28 +2028,633 @@
 // let newArr = arr.slice(3);
 // console.log(newArr);
 
-Задача 75.7
+// Задача 75.7
 
-Дан массив[1, 2, 3, 4, 5].С помощью метода splice преобразуйте массив в[1, 4, 5].
+// Дан массив[1, 2, 3, 4, 5].С помощью метода splice преобразуйте массив в[1, 4, 5].
 
-let arr = [1, 2, 3, 4, 5];
-let newArr = arr.splice(1, 2);
-console.log(arr);
+// let arr = [1, 2, 3, 4, 5];
+// let newArr = arr.splice(1, 2);
+// console.log(arr);
 
-Задача 75.8
+// Задача 75.8
 
-Дан массив[1, 2, 3, 4, 5].С помощью метода splice запишите в новый массив элементы[2, 3, 4].
+// Дан массив[1, 2, 3, 4, 5].С помощью метода splice запишите в новый массив элементы[2, 3, 4].
 
-Задача 75.9
+// Задача 75.9
 
-Дан массив[1, 2, 3, 4, 5].С помощью метода splice сделайте из него массив[1, 2, 3, 'a', 'b', 'c', 4, 5].
+// Дан массив[1, 2, 3, 4, 5].С помощью метода splice сделайте из него массив[1, 2, 3, 'a', 'b', 'c', 4, 5].
 
-let arr = [1, 2, 3, 4, 5];
-arr.splice(1, 0, `a`, `b`);
-arr.splice(6, 0, `c`);
-arr.splice(8, 0, `e`);
-console.log(arr);
+// let arr = [1, 2, 3, 4, 5];
+// arr.splice(1, 0, `a`, `b`);
+// arr.splice(6, 0, `c`);
+// arr.splice(8, 0, `e`);
+// console.log(arr);
 
-Задача 75.10
+// Задача 75.10
 
-Дан массив[1, 2, 3, 4, 5].С помощью метода splice сделайте из него массив[1, 'a', 'b', 2, 3, 4, 'c', 5, 'e'].
+// Дан массив[1, 2, 3, 4, 5].С помощью метода splice сделайте из него массив[1, 'a', 'b', 2, 3, 4, 'c', 5, 'e'].
+
+
+// Давайте преобразуем первую букву этой строки в верхний регистр:
+
+//     let str = 'london';
+
+// let result = str.slice(0, 1).toUpperCase() + str.slice(1);
+// console.log(result); // выведет 'London'
+// Задача 76.1
+
+// Преобразуйте последнюю букву строки в верхний регистр.
+
+// let str = 'london';
+
+// let result = str.slice(0, -1) + str.slice(-1).toUpperCase();
+// console.log(result);
+
+// Задача 76.2
+
+// Преобразуйте первые 2 буквы строки в верхний регистр.
+
+// let str = 'london';
+
+// let result = str.slice(0, 2).toUpperCase() + str.slice(2);
+// console.log(result);
+
+// Задача 76.3
+
+// Пусть дана строка, у которой первая буква в верхнем регистре, например вот такая:
+
+//     let str = 'London';
+// Преобразуйте первую букву строки в нижний регистр.
+
+
+
+// Давайте напишем код, который преобразует первую букву каждого слова в верхний регистр.
+// let str = 'word1 word2 word3';
+// let arr = str.split(` `);
+
+// for (let i = 0; i < 3; i++) {
+//     arr[i] = arr[i].slice(0, 1).toUpperCase() + arr[i].slice(1);
+// }
+// str = arr.join(` `);
+// console.log(str);
+
+
+// Задача 76.5
+
+// Преобразуйте строку
+// в 'VarTestText'.
+
+// let str = 'var_test_text';
+
+// let arr = str.split(`_`);
+// for (let i = 0; i < 3; i++) {
+//     arr[i] = arr[i].slice(0, 1).toUpperCase() + arr[i].slice(1);
+// }
+// str = arr.join(``);
+// console.log(str);
+
+
+// Написанный код должен работать для любых строк такого типа(то есть для строк, в которых слова разделены символов подчеркивания).
+
+// Задача 76.6
+
+// Модифицируйте предыдущую задачу так, чтобы первая буква новой строки была в нижнем регистре.
+
+// let str = 'var_test_text';
+
+// let words = str.split('_');
+
+// console.log(words);
+
+// for (let i = 1; i < words.length; i++) {
+//     words[i] = words[i].slice(0, 1).toUpperCase() + words[i].slice(1);
+// }
+// let res = words.join('');
+// console.log(res);
+
+// Задача 77.1
+
+// Сделайте функцию, выводящую на экран ваше имя.
+
+// function func() {
+//     console.log(`anton`);
+// }
+
+// func();
+
+// Задача 77.2
+
+// Сделайте функцию, выводящую на экран сумму чисел от 1 до 100.
+
+// let sum = 0;
+
+// function sumOfnum(firstNum, secondNum) {
+//     for (let i = firstNum; i <= secondNum; i++) {
+//         sum += i;
+//     }
+//     return sum;
+// }
+
+// console.log(sumOfnum(1, 100));
+
+// Задача 78.1
+
+// Сделайте функцию, которая параметром принимает число и выводит на экран куб этого числа.
+
+// function exponentiation(num) {
+//     console.log(Math.pow(num, 2));
+// }
+
+// exponentiation(2);
+
+// Задача 78.2
+
+// Сделайте функцию, которая параметром принимает число и проверяет, положительное это число или отрицательное.В первом случае пусть функция выводит на экран текст '+++', а во втором '---'.
+
+// function plusOrMinus(params) {
+//     if (params < 0) {
+//         console.log(`---`);
+//     } else if (params == 0) {
+//         console.log(`ZERO`);
+//     } else {
+//         console.log(`+++`);
+//     }
+// }
+
+// plusOrMinus(0);
+
+// Задача 79.3
+
+// Пусть у вас есть функция, возвращающая квадратный корень из числа, и функция, округляющая дробь до трех знаков в дробной части:
+
+//     function sqrt(num) {
+//         return Math.sqrt(num);
+//     }
+
+// function round(num) {
+//     return num.toFixed(3);
+// }
+
+// let result = round(sqrt(2));
+// console.log(result);
+
+
+// Задача 79.4
+
+// Пусть у вас есть функция, возвращающая квадратный корень из числа, и функция, возвращающая сумму трех чисел:
+
+//     function sqrt(num) {
+//         return Math.sqrt(num);
+//     }
+
+// function sum(num1, num2, num3) {
+//     return num1 + num2 + num3;
+// }
+
+// function round(num) {
+//     return num.toFixed(3);
+// }
+
+// let result = round(sum(sqrt(2), sqrt(3), sqrt(4)));
+
+// console.log(result);
+// С помощью этих функций найдите сумму корней чисел 2, 3 и 4 и запишите ее в переменную result.
+
+// Задача 79.5
+
+// Пусть у вас есть функция, округляющая дробь до трех знаков в дробной части:
+
+//     function round(num) {
+//         return num.toFixed(3);
+//     }
+// С помощью этой функции модифицируйте предыдущую задачу так, чтобы в переменную result записывалась дробь, округленная до 3 - х знаков в дробной части.
+
+// Задача 79.10
+
+// Напишите функцию, которая параметром будет принимать число и делить его на 2 столько раз, пока результат не станет меньше 10.
+// Пусть функция возвращает количество итераций, которое потребовалось для достижения результата.
+
+// let counter = 0;
+
+// function countTwo(num) {
+//     for (let i = num; i >= 10; i /= 2) {
+//         counter++;
+//     }
+//     console.log(counter);
+//     // return counter;
+
+// }
+
+// countTwo(500);
+
+// Задача 80.1
+
+// let arr1 = [1, 2, 3, 4];
+// let arr2 = [5, 6, 7, 8];
+
+// function sumPow(arr) {
+//     let sum = 0;
+
+//     for (let elem of arr) {
+//         sum += elem;
+//     }
+//     console.log(sum);
+//     return sum;
+
+// }
+
+// sumPow(arr1);
+
+// Напишите функцию, которая будет находить сумму квадратов элементов массива.
+
+// let arr1 = [1, 2, 3, 4];
+// let arr2 = [5, 6, 7, 8];
+
+// function sumPow(arr) {
+//     let sum = 0;
+
+//     for (let elem of arr) {
+//         sum += Math.pow(elem, 2);
+//     }
+//     console.log(sum);
+//     return sum;
+
+// }
+
+// sumPow(arr1);
+
+
+// Задача 80.2
+
+// Сделайте функцию getDigitsSum(digit - это цифра), которая параметром будет принимать целое число и возвращать сумму его цифр.
+
+// function getDigitsSum(num) {
+//     let arr = String(num).split(``);
+//     let sum = 0;
+//     console.log(arr);
+
+//     for (let elem of arr) {
+//         sum += Number(elem);
+//     }
+//     console.log(sum);
+//     return sum;
+// }
+
+// getDigitsSum(12312311);
+
+// Задача 80.3
+
+// Реализуйте функцию getDivisors, которая параметром будет принимать число и возвращать массив его делителей, то есть чисел, на которое
+// делится наше число.К примеру, если мы передадим число 24 - мы должны получить массив[1, 2, 3, 4, 6, 8, 12, 24].
+
+// function getDivisors(num) {
+//     let arr = [];
+//     for (let i = 1; i <= num; i++) {
+//         if (num % i == 0) {
+//             arr.push(i);
+//         }
+//     }
+//     console.log(arr);
+//     return arr;
+// }
+
+// getDivisors(21);
+// Задача 80.4
+
+// Сделайте функцию reverseStr, которая параметром будет принимать строку и переворачивать ее символы в обратном порядке.
+// Решите задачу без цикла, используя комбинацию стандартных функций JavaScript.
+
+// function reverseStr(str) {
+//     str = str.split(``).reverse().join();
+//     console.log(str);
+//     return str;
+// }
+
+// reverseStr(`abc`);
+// Задача 80.5
+
+// Сделайте функцию delElem, которая параметрами будет принимать значение и массив и удалять
+// из массива все элементы с таким значением.
+// let arr1 = [1, 2, 3, 4];
+// let arr2 = [];
+
+// function delElem(params, arr) {
+//     for (let elem of arr) {
+//         if (params != elem) {
+//             arr2.push(elem);
+//         }
+//     }
+
+//     return arr2;
+// }
+// console.log(delElem(1, arr1));
+
+// Задача 80.6
+
+// Сделайте функцию, заполняющую массив целыми числами от 1 до заданного.
+
+// let arr = [];
+
+// function addNumbers(num) {
+//     for (let i = 1; i <= num; i++) {
+//         arr.push(i);
+//     }
+//     console.log(arr);
+// }
+
+// addNumbers(5);
+
+
+
+
+// Пример работы такой функции:
+
+//     console.log(func(5)); // выведет [1, 2, 3, 4, 5]
+// Задача 80.7
+
+// Сделайте функцию, заполняющую массив целыми числами от начального до конечного заданных чисел.
+
+// Пример работы такой функции:
+
+//     let arr = [];
+
+// function addNumbers(numStart, numEnd) {
+//     for (let i = numStart; i <= numEnd; i++) {
+//         arr.push(i);
+//     }
+//     console.log(arr);
+// }
+
+// addNumbers(5, 15);
+
+// console.log(func(3, 7)); // выведет [3, 4, 5, 6, 7]
+
+// Задача 81.1
+
+// Сделайте функцию, которая параметром будет принимать массив с числами, и проверять, что все элементы
+// в этом массиве являются четными числами.
+
+// let arr = [1, -2, 3, 4, -5];
+
+// function evenNum(arr) {
+//     for (let elem of arr) {
+//         if (elem % 2 != 0) {
+//             return false;
+//         }
+//     }
+//     return true;
+// }
+
+// console.log(evenNum(arr));
+// Задача 81.2
+
+// Сделайте функцию, которая параметром будет принимать число и проверять, что все цифры это числа являются нечетными.
+
+// function oddNumber(num) {
+//     let arr = String(num).split(``);
+//     console.log(arr);
+//     for (let elem of arr) {
+//         if (elem % 2 == 0) {
+//             return false;
+//         }
+//     }
+//     return true;
+// }
+
+// console.log(oddNumber(111));
+
+
+// Задача 81.3
+
+// Сделайте функцию, которая параметром будет принимать массив и проверять,
+// есть ли в этом массиве два одинаковых элемента подряд.
+
+// function similarNum(num) {
+//     let arr = String(num).split(``);
+//     console.log(arr);
+//     for (let i = 0; i <= arr.length; i++) {
+//         if (+arr[i] == +arr[i + 1]) {
+//             return true;
+//         }
+//     }
+//     return false;
+// }
+
+// console.log(similarNum(2312312));
+
+// Задача 82.1
+
+// Дана следующая функция:
+
+//     function func(a, b) {
+//         if (a == b) {
+//             return true;
+//         } else {
+//             return false;
+//         }
+//     }
+
+// function func(a, b) {
+//     return a === b;
+// }
+
+// func(1, 1);
+
+
+// function func(a, b) {
+//     return a == b;
+// }
+
+// console.log(func(1, 2));
+
+// Перепишите ее код в сокращенной форме согласно изученной теории.
+
+// Задача 82.2
+
+// Дана следующая функция:
+
+//     function func(a, b) {
+//         if (a != b) {
+//             return true;
+//         } else {
+//             return false;
+//         }
+//     }
+
+// function func(a, b) {
+//     return a != b;
+// }
+
+// console.log(func(1, 2));
+// Перепишите ее код в сокращенной форме согласно изученной теории.
+
+// Задача 82.3
+
+// Дана следующая функция:
+
+//     function func(a, b) {
+//         if (a + b >= 10) {
+//             return true;
+//         } else {
+//             return false;
+//         }
+//     }
+
+// function func(a, b) {
+//     return a + b >= 10;
+// }
+
+// console.log(func(1, 2));
+// Перепишите ее код в сокращенной форме согласно изученной теории.
+
+// Задача 82.4
+
+// Дана следующая функция:
+
+//     function func(num) {
+//         if (num >= 0) {
+//             return true;
+//         } else {
+//             return false;
+//         }
+//     }
+
+
+// Перепишите ее код в сокращенной форме согласно изученной теории.
+
+// Задача 83.1
+
+// Дана функция, проверяющая числа на простоту:
+
+//     function isPrime(num) {
+//         for (let i = 2; i < num; i++) {
+//             if (num % i == 0) {
+//                 return false;
+//             }
+//         }
+
+//         return true;
+//     }
+
+
+// for (let i = 1; i <= 100; i++) {
+//     console.log(isPrime(i));
+//     console.log(i);
+// }
+// С помощью приведенной функции найдите все простые числа в интервале от 1 до 100.
+
+// Задача 83.2
+
+// Дана функция getDigitsSum, которая параметром принимает целое число и возвращает сумму его цифр:
+
+//     function getDigitsSum(num) {
+//         let sum = 0;
+//         let digits = String(num).split('');
+
+//         for (let digit of digits) {
+//             sum += Number(digit);
+//         }
+
+//         return sum;
+//     }
+
+
+// for (let i = 1; i <= 2030; i++) {
+//     if (getDigitsSum(i) == 13) {
+//         console.log(i);
+//     }
+// }
+
+// С помощью приведенной функции getDigitsSum найдите все года от 1 до 2030, сумма цифр которых равна 13.
+
+// Задача 83.3
+
+// Пусть дан какой - то массив с числами, например, такой:
+
+//     [123, 456, 789]
+// Давайте сделаем так, чтобы цифры в каждом элементе массива были в обратном порядке.То есть из нашего массива сделаем следующий:
+
+//     [321, 654, 987]
+// Некий программист уже написал код, реализующий описанную задачу:
+
+//     let nums = [123, 456, 789];
+
+// function reverseArr(nums) {
+//     let result = [];
+//     for (let num of nums) {
+//         result.push(String(num).split('').reverse().join(''));
+//     }
+//     return result;
+// }
+
+// console.log(reverseArr(nums));
+
+
+
+// console.log(result); // выведет [321, 654, 987]
+// Переделайте приведенный код так, чтобы переворот числа выполняла отдельная функция.
+
+// Задача 83.4
+
+// Даны два числа.Необходимо проверить, равна ли сумма цифр первого числа сумме цифр второго числа.
+
+// Некий программист уже написал решение задачи, вот оно:
+
+//     let num1 = 234;
+// let num2 = 531;
+
+// function sumOfDigits1(num) {
+//     let digits = String(num).split('');
+//     let digitsSum = 0;
+//     for (let digit of digits) {
+//         digitsSum += Number(digit);
+//     }
+//     return digitsSum;
+// }
+
+// function digitCompare(num, num1) {
+//     if (num == num1) {
+//         console.log('суммы цифр совпадают');
+//     } else {
+//         console.log('суммы цифр не совпадают');
+//     }
+// }
+
+// digitCompare(sumOfDigits1(num1), sumOfDigits1(num2));
+
+
+// В чем недостатки приведенного кода ? Переделайте код так, чтобы он был более удачным.
+
+// Задача 83.5
+
+// Дан массив с числами.Необходимо перебрать этот массив с числами и вывести в консоль
+// нетривиальные делители этих чисел(то есть исключая число 1 и само число).
+
+// Некий программист уже написал решение задачи:
+
+//     let nums = [12, 24, 35, 14];
+
+// for (let num of nums) {
+//     console.log(num + ': ' + getDivisors(num).join(', '));
+// }
+
+// function getDivisors(num) {
+//     let result = [];
+
+//     for (let i = 2; i < num; i++) {
+//         if (num % i == 0) {
+//             result.push(i);
+//         }
+//     }
+
+//     return result;
+// }
+
+// console.log(getDivisors(321));
+
+// Программист не тестировал отдельно работу функции getDivisors, а написал весь код сразу и затем запустил его.
+// При запуске оказалось, что код работает как - то не так.
+// Видимо, в функции getDivisors была допущена какая - то ошибка.
+
+// Найдите и исправьте ошибку.Потестируйте отдельно функцию getDivisors, чтобы убедиться, что она работает корректно после вашей правки.
+// После того, как вы убедитесь в корректности работы функции - проверьте полный код решения задачи.

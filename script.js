@@ -2658,3 +2658,237 @@
 
 // Найдите и исправьте ошибку.Потестируйте отдельно функцию getDivisors, чтобы убедиться, что она работает корректно после вашей правки.
 // После того, как вы убедитесь в корректности работы функции - проверьте полный код решения задачи.
+
+
+// Задача 84.1
+
+// Дана функция getSum, находящая сумму элементов переданного массива:
+
+//     function getSum(arr) {
+//         let sum = 0;
+
+//         for (let elem of arr) {
+//             sum += Number(elem);
+//         }
+
+//         return sum;
+//     }
+// // Дана функция getDigits, возвращающая массив цифр числа:
+
+// function getDigits(num) {
+//     return String(num).split('');
+// }
+// // Используя комбинацию приведенных функций найдите сумму цифр числа 12345.
+
+// console.log(getSum(getDigits(12345)));
+
+
+// console.log(getAvg(getDivisors(24)));
+
+// // Нахождение среднего арифметического:
+// function getAvg(arr) {
+//     let sum = 0;
+
+//     for (let elem of arr) {
+//         sum += elem;
+//     }
+
+//     return sum / arr.length;
+// }
+
+// // Нахождение массива делителей числа:
+// function getDivisors(num) {
+//     let result = [];
+
+//     for (let i = 2; i < num; i++) {
+//         if (num % i == 0) {
+//             result.push(i);
+//         }
+//     }
+//     return result;
+// }
+
+// Пусть у нас дан массив с числами.Решим следующую задачу:
+//     запишем в новый массив только те элементы, сумма цифр в которых от 1 до 9.
+
+// let arr = [12, 19, 28, 13, 14, 345];
+// let result = [];
+
+// function getDigits(num) {
+//     let arr = String(num).split(``);
+//     return arr;
+// }
+
+// function getSum(arr) {
+//     let sum = 0;
+//     for (let elem of arr) {
+//         sum += Number(elem);
+//     }
+//     return sum;
+// }
+
+// function inRange(num) {
+//     let someNum = getSum(getDigits(num));
+//     return someNum >= 1 && someNum <= 9;
+// }
+
+
+
+// for (let elem of arr) {
+//     if (inRange(elem)) {
+//         result.push(elem);
+//     }
+// }
+
+// console.log(result);
+
+// Задача 86.1
+
+// Реализуйте функцию getOwnDivisors.Потестируйте ее работу.
+
+// function getOwnDivisors(num) {
+//     let divisors = [];
+//     for (let i = 1; i < num; i++) {
+//         if (num % i == 0) {
+//             divisors.push(i);
+//         }
+//     }
+//     return divisors;
+// }
+
+
+
+
+// // Задача 86.2
+
+// // Реализуйте функцию getSum.Потестируйте ее работу.
+
+
+// function getSum(arr) {
+//     let sum = 0;
+//     for (let elem of arr) {
+//         sum += elem;
+//     }
+//     return sum;
+// }
+
+// // console.log(getSum(getOwnDivisors(220)));
+
+// // Задача 86.3
+
+// // Проверьте работу функции isFreindly.
+
+// function isFreindly(num1, num2) {
+//     let sum1 = getSum(getOwnDivisors(num1));
+//     let sum2 = getSum(getOwnDivisors(num2));
+
+//     if (sum1 == num2 && sum2 == num1) {
+//         return true;
+//     } else {
+//         return false;
+//     }
+// }
+
+// // console.log(isFreindly(220, 284));
+// function findApair(num1, num2) {
+//     let result = [];
+//     for (let i = num1; i <= num2; i++) {
+//         for (let j = num1; j <= num2; j++) {
+//             if (isFreindly(i, j)) {
+//                 let tempArr = [i, j];
+//                 result.push(tempArr);
+//             }
+//         }
+
+//     }
+//     return result;
+// }
+
+
+// console.log(findApair(1, 2000));
+// Задача 86.4
+
+// Сделайте функцию getFreindly, которая будет находить пары дружественных чисел в заданном промежутке и
+// возвращать их в виде двухмерного массива вида[[220, 284], [1184, 1210], [2620, 2924]].
+// С помощью созданной функции найдите все пары дружественных чисел на промежутке от 1 до 9000.
+
+
+
+// let alldivisors = []; //массив делителей всех чисел
+// function getOwnDivisors(num) {
+//     let divisors = [1];
+//     for (let i = 2; i < num; i++) {
+//         if (num % i == 0) divisors.push(i);
+//     }
+//     alldivisors[num] = divisors; //под индексом num будет храниться массив делителей num
+// };
+
+// function getSum(arr) {
+//     let sum = 0;
+//     arr.forEach(el => sum += el);
+//     return sum;
+// };
+
+// function isFrendly(num1, num2) {
+//     let check1 = getSum(alldivisors[num1]) == num2; //обращение к элементу массива, который хранит делители числа num1
+//     let check2 = getSum(alldivisors[num2]) == num1;
+//     return check1 && check2 && num1 != num2;
+// }
+
+// // Пишем майнер дружественных чисел
+// function getFriendly(numStart, numEnd) {
+//     let res = [];
+//     for (let i = numStart; i <= numEnd; i++) {
+//         getOwnDivisors(i); //заполнение массива
+//     }
+//     for (let i = numStart; i <= numEnd; i++) {
+//         for (let j = i; j <= numEnd; j++) {
+//             if (isFrendly(i, j)) {
+//                 res.push([i, j]);
+//                 console.log([i, j]);
+//             }
+//         }
+//     }
+//     return res;
+// }
+
+// // Запускаем майнер. По условию задачи
+// // искать от 1 до 9000, но я не дождался...
+// console.log(getFriendly(1, 9000));
+
+Задача 86.5
+
+Совершенное число - целое число, равное сумме всех своих собственных
+делителей(то есть всех положительных делителей, отличных от самого числа).
+Сделайте функцию getPerfect, которая будет находить совершенные числа в заданном диапазоне.
+Проверьте работу функции в промежутке от 1 до 1000.
+
+
+function getDivisors(params) {
+    let arr = [];
+    for (let i = 1; i < params; i++) {
+        if (params % i == 0) {
+            arr.push(i);
+        }
+    }
+}
+
+function getSum(arr) {
+    let sum = 0;
+    arr.forEach(el => sum += el);
+    return sum;
+};
+
+
+function getPerf(params1, params2) {
+    for (params1; params1 < params2; params1++) {
+        getSum(getDivisors(params1));
+    }
+
+}
+
+console.log(getPerf(2, 500));
+
+Задача 86.6
+
+Сделайте функцию getSimpleDivisors, которая будет принимать параметром целое число и находить все делители этого числа, являющиеся простыми числами.

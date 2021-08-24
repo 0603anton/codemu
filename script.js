@@ -2526,21 +2526,24 @@
 
 // Дана функция, проверяющая числа на простоту:
 
-//     function isPrime(num) {
-//         for (let i = 2; i < num; i++) {
-//             if (num % i == 0) {
-//                 return false;
-//             }
+// function isPrime(num) {
+//     for (let i = 2; i < num; i++) {
+//         if (num % i == 0) {
+//             return false;
 //         }
-
-//         return true;
 //     }
+
+//     return true;
+// }
 
 
 // for (let i = 1; i <= 100; i++) {
 //     console.log(isPrime(i));
 //     console.log(i);
 // }
+
+
+
 // С помощью приведенной функции найдите все простые числа в интервале от 1 до 100.
 
 // Задача 83.2
@@ -2856,39 +2859,142 @@
 // // искать от 1 до 9000, но я не дождался...
 // console.log(getFriendly(1, 9000));
 
-Задача 86.5
+// Задача 86.5
 
-Совершенное число - целое число, равное сумме всех своих собственных
-делителей(то есть всех положительных делителей, отличных от самого числа).
-Сделайте функцию getPerfect, которая будет находить совершенные числа в заданном диапазоне.
-Проверьте работу функции в промежутке от 1 до 1000.
-
-
-function getDivisors(params) {
-    let arr = [];
-    for (let i = 1; i < params; i++) {
-        if (params % i == 0) {
-            arr.push(i);
-        }
-    }
-}
-
-function getSum(arr) {
-    let sum = 0;
-    arr.forEach(el => sum += el);
-    return sum;
-};
+// Совершенное число - целое число, равное сумме всех своих собственных
+// делителей(то есть всех положительных делителей, отличных от самого числа).
+// Сделайте функцию getPerfect, которая будет находить совершенные числа в заданном диапазоне.
+// Проверьте работу функции в промежутке от 1 до 1000.
 
 
-function getPerf(params1, params2) {
-    for (params1; params1 < params2; params1++) {
-        getSum(getDivisors(params1));
-    }
+// function getDivisors(params) {
+//     let arr = [];
+//     for (let i = 1; i < params; i++) {
+//         if (params % i == 0) {
+//             arr.push(i);
+//         }
+//     }
+//     return arr;
+// }
 
-}
+// function getSum(arr) {
+//     let sum = 0;
+//     for (let elem of arr) {
+//         sum += elem;
+//     }
+//     return sum;
+// };
 
-console.log(getPerf(2, 500));
 
-Задача 86.6
+// function getPerf(param) {
+//     let result = [];
+//     for (let i = param; i <= 9000; i++) {
+//         if (i == getSum(getDivisors(i))) {
+//             result.push(i);
+//         }
+//     }
+//     return result;
+// }
 
-Сделайте функцию getSimpleDivisors, которая будет принимать параметром целое число и находить все делители этого числа, являющиеся простыми числами.
+// console.log(getPerf(1));
+
+
+// Задача 86.6
+
+// Сделайте функцию getSimpleDivisors, которая будет принимать параметром
+// целое число и находить все делители этого числа, являющиеся простыми числами.
+
+// function getDivisors(params) {
+//     let arr = [];
+//     for (let i = 1; i < params; i++) {
+//         if (params % i == 0) {
+//             arr.push(i);
+//         }
+//     }
+//     return arr;
+// };
+
+// function isPrime(num) {
+
+//     for (let i = 2; i < num; i++) {
+//         if (num % i == 0) {
+//             return false;
+//         }
+
+
+//     }
+//     return true;
+// }
+
+
+
+
+
+// function getPrimeDivisors(params) {
+//     let result = [];
+//     for (let elem of getDivisors(params)) {
+//         if (isPrime(elem)) {
+//             result.push(elem);
+//         }
+//     }
+//     return result;
+// }
+
+// console.log(getPrimeDivisors(333));
+
+// Пусть у нас даны два массива:
+
+let arr1 = [1, 2, 3];
+let arr2 = [2, 3, 4, 5];
+// // Можно заметить, что числа 2 и 3 присутствуют и в одном, и во втором массиве.Такие общие элементы называются пересечением массивов.
+
+// // Давайте напишем функцию getInt, которая будет находить пересечение массивов и возвращать пересечение этих массивов.
+
+// function getInt(arr1, arr2) {
+//     let result = [];
+//     for (let elem of arr1) {
+//         if (inArray(elem, arr2)) {
+//             result.push(elem);
+//         }
+//     }
+//     return result;
+// }
+
+// function inArray(elem, arr) {
+//     return arr.indexOf(elem) !== -1;
+// }
+
+// console.log(getInt(arr1, arr2));
+
+// Можно заметить, что числа 1, 4 и 5 не присутствуют одновременно в обоих массивах.Такие элементы называются разностью массивов.
+
+// Давайте функцию getDiff, которая будет находить разность двух массивов.
+
+// Я вижу следующий алгоритм: нужно взять первый массив, и проверить каждый его элемент на то, есть ли он во втором массиве.Если элемента нету во втором массиве - то его берем в результат.
+
+// Затем такую же манипуляцию следует проделать и со вторым массивом.
+
+
+// function getDiff(arr1, arr2) {
+//     let diff1 = getDiffone(arr1, arr2);
+//     let diff2 = getDiffone(arr2, arr1);
+
+//     return [].concat(diff1, diff2);
+// }
+
+// function getDiffone(arr1, arr2) {
+//     let result = [];
+//     for (let elem of arr1) {
+//         if (!inArray(elem, arr2)) {
+//             result.push(elem);
+//         }
+//     }
+//     return result;
+// }
+
+
+// function inArray(elem, arr) {
+//     return arr.indexOf(elem) !== -1;
+// }
+
+// console.log(getDiff([1, 2, 3], [2, 3, 4, 5])); // выведет [1, 4, 5]

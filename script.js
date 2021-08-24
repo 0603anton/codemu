@@ -2998,3 +2998,133 @@ let arr2 = [2, 3, 4, 5];
 // }
 
 // console.log(getDiff([1, 2, 3], [2, 3, 4, 5])); // выведет [1, 4, 5]
+
+// Задача 89.1
+
+// Реализуйте функцию getGreatestCommonDivisor, которая параметрами будет принимать два числа и возвращать НОД этих двух чисел.
+
+// При решении задачи старайтесь использовать вспомогательные функции, в том числе полученные нами ранее в теоретической части.
+
+// Обязательно тестируйте каждую вспомогательную функцию перед использованием.
+
+// function getGreatestCommonDivisor(num1, num2) {
+
+//     let commonDiv = getCommonDivisors(getDivisors(num1), getDivisors(num2));
+
+//     return Math.max.apply(null, commonDiv);
+// }
+
+// function getDivisors(num) {
+//     let result = [];
+//     for (let i = 1; i <= num; i++) {
+//         if (num % i == 0) {
+//             result.push(i);
+//         }
+//     }
+//     return result;
+// }
+
+// // console.log(getDivisors(6));
+
+// function inArray(num, arr) {
+//     return arr.indexOf(num) !== -1;
+// }
+
+// // console.log(inArray(1, [1, 2, 3]));
+
+// function getCommonDivisors(arr1, arr2) {
+//     let result = [];
+//     for (let elem of arr1) {
+//         if (inArray(elem, arr2)) {
+//             result.push(elem);
+//         }
+//     }
+//     return result;
+// }
+
+// // console.log(getCommonDivisors([1, 3, 5], [2, 3, 6]));
+
+// console.log(getGreatestCommonDivisor(24, 36));
+
+// Задача 89.2
+
+// Положительные целые числа, не имеющие общих делителей, кроме тривиальной единицы, называются взаимно простыми.
+
+// Говоря другими словами, два числа можно назвать взаимно простыми, если их НОД равен единице.
+
+// Напишите функцию, которая параметрами будет принимать два числа и проверять - взаимно простые они или нет.
+
+// function getGreatestCommonDivisor(num1, num2) {
+
+//     let commonDiv = getCommonDivisors(getDivisors(num1), getDivisors(num2));
+
+//     let nod = Math.max.apply(null, commonDiv);
+
+//     console.log(`Числа ${num1} и ${num2} взаимнопростые:`);
+//     return nod == 1;
+// }
+
+// function getDivisors(num) {
+//     let result = [];
+//     for (let i = 1; i <= num; i++) {
+//         if (num % i == 0) {
+//             result.push(i);
+//         }
+//     }
+//     return result;
+// }
+
+// // console.log(getDivisors(6));
+
+// function inArray(num, arr) {
+//     return arr.indexOf(num) !== -1;
+// }
+
+// // console.log(inArray(1, [1, 2, 3]));
+
+// function getCommonDivisors(arr1, arr2) {
+//     let result = [];
+//     for (let elem of arr1) {
+//         if (inArray(elem, arr2)) {
+//             result.push(elem);
+//         }
+//     }
+//     return result;
+// }
+
+// // console.log(getCommonDivisors([1, 3, 5], [2, 3, 6]));
+
+// console.log(getGreatestCommonDivisor(2, 3));
+
+Задача 90.1
+
+Самостоятельно, не подсматривая в мой код, реализуйте описанную функцию.При решении задачи код функции
+getRandomInt скопируйте из учебника.
+
+
+function getRandomInt(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+function getRandomElem(arr) {
+    return arr[getRandomInt(0, arr.length - 1)];
+}
+
+arr = [1, 5, 7];
+
+// console.log(getRandomElem(arr));
+
+
+// Задача 90.2
+
+// Используя созданную функцию, найдите сумму трех случайных элементов из массива.
+
+function sumOfRandomElem(arr) {
+    let sum = 0;
+    for (let i = 0; i < 3; i++) {
+        sum += getRandomElem(arr);
+    }
+    return sum;
+}
+
+console.log(sumOfRandomElem(arr));

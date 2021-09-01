@@ -3096,35 +3096,381 @@ let arr2 = [2, 3, 4, 5];
 
 // console.log(getGreatestCommonDivisor(2, 3));
 
-Задача 90.1
+// Задача 90.1
 
-Самостоятельно, не подсматривая в мой код, реализуйте описанную функцию.При решении задачи код функции
-getRandomInt скопируйте из учебника.
+// Самостоятельно, не подсматривая в мой код, реализуйте описанную функцию.При решении задачи код функции
+// getRandomInt скопируйте из учебника.
 
 
-function getRandomInt(min, max) {
-    return Math.floor(Math.random() * (max - min + 1)) + min;
+// function getRandomInt(min, max) {
+//     return Math.floor(Math.random() * (max - min + 1)) + min;
+// }
+
+// function getRandomElem(arr) {
+//     return arr[getRandomInt(0, arr.length - 1)];
+// }
+
+// arr = [1, 5, 7];
+
+// // console.log(getRandomElem(arr));
+
+
+// // Задача 90.2
+
+// // Используя созданную функцию, найдите сумму трех случайных элементов из массива.
+
+// function sumOfRandomElem(arr) {
+//     let sum = 0;
+//     for (let i = 0; i < 3; i++) {
+//         sum += getRandomElem(arr);
+//     }
+//     return sum;
+// }
+
+// console.log(sumOfRandomElem(arr));
+
+// Задача 91.1
+
+// Самостоятельно, не подсматривая в мой код, реализуйте описанную функцию.При решении задачи код функции getRandomInt скопируйте из учебника.
+
+// Реализуем функцию shuffle, параметром принимающую массив и перемешивающую его элементы в случайном порядке.
+
+// function shuffle(arr) {
+//     let result = [];
+
+//     while (arr.length > 0) {
+//         let random = getRandomInt(0, arr.length - 1);
+//         let elem = arr.splice(random, 1)[0];
+//         result.push(elem);
+//     }
+//     // console.log(result);
+//     return result;
+
+// }
+
+
+
+// function getRandomInt(min, max) {
+//     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-function getRandomElem(arr) {
-    return arr[getRandomInt(0, arr.length - 1)];
-}
+// console.log(shuffle([1, 2, 3, 4, 5]));
 
-arr = [1, 5, 7];
+// Задача 91.2
 
-// console.log(getRandomElem(arr));
+// Сделайте функцию range принимающую параметрами 2 целых числа - начало и конец диапазона, и возвращающую массив,
+//     заполненный целыми числами из этого диапазона.
+
+// function range(num, num1) {
+//     let result = [];
+//     for (let i = num; i <= num1; i++) {
+//         result.push(i);
+//     }
+//     return result;
+// }
+
+// console.log(range(1, 10));
 
 
-// Задача 90.2
+// Задача 91.3
 
-// Используя созданную функцию, найдите сумму трех случайных элементов из массива.
+// Сделайте функцию rangeRand, возвращающую массив, заполненный случайными целыми числами из заданного диапазона.
+// При этом числа не должны повторяться.Для решения задачи используйте комбинацию функций range и shuffle.
 
-function sumOfRandomElem(arr) {
-    let sum = 0;
-    for (let i = 0; i < 3; i++) {
-        sum += getRandomElem(arr);
+// function rangeRand(num, num1) {
+//     return shuffle(range(num, num1));
+// }
+
+// console.log(rangeRand(1, 15));
+
+// Задача 92.1
+
+// Самостоятельно, не подсматривая в мой код, реализуйте описанную функцию.
+// При решении задачи код функций getRandomInt и shuffle скопируйте из учебника.
+// Давайте теперь реализуем функцию randoms, возвращающую заданное количество случайных элементов из массива.
+// Пусть первым параметром функция принимает массив, а вторым - количество элементов, которое следует вернуть.
+
+
+// function randoms(arr, numOfElem) {
+//     return cutFirstElem(shuffle(arr), numOfElem);
+// };
+
+// function shuffle(arr) {
+//     let result = [];
+
+//     while (arr.length > 0) {
+//         let random = getRandomInt(0, arr.length - 1);
+//         let elem = arr.splice(random, 1)[0];
+//         result.push(elem);
+//     }
+//     // console.log(result);
+//     return result;
+
+// }
+
+// function getRandomInt(min, max) {
+//     return Math.floor(Math.random() * (max - min + 1)) + min;
+// }
+
+// function cutFirstElem(arr, num) {
+//     return arr.slice(0, num);
+// }
+
+// console.log(randoms([1, 2, 3, 4, 5], 3));
+
+// let a = [9, 7, 5, 3, 1, 2, 4, 6, 8];
+// let a = [2, 1];
+
+// function bubblesortOnce(a) {
+//     // TODO
+//     let b = [...a]
+//     for (let i = 0; i < b.length - 1; i++) {
+//         if (b[i] > b[i + 1]) {
+//             let temp = b.slice(b.indexOf(b[i]), i + 2).reverse();
+//             // console.log(temp);
+//             b.splice(b.indexOf(b[i]), 2, temp[0], temp[1]);
+//         }
+
+//     }
+//     return b;
+
+// }
+
+// console.log(bubblesortOnce(a));
+
+// let b = [...a]
+
+// for (let i = 0; i < b.length - 1; i++) {
+//     if (b[i] > b[i + 1]) {
+//         let temp = arr[i];
+//         arr[i] = arr[i + 1];
+//         arr[i + 1] = temp;
+//     }
+// }
+
+
+
+// упрощённая версия
+
+// let a = [9, 7, 5, 3, 1, 2, 4, 6, 8];
+
+
+// function bubblesortOnce(a) {
+//     // TODO
+//     let b = [...a]
+
+//     for (let i = 0; i < b.length - 1; i++) {
+//         if (b[i] > b[i + 1]) {
+//             // let temp = b[i];
+//             // b[i] = b[i + 1];
+//             // b[i + 1] = temp;
+//             [b[i], b[i + 1]] = [b[i + 1], b[i]]
+
+//         }
+//     }
+//     return b;
+
+// }
+
+// console.log(bubblesortOnce(a));
+
+// пузырьковая сортировка базовый вариант
+
+// function bubbleSort(arr) {
+//     for (let i = 0; i < arr.length - 1; i++) {
+//         for (let j = 0; j < arr.length; j++) {
+
+//             if (arr[j] > arr[j + 1]) {
+//                 [arr[j], arr[j + 1]] = [arr[j + 1], arr[j]];
+
+//             }
+//         }
+
+//     }
+//     return arr;
+// }
+
+// console.log(bubbleSort([3, 10, 4, 3]));
+
+// Пусть нам нужно вывести на экран все возможные счастливые автобусные билеты.Билет называется счастливым, 
+// если сумма первых трех цифр билета равна сумме вторых трех цифр(будем рассматривать только билеты, в номере которых 6 цифр).
+
+
+function getLuckyTickets() {
+    let result = [];
+
+    for (let i = 1001; i <= 999999; i++) {
+        if (isLucky(i)) {
+            result.push(i);
+        }
     }
-    return sum;
+
+    return result;
 }
 
-console.log(sumOfRandomElem(arr));
+function isLucky(num) {
+    let str = normilize(num);
+
+    let sum1 = Number(str[0]) + Number(str[1]) + Number(str[2]);
+    let sum2 = Number(str[3]) + Number(str[4]) + Number(str[5]);
+
+    return sum1 == sum2;
+}
+
+function normilize(num) {
+    let str = String(num);
+
+    if (str.length == 4) {
+        str = `00` + str;
+    } else if (str.length == 5) {
+        str = `0` + str;
+    }
+    return str;
+}
+
+// Задача 94.1
+
+// Реализуйте описанную функцию.Потестируйте ее работу.
+
+function normilize(num) {
+    let str = String(num);
+
+    if (str.length == 4) {
+        str = `00` + str;
+    } else if (str.length == 5) {
+        str = `0` + str;
+    }
+    return str;
+}
+
+function isLucky(numStr) {
+    let sum1 = 0;
+    let sum2 = 0;
+    for (let i = 0; i < numStr.length / 2; i++) {
+        sum1 += Number(numStr[i]);
+    }
+    // console.log(sum1);
+    for (let i = numStr.length / 2; i < numStr.length; i++) {
+        sum2 += Number(numStr[i]);
+    }
+    // console.log(sum2);
+    return sum1 == sum2;
+}
+
+// console.log(isLucky('1203'));
+// console.log(isLucky('012003'));
+// console.log(isLucky('123006'));
+// console.log(isLucky('33'));
+
+// Объясните работу следующей строки функции normalizeNum:
+
+//     return formStr('0', digitsAmount - str.length) + str;
+/*Функция с 2 парметрами. 1 параметр символ который эта функция будет добавлять к строке
+   , второй параметр это выражение которое выщитывает необходимое количество символов котоыре надо 
+   добавить. а затем к тим символам добавляем исходую строку  */
+
+// function formStr(data, length) {
+//     let str = ``;
+//     for (let i = 0; i <= length; i++) {
+//         str += data;
+//     }
+//     return str;
+// }
+
+// console.log(formStr('0', 10));
+
+function isLucky(numStr) {
+    let sum1 = 0;
+    let sum2 = 0;
+    for (let i = 0; i < numStr.length / 2; i++) {
+        sum1 += Number(numStr[i]);
+    }
+    // console.log(sum1);
+    for (let i = numStr.length / 2; i < numStr.length; i++) {
+        sum2 += Number(numStr[i]);
+    }
+    // console.log(sum2);
+    return sum1 == sum2;
+}
+
+
+function normalizeNum(num, digitsAmount) {
+    let str = String(num);
+    return formStr('0', digitsAmount - str.length) + str;
+}
+
+
+function formStr(data, length) {
+    let str = ``;
+    for (let i = 0; i < length; i++) {
+        str += data;
+    }
+    return str;
+}
+
+
+
+// console.log(normalizeNum(123, 6)); // выведет '000123'
+// console.log(normalizeNum(1234, 6)); // выведет '001234'
+// console.log(normalizeNum(12345, 6)); // выведет '012345'
+// console.log(normalizeNum(123456, 6)); // выведет '123456'
+
+// console.log(isLucky(normalizeNum(1203, 4))); // выведет true
+// console.log(isLucky(normalizeNum(312, 4))); // выведет true
+
+// console.log(isLucky(normalizeNum(6123, 6))); // выведет true
+// console.log(isLucky(normalizeNum(600123, 6))); // выведет true
+
+// console.log(isLucky(normalizeNum(700123, 6))); // выведет false
+// console.log(isLucky(normalizeNum(070123, 6))); // выведет false
+
+
+// Задача 94.6
+
+// Сделайте функцию getLast, которая параметром будет принимать число цифр в билете и возвращать число,
+// соответствующее концу цикла.Потестируйте эту функцию на различных значениях.
+
+
+function getLast(digitsAmount) {
+    let str = ``;
+    for (let i = 0; i < digitsAmount; i++) {
+        str += '9';
+    }
+    return Number(str);
+}
+
+// console.log(getLast(8));
+
+// Задача 94.7
+
+// Сделайте функцию getFirst, которая параметром будет принимать число цифр в билете и возвращать число,
+// соответствующее началу цикла.Потестируйте эту функцию на различных значениях.
+
+function getFirst(digitsAmount) {
+    let str = ``;
+    for (let i = 2; i < digitsAmount; i++) {
+        str += '0';
+    }
+    return Number(`1` + str + `1`);
+}
+
+// console.log(getFirst(4));
+
+function getLuckyTickets(digitsAmount) {
+    let result = [];
+
+    let first = getFirst(digitsAmount);
+    let last = getLast(digitsAmount);
+
+    for (let i = first; i <= last; i++) {
+        let ticketNum = normalizeNum(i, digitsAmount);
+
+        if (isLucky(ticketNum)) {
+            result.push(ticketNum);
+        }
+    }
+
+    return result;
+}
+
+console.log(getLuckyTickets(6));

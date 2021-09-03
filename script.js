@@ -3431,46 +3431,214 @@ function formStr(data, length) {
 // соответствующее концу цикла.Потестируйте эту функцию на различных значениях.
 
 
-function getLast(digitsAmount) {
-    let str = ``;
-    for (let i = 0; i < digitsAmount; i++) {
-        str += '9';
-    }
-    return Number(str);
+108
+
+Задача 1 js.Pm.FA.FO .1
+
+Сделайте объект с тремя функциями.Пусть первая возвращает через
+return число 1, вторая - число 2, третья - число 3. С помощью созданных функций выведите на экран сумму возвращаемых чисел.
+
+Задача 2 js.Pm.FA.FO .2
+
+Переберите созданный объект циклом и выведите результаты работы функций на экран.
+
+let obj = {
+    func1: function () {
+        return 1;
+    },
+    func2: function () {
+        return 2;
+    },
+    func3: function () {
+        return 3;
+    },
+};
+
+for (let elem in obj) {
+    console.log(obj[elem]());
 }
 
-// console.log(getLast(8));
+Задача 3 js.Pm.FA.FO .3
 
-// Задача 94.7
+Сделайте объект с тремя функциями, каждая из которых будет принимать параметром массив с числами.Сделайте так,
+    чтобы первая функция возвращала сумму элементов массива, вторая функция - сумму квадратов, а третья - сумму кубов.
 
-// Сделайте функцию getFirst, которая параметром будет принимать число цифр в билете и возвращать число,
-// соответствующее началу цикла.Потестируйте эту функцию на различных значениях.
-
-function getFirst(digitsAmount) {
-    let str = ``;
-    for (let i = 2; i < digitsAmount; i++) {
-        str += '0';
-    }
-    return Number(`1` + str + `1`);
-}
-
-// console.log(getFirst(4));
-
-function getLuckyTickets(digitsAmount) {
-    let result = [];
-
-    let first = getFirst(digitsAmount);
-    let last = getLast(digitsAmount);
-
-    for (let i = first; i <= last; i++) {
-        let ticketNum = normalizeNum(i, digitsAmount);
-
-        if (isLucky(ticketNum)) {
-            result.push(ticketNum);
+let obj = {
+    func1: function (arr) {
+        let sum = 0;
+        for (let elem of arr) {
+            sum += elem;
         }
-    }
+        return sum;
+    },
+    func2: function (arr) {
+        let sum = 0;
+        for (let elem of arr) {
+            sum += Math.pow(elem, 2);
+        }
+        return sum;
+    },
+    func3: function (arr) {
+        let sum = 0;
+        for (let elem of arr) {
+            sum += Math.pow(elem, 3);
+        }
+        return sum;
+    },
+};
 
-    return result;
+for (let elem in obj) {
+    console.log(obj[elem]([1, 2, 3]));
 }
 
-console.log(getLuckyTickets(6));
+
+109
+
+
+Задача 1 js.Pm.FA.PFAP .1
+
+Сделайте функцию test, параметрами принимающую 3 функции.Передайте в нее первым параметром функцию, возвращающую 1, вторым - функцию, возвращающую 2,
+    третьим - функцию, возвращающую 3. Выведите на экран сумму результатов функций.
+
+test(
+    function () {
+        return 1;
+    },
+    function () {
+        return 2;
+    },
+    function () {
+        return 3;
+    }
+);
+
+function test(func1, func2, func3) {
+    return func1() + func2() + func3(); // выведет 6
+}
+
+// Задача 2 js.Pm.FA.PFAP .2
+
+// Сделайте функцию test, параметрами принимающую 3 функции и возвращающую сумму результатов переданных функций.
+
+// Задача 3 js.Pm.FA.PFAP .3
+
+// Сделайте 3 функции, объявив их как Function Declaration и дав им имена func1, func2 и func3.Пусть первая функция возвращает 1, вторая - 2, а третья - 3. Передайте эти функции параметром в функцию test из предыдущей задачи.
+
+function func1() {
+    return 1;
+}
+
+function func2() {
+    return 2;
+}
+
+function func3() {
+    return 3;
+}
+
+
+
+// Задача 4 js.Pm.FA.PFAP .4
+
+// Модифицируйте предыдущую задачу так, чтобы функции были объявлены как Function Expression с теми же именами.
+
+let func1 = function () {
+    return 1;
+}
+let func2 = function () {
+    return 1;
+}
+let func3 = function () {
+    return 1;
+}
+
+function test(func1, func2, func3) {
+    return (func1() + func2() + func3()); // выведет 6
+}
+
+console.log(test(func1, func2, func3));
+
+
+function test(func) {
+    alert(func(3));
+}
+
+test(function (num) {
+    return Math.pow(num, 3);
+});
+
+
+let func = function (num, num1) {
+    return num + num1;
+}
+// console.log(func(1, 2));
+// function func(num) {
+//     return num ** 3;
+// }
+
+function test(func) {
+    console.log(func);
+    console.log(func(2, 3));
+}
+
+test(func);
+
+
+Задача 9 js.Pm.FA.PFAP .9
+
+Пусть функция test первым параметром принимает число, а вторым и третьим параметрами - функции, также параметром принимающие числа.
+
+Пусть функция test возвращает сумму результатов переданных функций:
+
+    function test(num, func1, func2) {
+        return func1(num) + func2(num);
+    }
+Вызовите функцию test, первым параметром передав число 3, вторым параметром функцию,
+возводящую число в квадрат, а третьим - функцию, возводящую число в куб.Выведите результат работы на экран.
+
+function test(num, func1, func2) {
+    return func1(num) + func2(num);
+}
+
+function func1(num) {
+    return num ** 2;
+}
+
+function func2(num) {
+    return num ** 3;
+}
+
+console.log(test(2, func1, func2));
+
+Давайте сделаем функцию, которая параметром будет принимать массив, а вторым параметром - функцию.Переданная функция должна будет применится к каждому элементу массива:
+
+    function test(arr, func) {
+        for (let i = 0; i < arr.length; i++) {
+            arr[i] = func(arr[i]);
+        }
+        return arr;
+    }
+
+let result = test([1, 2, 3], function (num) {
+    return num * num;
+});
+
+console.log(result); // выведет [1, 4, 9]
+
+
+Задача 11 js.Pm.FA.PFAP .11
+
+Вызовите созданную вами функцию test, передав ей параметром массив с числами.Сделайте так, чтобы функция вернула массив с кубами этих чисел.
+
+function test(arr, func) {
+    for (let i = 0; i < arr.length; i++) {
+        arr[i] = func(arr[i]);
+    }
+    return arr;
+}
+
+let result = test([1, 2, 3], function (num) {
+    return num ** 3;
+});
+
+console.log(result); // выведет [1, 4, 9]

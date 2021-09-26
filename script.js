@@ -3980,5 +3980,21 @@ function filter(arr, callback) {
 Дан массив со строками.С помощью созданной нами функции filter оставьте в этом массиве только строки, длина которых от 1 до 3 символов.
 
 let result = filter(['ST', 'STRssssss', 'STRsss', 'STRas', 'S'], function (elem) {
-
+    if (elem.length > 0 && elem.length < 4) {
+        return true;
+    } else {
+        return false;
+    }
 });
+
+console.log(result);
+
+function filter(arr, callback) {
+    let result = [];
+    for (let elem of arr) {
+        if (callback(elem)) {
+            result.push(elem);
+        }
+    }
+    return result;
+}

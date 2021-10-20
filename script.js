@@ -3296,627 +3296,643 @@ let arr2 = [2, 3, 4, 5];
 // если сумма первых трех цифр билета равна сумме вторых трех цифр(будем рассматривать только билеты, в номере которых 6 цифр).
 
 
-function getLuckyTickets() {
-    let result = [];
+// function getLuckyTickets() {
+//     let result = [];
 
-    for (let i = 1001; i <= 999999; i++) {
-        if (isLucky(i)) {
-            result.push(i);
-        }
-    }
+//     for (let i = 1001; i <= 999999; i++) {
+//         if (isLucky(i)) {
+//             result.push(i);
+//         }
+//     }
 
-    return result;
-}
+//     return result;
+// }
 
-function isLucky(num) {
-    let str = normilize(num);
+// function isLucky(num) {
+//     let str = normilize(num);
 
-    let sum1 = Number(str[0]) + Number(str[1]) + Number(str[2]);
-    let sum2 = Number(str[3]) + Number(str[4]) + Number(str[5]);
+//     let sum1 = Number(str[0]) + Number(str[1]) + Number(str[2]);
+//     let sum2 = Number(str[3]) + Number(str[4]) + Number(str[5]);
 
-    return sum1 == sum2;
-}
+//     return sum1 == sum2;
+// }
 
-function normilize(num) {
-    let str = String(num);
+// function normilize(num) {
+//     let str = String(num);
 
-    if (str.length == 4) {
-        str = `00` + str;
-    } else if (str.length == 5) {
-        str = `0` + str;
-    }
-    return str;
-}
+//     if (str.length == 4) {
+//         str = `00` + str;
+//     } else if (str.length == 5) {
+//         str = `0` + str;
+//     }
+//     return str;
+// }
 
-// Задача 94.1
+// // Задача 94.1
 
-// Реализуйте описанную функцию.Потестируйте ее работу.
+// // Реализуйте описанную функцию.Потестируйте ее работу.
 
-function normilize(num) {
-    let str = String(num);
+// function normilize(num) {
+//     let str = String(num);
 
-    if (str.length == 4) {
-        str = `00` + str;
-    } else if (str.length == 5) {
-        str = `0` + str;
-    }
-    return str;
-}
+//     if (str.length == 4) {
+//         str = `00` + str;
+//     } else if (str.length == 5) {
+//         str = `0` + str;
+//     }
+//     return str;
+// }
 
-function isLucky(numStr) {
-    let sum1 = 0;
-    let sum2 = 0;
-    for (let i = 0; i < numStr.length / 2; i++) {
-        sum1 += Number(numStr[i]);
-    }
-    // console.log(sum1);
-    for (let i = numStr.length / 2; i < numStr.length; i++) {
-        sum2 += Number(numStr[i]);
-    }
-    // console.log(sum2);
-    return sum1 == sum2;
-}
+// function isLucky(numStr) {
+//     let sum1 = 0;
+//     let sum2 = 0;
+//     for (let i = 0; i < numStr.length / 2; i++) {
+//         sum1 += Number(numStr[i]);
+//     }
+//     // console.log(sum1);
+//     for (let i = numStr.length / 2; i < numStr.length; i++) {
+//         sum2 += Number(numStr[i]);
+//     }
+//     // console.log(sum2);
+//     return sum1 == sum2;
+// }
 
-// console.log(isLucky('1203'));
-// console.log(isLucky('012003'));
-// console.log(isLucky('123006'));
-// console.log(isLucky('33'));
+// // console.log(isLucky('1203'));
+// // console.log(isLucky('012003'));
+// // console.log(isLucky('123006'));
+// // console.log(isLucky('33'));
 
-// Объясните работу следующей строки функции normalizeNum:
+// // Объясните работу следующей строки функции normalizeNum:
 
+// //     return formStr('0', digitsAmount - str.length) + str;
+// /*Функция с 2 парметрами. 1 параметр символ который эта функция будет добавлять к строке
+//    , второй параметр это выражение которое выщитывает необходимое количество символов котоыре надо 
+//    добавить. а затем к тим символам добавляем исходую строку  */
+
+// // function formStr(data, length) {
+// //     let str = ``;
+// //     for (let i = 0; i <= length; i++) {
+// //         str += data;
+// //     }
+// //     return str;
+// // }
+
+// // console.log(formStr('0', 10));
+
+// function isLucky(numStr) {
+//     let sum1 = 0;
+//     let sum2 = 0;
+//     for (let i = 0; i < numStr.length / 2; i++) {
+//         sum1 += Number(numStr[i]);
+//     }
+//     // console.log(sum1);
+//     for (let i = numStr.length / 2; i < numStr.length; i++) {
+//         sum2 += Number(numStr[i]);
+//     }
+//     // console.log(sum2);
+//     return sum1 == sum2;
+// }
+
+
+// function normalizeNum(num, digitsAmount) {
+//     let str = String(num);
 //     return formStr('0', digitsAmount - str.length) + str;
-/*Функция с 2 парметрами. 1 параметр символ который эта функция будет добавлять к строке
-   , второй параметр это выражение которое выщитывает необходимое количество символов котоыре надо 
-   добавить. а затем к тим символам добавляем исходую строку  */
+// }
+
 
 // function formStr(data, length) {
 //     let str = ``;
-//     for (let i = 0; i <= length; i++) {
+//     for (let i = 0; i < length; i++) {
 //         str += data;
 //     }
 //     return str;
 // }
 
-// console.log(formStr('0', 10));
-
-function isLucky(numStr) {
-    let sum1 = 0;
-    let sum2 = 0;
-    for (let i = 0; i < numStr.length / 2; i++) {
-        sum1 += Number(numStr[i]);
-    }
-    // console.log(sum1);
-    for (let i = numStr.length / 2; i < numStr.length; i++) {
-        sum2 += Number(numStr[i]);
-    }
-    // console.log(sum2);
-    return sum1 == sum2;
-}
 
 
-function normalizeNum(num, digitsAmount) {
-    let str = String(num);
-    return formStr('0', digitsAmount - str.length) + str;
-}
+// // console.log(normalizeNum(123, 6)); // выведет '000123'
+// // console.log(normalizeNum(1234, 6)); // выведет '001234'
+// // console.log(normalizeNum(12345, 6)); // выведет '012345'
+// // console.log(normalizeNum(123456, 6)); // выведет '123456'
+
+// // console.log(isLucky(normalizeNum(1203, 4))); // выведет true
+// // console.log(isLucky(normalizeNum(312, 4))); // выведет true
+
+// // console.log(isLucky(normalizeNum(6123, 6))); // выведет true
+// // console.log(isLucky(normalizeNum(600123, 6))); // выведет true
+
+// // console.log(isLucky(normalizeNum(700123, 6))); // выведет false
+// // console.log(isLucky(normalizeNum(070123, 6))); // выведет false
 
 
-function formStr(data, length) {
-    let str = ``;
-    for (let i = 0; i < length; i++) {
-        str += data;
-    }
-    return str;
-}
+// // Задача 94.6
+
+// // Сделайте функцию getLast, которая параметром будет принимать число цифр в билете и возвращать число,
+// // соответствующее концу цикла.Потестируйте эту функцию на различных значениях.
 
 
+// 108
 
-// console.log(normalizeNum(123, 6)); // выведет '000123'
-// console.log(normalizeNum(1234, 6)); // выведет '001234'
-// console.log(normalizeNum(12345, 6)); // выведет '012345'
-// console.log(normalizeNum(123456, 6)); // выведет '123456'
+// Задача 1 js.Pm.FA.FO .1
 
-// console.log(isLucky(normalizeNum(1203, 4))); // выведет true
-// console.log(isLucky(normalizeNum(312, 4))); // выведет true
+// Сделайте объект с тремя функциями.Пусть первая возвращает через
+// return число 1, вторая - число 2, третья - число 3. С помощью созданных функций выведите на экран сумму возвращаемых чисел.
 
-// console.log(isLucky(normalizeNum(6123, 6))); // выведет true
-// console.log(isLucky(normalizeNum(600123, 6))); // выведет true
+// Задача 2 js.Pm.FA.FO .2
 
-// console.log(isLucky(normalizeNum(700123, 6))); // выведет false
-// console.log(isLucky(normalizeNum(070123, 6))); // выведет false
+// Переберите созданный объект циклом и выведите результаты работы функций на экран.
 
+// let obj = {
+//     func1: function () {
+//         return 1;
+//     },
+//     func2: function () {
+//         return 2;
+//     },
+//     func3: function () {
+//         return 3;
+//     },
+// };
 
-// Задача 94.6
+// for (let elem in obj) {
+//     console.log(obj[elem]());
+// }
 
-// Сделайте функцию getLast, которая параметром будет принимать число цифр в билете и возвращать число,
-// соответствующее концу цикла.Потестируйте эту функцию на различных значениях.
+// Задача 3 js.Pm.FA.FO .3
 
+// Сделайте объект с тремя функциями, каждая из которых будет принимать параметром массив с числами.Сделайте так,
+//     чтобы первая функция возвращала сумму элементов массива, вторая функция - сумму квадратов, а третья - сумму кубов.
 
-108
+// let obj = {
+//     func1: function (arr) {
+//         let sum = 0;
+//         for (let elem of arr) {
+//             sum += elem;
+//         }
+//         return sum;
+//     },
+//     func2: function (arr) {
+//         let sum = 0;
+//         for (let elem of arr) {
+//             sum += Math.pow(elem, 2);
+//         }
+//         return sum;
+//     },
+//     func3: function (arr) {
+//         let sum = 0;
+//         for (let elem of arr) {
+//             sum += Math.pow(elem, 3);
+//         }
+//         return sum;
+//     },
+// };
 
-Задача 1 js.Pm.FA.FO .1
-
-Сделайте объект с тремя функциями.Пусть первая возвращает через
-return число 1, вторая - число 2, третья - число 3. С помощью созданных функций выведите на экран сумму возвращаемых чисел.
-
-Задача 2 js.Pm.FA.FO .2
-
-Переберите созданный объект циклом и выведите результаты работы функций на экран.
-
-let obj = {
-    func1: function () {
-        return 1;
-    },
-    func2: function () {
-        return 2;
-    },
-    func3: function () {
-        return 3;
-    },
-};
-
-for (let elem in obj) {
-    console.log(obj[elem]());
-}
-
-Задача 3 js.Pm.FA.FO .3
-
-Сделайте объект с тремя функциями, каждая из которых будет принимать параметром массив с числами.Сделайте так,
-    чтобы первая функция возвращала сумму элементов массива, вторая функция - сумму квадратов, а третья - сумму кубов.
-
-let obj = {
-    func1: function (arr) {
-        let sum = 0;
-        for (let elem of arr) {
-            sum += elem;
-        }
-        return sum;
-    },
-    func2: function (arr) {
-        let sum = 0;
-        for (let elem of arr) {
-            sum += Math.pow(elem, 2);
-        }
-        return sum;
-    },
-    func3: function (arr) {
-        let sum = 0;
-        for (let elem of arr) {
-            sum += Math.pow(elem, 3);
-        }
-        return sum;
-    },
-};
-
-for (let elem in obj) {
-    console.log(obj[elem]([1, 2, 3]));
-}
+// for (let elem in obj) {
+//     console.log(obj[elem]([1, 2, 3]));
+// }
 
 
-109
+// 109
 
 
-Задача 1 js.Pm.FA.PFAP .1
+// Задача 1 js.Pm.FA.PFAP .1
 
-Сделайте функцию test, параметрами принимающую 3 функции.Передайте в нее первым параметром функцию, возвращающую 1, вторым - функцию, возвращающую 2,
-    третьим - функцию, возвращающую 3. Выведите на экран сумму результатов функций.
+// Сделайте функцию test, параметрами принимающую 3 функции.Передайте в нее первым параметром функцию, возвращающую 1, вторым - функцию, возвращающую 2,
+//     третьим - функцию, возвращающую 3. Выведите на экран сумму результатов функций.
 
-test(
-    function () {
-        return 1;
-    },
-    function () {
-        return 2;
-    },
-    function () {
-        return 3;
-    }
-);
+// test(
+//     function () {
+//         return 1;
+//     },
+//     function () {
+//         return 2;
+//     },
+//     function () {
+//         return 3;
+//     }
+// );
 
-function test(func1, func2, func3) {
-    return func1() + func2() + func3(); // выведет 6
-}
+// function test(func1, func2, func3) {
+//     return func1() + func2() + func3(); // выведет 6
+// }
 
-// Задача 2 js.Pm.FA.PFAP .2
+// // Задача 2 js.Pm.FA.PFAP .2
 
-// Сделайте функцию test, параметрами принимающую 3 функции и возвращающую сумму результатов переданных функций.
+// // Сделайте функцию test, параметрами принимающую 3 функции и возвращающую сумму результатов переданных функций.
 
-// Задача 3 js.Pm.FA.PFAP .3
+// // Задача 3 js.Pm.FA.PFAP .3
 
-// Сделайте 3 функции, объявив их как Function Declaration и дав им имена func1, func2 и func3.Пусть первая функция возвращает 1, вторая - 2, а третья - 3. Передайте эти функции параметром в функцию test из предыдущей задачи.
+// // Сделайте 3 функции, объявив их как Function Declaration и дав им имена func1, func2 и func3.Пусть первая функция возвращает 1, вторая - 2, а третья - 3. Передайте эти функции параметром в функцию test из предыдущей задачи.
 
-function func1() {
-    return 1;
-}
+// function func1() {
+//     return 1;
+// }
 
-function func2() {
-    return 2;
-}
+// function func2() {
+//     return 2;
+// }
 
-function func3() {
-    return 3;
-}
+// function func3() {
+//     return 3;
+// }
 
 
 
-// Задача 4 js.Pm.FA.PFAP .4
+// // Задача 4 js.Pm.FA.PFAP .4
 
-// Модифицируйте предыдущую задачу так, чтобы функции были объявлены как Function Expression с теми же именами.
+// // Модифицируйте предыдущую задачу так, чтобы функции были объявлены как Function Expression с теми же именами.
 
-let func1 = function () {
-    return 1;
-}
-let func2 = function () {
-    return 1;
-}
-let func3 = function () {
-    return 1;
-}
+// let func1 = function () {
+//     return 1;
+// }
+// let func2 = function () {
+//     return 1;
+// }
+// let func3 = function () {
+//     return 1;
+// }
 
-function test(func1, func2, func3) {
-    return (func1() + func2() + func3()); // выведет 6
-}
+// function test(func1, func2, func3) {
+//     return (func1() + func2() + func3()); // выведет 6
+// }
 
-console.log(test(func1, func2, func3));
-
-
-function test(func) {
-    alert(func(3));
-}
-
-test(function (num) {
-    return Math.pow(num, 3);
-});
+// console.log(test(func1, func2, func3));
 
 
-let func = function (num, num1) {
-    return num + num1;
-}
-// console.log(func(1, 2));
-// function func(num) {
+// function test(func) {
+//     alert(func(3));
+// }
+
+// test(function (num) {
+//     return Math.pow(num, 3);
+// });
+
+
+// let func = function (num, num1) {
+//     return num + num1;
+// }
+// // console.log(func(1, 2));
+// // function func(num) {
+// //     return num ** 3;
+// // }
+
+// function test(func) {
+//     console.log(func);
+//     console.log(func(2, 3));
+// }
+
+// test(func);
+
+
+// Задача 9 js.Pm.FA.PFAP .9
+
+// Пусть функция test первым параметром принимает число, а вторым и третьим параметрами - функции, также параметром принимающие числа.
+
+// Пусть функция test возвращает сумму результатов переданных функций:
+
+//     function test(num, func1, func2) {
+//         return func1(num) + func2(num);
+//     }
+// Вызовите функцию test, первым параметром передав число 3, вторым параметром функцию,
+// возводящую число в квадрат, а третьим - функцию, возводящую число в куб.Выведите результат работы на экран.
+
+// function test(num, func1, func2) {
+//     return func1(num) + func2(num);
+// }
+
+// function func1(num) {
+//     return num ** 2;
+// }
+
+// function func2(num) {
 //     return num ** 3;
 // }
 
-function test(func) {
-    console.log(func);
-    console.log(func(2, 3));
-}
+// console.log(test(2, func1, func2));
 
-test(func);
+// Давайте сделаем функцию, которая параметром будет принимать массив, а вторым параметром - функцию.Переданная функция должна будет применится к каждому элементу массива:
 
+//     function test(arr, func) {
+//         for (let i = 0; i < arr.length; i++) {
+//             arr[i] = func(arr[i]);
+//         }
+//         return arr;
+//     }
 
-Задача 9 js.Pm.FA.PFAP .9
+// let result = test([1, 2, 3], function (num) {
+//     return num * num;
+// });
 
-Пусть функция test первым параметром принимает число, а вторым и третьим параметрами - функции, также параметром принимающие числа.
+// console.log(result); // выведет [1, 4, 9]
 
-Пусть функция test возвращает сумму результатов переданных функций:
 
-    function test(num, func1, func2) {
-        return func1(num) + func2(num);
-    }
-Вызовите функцию test, первым параметром передав число 3, вторым параметром функцию,
-возводящую число в квадрат, а третьим - функцию, возводящую число в куб.Выведите результат работы на экран.
+// Задача 11 js.Pm.FA.PFAP .11
 
-function test(num, func1, func2) {
-    return func1(num) + func2(num);
-}
+// Вызовите созданную вами функцию test, передав ей параметром массив с числами.Сделайте так, чтобы функция вернула массив с кубами этих чисел.
 
-function func1(num) {
-    return num ** 2;
-}
+// function test(arr, func) {
+//     for (let i = 0; i < arr.length; i++) {
+//         arr[i] = func(arr[i]);
+//     }
+//     return arr;
+// }
 
-function func2(num) {
-    return num ** 3;
-}
+// let result = test([1, 2, 3], function (num) {
+//     return num ** 3;
+// });
 
-console.log(test(2, func1, func2));
+// console.log(result); // выведет [1, 4, 9]
 
-Давайте сделаем функцию, которая параметром будет принимать массив, а вторым параметром - функцию.Переданная функция должна будет применится к каждому элементу массива:
+// Вложенные функции в JavaScript
 
-    function test(arr, func) {
-        for (let i = 0; i < arr.length; i++) {
-            arr[i] = func(arr[i]);
-        }
-        return arr;
-    }
+// Задача 1 js.Pm.FA.NF .1
 
-let result = test([1, 2, 3], function (num) {
-    return num * num;
-});
+// Сделайте функцию func, которая параметрами будет принимать два числа, а возвращать сумму квадрата первого числа с кубом второго числа.
 
-console.log(result); // выведет [1, 4, 9]
+// Сделайте для этого вспомогательную функцию square, возводящую число в квадрат, и вспомогательную функцию cube, возводящую число в куб.
 
+// function func(num, num1) {
+//     function square(num) {
+//         return num ** 2;
+//     }
 
-Задача 11 js.Pm.FA.PFAP .11
+//     function cube(num1) {
+//         return num1 ** 3;
+//     }
 
-Вызовите созданную вами функцию test, передав ей параметром массив с числами.Сделайте так, чтобы функция вернула массив с кубами этих чисел.
+//     return square(num) + cube(num1);
+// }
 
-function test(arr, func) {
-    for (let i = 0; i < arr.length; i++) {
-        arr[i] = func(arr[i]);
-    }
-    return arr;
-}
+// console.log(func(2, 3));
 
-let result = test([1, 2, 3], function (num) {
-    return num ** 3;
-});
 
-console.log(result); // выведет [1, 4, 9]
+// Задача 1 js.Pm.FA.FRF .1
 
-Вложенные функции в JavaScript
+// Сделайте функцию func1, которая будучи вызвана вот так: func1()(), вернет число 1.
+// Сделайте аналогичную функцию func2, возвращающую число 2. Найдите сумму результатов этих функций.
 
-Задача 1 js.Pm.FA.NF .1
 
-Сделайте функцию func, которая параметрами будет принимать два числа, а возвращать сумму квадрата первого числа с кубом второго числа.
+// function fanc1() {
+//     return function () {
+//         return function () {
+//             return 1;
+//         }
+//     }
+// }
 
-Сделайте для этого вспомогательную функцию square, возводящую число в квадрат, и вспомогательную функцию cube, возводящую число в куб.
+// function fanc2() {
+//     return function () {
+//         return function () {
+//             return 2;
+//         }
+//     }
+// }
 
-function func(num, num1) {
-    function square(num) {
-        return num ** 2;
-    }
+// console.log(fanc1()()() + fanc2()()());
 
-    function cube(num1) {
-        return num1 ** 3;
-    }
 
-    return square(num) + cube(num1);
-}
+// Задача 3 js.Pm.FA.FRF .3
 
-console.log(func(2, 3));
+// Сделайте функцию func, которая будучи вызвана вот так: func(2)(3)(4), вернет сумму переданных в параметры чисел.
 
+// function fanc1() {
+//     return function (num1) {
+//         return function (num2) {
+//             return function (num3) {
+//                 return num1 + num2 + num3;
+//             }
+//         }
+//     }
+// }
 
-Задача 1 js.Pm.FA.FRF .1
+// console.log(fanc1()(2)(3)(4));
 
-Сделайте функцию func1, которая будучи вызвана вот так: func1()(), вернет число 1.
-Сделайте аналогичную функцию func2, возвращающую число 2. Найдите сумму результатов этих функций.
+// Задача 4 js.Pm.FA.FRF .4
 
+// Сделайте функцию func, которая будучи вызвана вот так: func(2)(3)(4)(5)(), вернет массив переданных в параметры чисел.
 
-function fanc1() {
-    return function () {
-        return function () {
-            return 1;
-        }
-    }
-}
-
-function fanc2() {
-    return function () {
-        return function () {
-            return 2;
-        }
-    }
-}
+// function func(num) {
+//     let arr = [];
+//     return function (num1) {
+//         return function (num2) {
+//             return function (num3) {
+//                 return function () {
+//                     arr.push(num, num1, num2, num3);
+//                     return arr;
+//                 }
+//             }
+//         }
+//     }
+// }
 
-console.log(fanc1()()() + fanc2()()());
+// console.log(func(2)(3)(4)(5)());
 
 
-Задача 3 js.Pm.FA.FRF .3
+// Задача 1 js.Pm.FA.Cls .1
 
-Сделайте функцию func, которая будучи вызвана вот так: func(2)(3)(4), вернет сумму переданных в параметры чисел.
-
-function fanc1() {
-    return function (num1) {
-        return function (num2) {
-            return function (num3) {
-                return num1 + num2 + num3;
-            }
-        }
-    }
-}
+// Самостоятельно, не подсматривая в мой код, реализуйте счетчик вызова функции, работающий на замыканиях.
 
-console.log(fanc1()(2)(3)(4));
+// function func() {
+//     let num = 0;
+//     return function () {
+//         return num++;
+//     }
+// }
 
-Задача 4 js.Pm.FA.FRF .4
+// let test = func();
+// console.log(test());
+// console.log(test());
+// console.log(test());
 
-Сделайте функцию func, которая будучи вызвана вот так: func(2)(3)(4)(5)(), вернет массив переданных в параметры чисел.
+// Задача 2 js.Pm.FA.Cls .2
 
-function func(num) {
-    let arr = [];
-    return function (num1) {
-        return function (num2) {
-            return function (num3) {
-                return function () {
-                    arr.push(num, num1, num2, num3);
-                    return arr;
-                }
-            }
-        }
-    }
-}
+// Пусть функция в замыкании хранит число 10. Сделайте так, чтобы каждый вызов функции уменьшал это число на 1 и
+// выводил на экран уменьшенное число.
 
-console.log(func(2)(3)(4)(5)());
+// function func() {
+//     let num = 10;
+//     return function () {
+//         return num--;
+//     }
+// }
 
+// let test = func();
+// console.log(test());
+// console.log(test());
+// console.log(test());
 
-Задача 1 js.Pm.FA.Cls .1
+// Задача 3 js.Pm.FA.Cls .3
 
-Самостоятельно, не подсматривая в мой код, реализуйте счетчик вызова функции, работающий на замыканиях.
+// Модифицируйте предыдущую задачу так, чтобы отсчет доходил до 0, а затем каждый последующий вызов функции
+// выводил на экран сообщение о том, что отсчет окончен.
 
-function func() {
-    let num = 0;
-    return function () {
-        return num++;
-    }
-}
+// function func() {
+//     let num = 1;
+//     return function () {
+//         if (num <= 0) {
+//             return `отсчет окончен`;
+//         } else {
+//             return num--;
+//         }
 
-let test = func();
-console.log(test());
-console.log(test());
-console.log(test());
+//     }
+// }
 
-Задача 2 js.Pm.FA.Cls .2
+// let test = func();
+// console.log(test());
+// console.log(test());
+// console.log(test());
 
-Пусть функция в замыкании хранит число 10. Сделайте так, чтобы каждый вызов функции уменьшал это число на 1 и
-выводил на экран уменьшенное число.
 
-function func() {
-    let num = 10;
-    return function () {
-        return num--;
-    }
-}
+// Задача 12 js.Pm.FA.IIFE .12
 
-let test = func();
-console.log(test());
-console.log(test());
-console.log(test());
+// Допишите следующий код так, чтобы его запуск алертом выводил '!':
 
-Задача 3 js.Pm.FA.Cls .3
+//     (function () {
+//         return function () {
+//             return function () {
+//                 return console.log(`!`);
+//             }
+//         }
+//     })()()();
 
-Модифицируйте предыдущую задачу так, чтобы отсчет доходил до 0, а затем каждый последующий вызов функции
-выводил на экран сообщение о том, что отсчет окончен.
 
-function func() {
-    let num = 1;
-    return function () {
-        if (num <= 0) {
-            return `отсчет окончен`;
-        } else {
-            return num--;
-        }
 
-    }
-}
 
-let test = func();
-console.log(test());
-console.log(test());
-console.log(test());
+// Задача 13 js.Pm.FA.IIFE .13
 
+// Допишите следующий код так, чтобы его запуск выводил сумму переданных параметрами чисел:
 
-Задача 12 js.Pm.FA.IIFE .12
+//     (function (num1) {
+//         return function (num2) {
+//             return console.log(num1 + num2);
+//         }
+//     })(1)(2);
+// Задача 14 js.Pm.FA.IIFE .14
 
-Допишите следующий код так, чтобы его запуск алертом выводил '!':
+// Допишите следующий код так, чтобы его запуск выводил сумму переданных параметрами чисел:
 
-    (function () {
-        return function () {
-            return function () {
-                return console.log(`!`);
-            }
-        }
-    })()()();
+//     (function (num1) {
+//         return function (num2) {
+//             return function (num3) {
+//                 return console.log(num1 + num2 + num3);
+//             }
+//         }
+//     })(1)(2)(3);
 
 
+// Задача 1 js.Pm.FA.CIIFE .1
 
+// Не подсматривая в мой код, самостоятельно реализуйте такой же счетчик.
 
-Задача 13 js.Pm.FA.IIFE .13
 
-Допишите следующий код так, чтобы его запуск выводил сумму переданных параметрами чисел:
+// let func = (function func() {
+//     let a = 1;
+//     return function () {
+//         a++
+//         if (a == 5) {
+//             a = 0;
+//         }
+//         console.log(a);
+//     }
+// })();
 
-    (function (num1) {
-        return function (num2) {
-            return console.log(num1 + num2);
-        }
-    })(1)(2);
-Задача 14 js.Pm.FA.IIFE .14
 
-Допишите следующий код так, чтобы его запуск выводил сумму переданных параметрами чисел:
+// func();
+// func();
+// func();
+// func();
+// func();
+// Задача 2 js.Pm.FA.CIIFE .2
 
-    (function (num1) {
-        return function (num2) {
-            return function (num3) {
-                return console.log(num1 + num2 + num3);
-            }
-        }
-    })(1)(2)(3);
+// Модифицируйте работу счетчика так, чтобы он считал до 5, а потом отсчет начинался сначала.
 
+// function callback(str) {
+//     // let str = String(elem);
+//     return str.split(``).reverse().join(``);
+// }
 
-Задача 1 js.Pm.FA.CIIFE .1
 
-Не подсматривая в мой код, самостоятельно реализуйте такой же счетчик.
 
+// let arr = [`pivo`, `vodka`, `voda`];
 
-let func = (function func() {
-    let a = 1;
-    return function () {
-        a++
-        if (a == 5) {
-            a = 0;
-        }
-        console.log(a);
-    }
-})();
-
-
-func();
-func();
-func();
-func();
-func();
-Задача 2 js.Pm.FA.CIIFE .2
-
-Модифицируйте работу счетчика так, чтобы он считал до 5, а потом отсчет начинался сначала.
-
-function callback(str) {
-    // let str = String(elem);
-    return str.split(``).reverse().join(``);
-}
-
-
-
-let arr = [`pivo`, `vodka`, `voda`];
-
-function each(arr, callback) {
-    let result = [];
-
-    for (let elem of arr) {
-        result.push(callback(elem)); // вызываем функцию-коллбэк
-    }
-
-    return result;
-}
-
-console.log(each(arr, callback));
-// Задача 1 js.Pm.FA.Clb .1
-
-// Дан массив со строками.С помощью созданной нами функции each переверните символы каждой строки в обратном порядке.
-
-
-
-
-Задача 2 js.Pm.FA.Clb .2
-
-Дан массив со строками.С помощью созданной нами функции each сделайте заглавным первый символ каждой строки.
-
-let arrrr = ['hshh', 'ssssdsa', '123'];
-
-
-function rev(elem) {
-    let str = String(elem);
-    return str.slice(0, 1).toUpperCase() + str.slice(1);
-}
-
-function each(arr, callback) {
-
-    let arrr = [];
-
-    for (let elem of arr) {
-        arrr.push(callback(elem))
-    }
-    return arrr
-}
-
-console.log(each(arrrr, rev));
-
-Задача 3 js.Pm.FA.Clb .3
-
-Дан массив с числами.С помощью созданной нами функции each найдите произведение каждого элемента массива на его порядковый номер.
-
-// let elems = [1, 2, 3, 4, 5];
-
-// function callback(arr) {
+// function each(arr, callback) {
 //     let result = [];
 
-//     for (let elems of arr) {
-//         result.push(elems * (arr.indexOf(elems) + 1));
+//     for (let elem of arr) {
+//         result.push(callback(elem)); // вызываем функцию-коллбэк
 //     }
+
 //     return result;
 // }
 
-// console.log(callback(elems));
+// console.log(each(arr, callback));
+// // Задача 1 js.Pm.FA.Clb .1
+
+// // Дан массив со строками.С помощью созданной нами функции each переверните символы каждой строки в обратном порядке.
+
+
+
+
+// Задача 2 js.Pm.FA.Clb .2
+
+// Дан массив со строками.С помощью созданной нами функции each сделайте заглавным первый символ каждой строки.
+
+// let arrrr = ['hshh', 'ssssdsa', '123'];
+
+
+// function rev(elem) {
+//     let str = String(elem);
+//     return str.slice(0, 1).toUpperCase() + str.slice(1);
+// }
+
+// function each(arr, callback) {
+
+//     let arrr = [];
+
+//     for (let elem of arr) {
+//         arrr.push(callback(elem))
+//     }
+//     return arrr
+// }
+
+// console.log(each(arrrr, rev));
+
+// Задача 3 js.Pm.FA.Clb .3
+
+// Дан массив с числами.С помощью созданной нами функции each найдите произведение каждого элемента массива на его порядковый номер.
+
+// // let elems = [1, 2, 3, 4, 5];
+
+// // function callback(arr) {
+// //     let result = [];
+
+// //     for (let elems of arr) {
+// //         result.push(elems * (arr.indexOf(elems) + 1));
+// //     }
+// //     return result;
+// // }
+
+// // console.log(callback(elems));
+
+// // let result = filter([1, 2, 3, 4, 5], function (elem) {
+// //     if (elem % 2 == 0) {
+// //         return true;
+// //     } else {
+// //         return false;
+// //     }
+// // });
+
+// // console.log(result); // выведет [2, 4]
+
+
+// // Реализуйте функцию filter, которая будет осуществлять фильтрацию массива. Пусть первым параметром функция принимает массив, а вторым - функцию-коллбэк, 
+// // и возвращает массив элементов, для которых функция-коллбэк вернет true.
+
+// // Пример работы такой функции (оставим в массиве только четные числа):
 
 // let result = filter([1, 2, 3, 4, 5], function (elem) {
-//     if (elem % 2 == 0) {
+//     if (elem % 2 != 0) {
 //         return true;
 //     } else {
 //         return false;
@@ -3925,76 +3941,169 @@ console.log(each(arrrr, rev));
 
 // console.log(result); // выведет [2, 4]
 
-
-// Реализуйте функцию filter, которая будет осуществлять фильтрацию массива. Пусть первым параметром функция принимает массив, а вторым - функцию-коллбэк, 
-// и возвращает массив элементов, для которых функция-коллбэк вернет true.
-
-// Пример работы такой функции (оставим в массиве только четные числа):
-
-let result = filter([1, 2, 3, 4, 5], function (elem) {
-    if (elem % 2 != 0) {
-        return true;
-    } else {
-        return false;
-    }
-});
-
-console.log(result); // выведет [2, 4]
-
-function filter(arr, callback) {
-    let res = [];
-    // let i = 0;
-    for (let elem of arr) {
-        if (callback(elem)) {
-            res.push(elem)
-        }
-    }
-    return res
-}
+// function filter(arr, callback) {
+//     let res = [];
+//     // let i = 0;
+//     for (let elem of arr) {
+//         if (callback(elem)) {
+//             res.push(elem)
+//         }
+//     }
+//     return res
+// }
 
 
-Задача 5 js.Pm.FA.Clb .5
+// Задача 5 js.Pm.FA.Clb .5
 
-Дан массив с числами.С помощью созданной нами функции filter оставьте в этом массиве только положительные числа.
+// Дан массив с числами.С помощью созданной нами функции filter оставьте в этом массиве только положительные числа.
 
-let result = filter([1, -2, 3, 4, -5], function (elem) {
-    if (elem > 0) return true;
-    else return false;
-});
+// let result = filter([1, -2, 3, 4, -5], function (elem) {
+//     if (elem > 0) return true;
+//     else return false;
+// });
 
-console.log(result);
+// console.log(result);
 
-function filter(arr, callback) {
-    let result = [];
-    for (let elem of arr) {
-        if (callback(elem)) {
-            result.push(elem);
-        }
-    }
-    return result;
-}
+// function filter(arr, callback) {
+//     let result = [];
+//     for (let elem of arr) {
+//         if (callback(elem)) {
+//             result.push(elem);
+//         }
+//     }
+//     return result;
+// }
 
 
-Задача 6 js.Pm.FA.Clb .6
+// Задача 6 js.Pm.FA.Clb .6
 
-Дан массив со строками.С помощью созданной нами функции filter оставьте в этом массиве только строки, длина которых от 1 до 3 символов.
+// Дан массив со строками.С помощью созданной нами функции filter оставьте в этом массиве только строки, длина которых от 1 до 3 символов.
 
-let result = filter(['ST', 'STRssssss', 'STRsss', 'STRas', 'S'], function (elem) {
-    if (elem.length > 0 && elem.length < 4) {
-        return true;
-    } else {
-        return false;
-    }
-});
+// let result = filter(['ST', 'STRssssss', 'STRsss', 'STRas', 'S'], function (elem) {
+//     if (elem.length > 0 && elem.length < 4) {
+//         return true;
+//     } else {
+//         return false;
+//     }
+// });
 
-console.log(result);
+// console.log(result);
 
-function filter(arr, callback) {
-    let result = [];
-    for (let elem of arr) {
-        if (callback(elem)) {
-            result.push(elem);
-        }
-    }
-    return result;
-}
+// function filter(arr, callback) {
+//     let result = [];
+//     for (let elem of arr) {
+//         if (callback(elem)) {
+//             result.push(elem);
+//         }
+//     }
+//     return result;
+// }
+
+// Задача 7 js.Pm.FA.Clb
+
+// Реализуйте функцию every, которая будет возвращать true, если для всех элементов массива функция - коллбэк вернула true,
+//     и будет возвращать false в противном случае.
+
+// Пример работы такой функции(проверим, что в массиве только положительные числа):
+
+//     let result = every([1, 2, 3, 4, 25], function (elem) {
+//         if (elem > 0) {
+//             return true;
+//         } else {
+//             return false;
+//         }
+//     });
+
+// console.log(result);
+
+// function every(arr, callback) {
+
+//     for (let elem of arr) {
+//         if (!callback(elem)) {
+//             return false;
+//         }
+//     }
+//     return true;
+// }
+
+// Задача 8 js.Pm.FA.Clb
+
+// Реализуйте функцию some, которая будет возвращать true, если для хотя бы для одного элемента массива функция -
+//     коллбэк вернула true, и будет возвращать false в противном случае.
+
+// Пример работы такой функции(проверим, что в массиве есть хотя бы одно отрицательное число):
+
+//     let result = every([1, -22, 3, 4, 5], function (elem) {
+//         if (elem < 0) {
+//             return true;
+//         } else {
+//             return false;
+//         }
+//     });
+
+// console.log(result);
+
+// function every(arr, callback) {
+
+//     for (const elem of arr) {
+//         if (callback(elem)) {
+//             return true;
+//         }
+//     }
+//     return false;
+// }
+
+// Задача 9 js.Pm.FA.Clb
+
+// Реализуйте функцию alternate, которая первым параметром будет принимать массив, а вторым и третьим - коллбэки.
+
+// Функция должна по очереди применять коллбэки к элементам массива.
+// То есть: для первого элемента - первый коллбэк, для второго элемента - второй коллбэк,
+//     для третьего - опять первый коллбэк и так далее пока элементы массива не закончатся.Пример работы такой функции:
+
+//     let result = alternate(
+//         ['a', 'b', 'c', 'd', 'e'],
+//         function (elem) {
+//             return elem + '!';
+//         },
+//         function (elem) {
+//             return elem + '?';
+//         },
+//     );
+
+// console.log(result); // выведет ['a!', 'b?', 'c!', 'd?', 'e!']
+
+// function alternate(arr, callback1, callback2) {
+//     let result = [];
+//     for (let i = 0; i < arr.length; i++) {
+//         if (i % 2 == 0) {
+//             result.push(callback1(arr[i]));
+//         } else {
+//             result.push(callback2(arr[i]));
+//         }
+//     }
+//     return result;
+// }
+
+js.Pm.FA.AF
+
+№ 1
+
+let result = every([1, 2, 3, 4, 5], elem => elem > 0);
+
+№
+2
+
+let result = every([1, 2, 3, 4, 5], (elem, index) => elem * index > 10);
+
+
+№
+3
+
+let arr = [
+  [1, 2, 3],
+  [4, 5, 6],
+  [7, 8, 9]
+];
+
+let result = each(arr, (elem, index) => elem * index > 10);

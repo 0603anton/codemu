@@ -4085,25 +4085,301 @@ let arr2 = [2, 3, 4, 5];
 //     return result;
 // }
 
-js.Pm.FA.AF
+// js.Pm.FA.AF
 
-№ 1
+// № 1
 
-let result = every([1, 2, 3, 4, 5], elem => elem > 0);
+// let result = every([1, 2, 3, 4, 5], elem => elem > 0);
 
-№
-2
+// №
+// 2
 
-let result = every([1, 2, 3, 4, 5], (elem, index) => elem * index > 10);
+// let result = every([1, 2, 3, 4, 5], (elem, index) => elem * index > 10);
 
 
-№
-3
+// №
+// 3
 
-let arr = [
-  [1, 2, 3],
-  [4, 5, 6],
-  [7, 8, 9]
-];
+// let arr = [
+//   [1, 2, 3],
+//   [4, 5, 6],
+//   [7, 8, 9]
+// ];
 
-let result = each(arr, (elem, index) => elem * index > 10);
+// // let result = each(arr, (elem, index) => elem * index > 10);
+
+// Задача 1 js.Pm.FA.Rc
+
+// Дан объект:
+
+//   let obj = {
+//     a: 1,
+//     b: 2,
+//     c: 3,
+//     d: 4,
+//     e: 5
+//   };
+
+// function showObjProp(obj) {
+//   for (let prop in obj) {
+//     console.log(obj[prop]);
+//   }
+// }
+
+// showObjProp(obj)
+// С помощью рекурсии выведите элементы этого объекта на экран.
+
+// Задача 2 js.Pm.FA.Rc
+
+// Дан массив:
+
+//   let arr = [
+//     1,
+//     2,
+//     3,
+//     4,
+//     5
+//   ];
+// // С помощью рекурсии найдите сумму квадратов элементов этого массива.
+
+
+// function getSquareSum(arr) {
+
+//   let sum = arr.shift() ** 2;
+//   if (arr.length != 0) {
+//     sum += getSquareSum(arr);
+//   }
+//   return sum;
+// }
+
+// console.log(getSquareSum(arr));
+
+
+120
+
+// Задача 1 js.Pm.FA.RMs
+
+// Дан многомерный объект произвольного уровня вложенности, например, такой:
+
+//   let obj = {
+//     a: 1,
+//     b: {
+//       c: 2,
+//       d: 3,
+//       e: 4
+//     },
+//     f: {
+//       g: 5,
+//       j: 6,
+//       k: {
+//         l: 7,
+//         m: {
+//           n: 8,
+//           o: 9
+//         }
+//       }
+//     }
+//   }
+
+// function showObjProp(obj) {
+//   for (let prop in obj) {
+//     if (typeof obj[prop] !== "object") {
+//       console.log(obj[prop]);
+//     } else {
+//       showObjProp(obj[prop]);
+//     }
+
+//   }
+// }
+
+// showObjProp(obj)
+
+
+// С помощью рекурсии выведите все примитивные элементы этого объекта на экран.
+
+// Задача 2 js.Pm.FA.RMs
+
+// Дан многомерный массив произвольного уровня вложенности, например, такой:
+
+//   const arr = [1, [2, 7, 8],
+//     [3, 4, [5, [6, 7]]]
+//   ];
+
+// let result = [];
+
+// function converToSimpleArr(arr) {
+
+//   for (let elem of arr) {
+//     if (typeof elem !== "object") {
+//       result.push(elem);
+//     } else {
+//       converToSimpleArr(elem);
+//     }
+//   }
+//   return result;
+// }
+
+// console.log(converToSimpleArr(arr));
+
+// Напишите код, который развернет наш многомерный массив в одномерный.Для приведенного выше массива это будет выглядеть вот так:
+
+//   [1, 2, 7, 8, 3, 4, 5, 6, 7]
+
+
+// Задача 3 js.Pm.FA.RMs
+
+// Дан многомерный объект произвольного уровня вложенности, например, такой:
+
+//   let obj = {
+//     a: 1,
+//     b: {
+//       c: 2,
+//       d: 3,
+//       e: 4
+//     },
+//     f: {
+//       g: 5,
+//       j: 6,
+//       k: {
+//         l: 7,
+//         m: {
+//           n: 8,
+//           o: 9
+//         }
+//       }
+//     }
+//   }
+
+
+
+// function getSum(obj) {
+//   let sum = 0;
+//   for (let prop in obj) {
+//     if (typeof obj[prop] !== "object") {
+//       sum += obj[prop];
+//     } else {
+//       sum += getSum(obj[prop]);
+//     }
+//   }
+//   return sum;
+// }
+
+// console.log(getSum(obj));
+
+
+// С помощью рекурсии найдите сумму элементов этого объекта.
+
+// Задача 4 js.Pm.FA.RMs
+
+// Дан многомерный массив произвольного уровня вложенности, содержащий внутри себя строки, например, такой:
+
+//   let arr = ['a', ['b', 'c', 'd'],
+//     ['e', 'f', ['g', ['j', 'k']]]
+//   ];
+
+// function converToString(arr) {
+//   let str = ``;
+//   for (let elem of arr) {
+//     if (typeof elem !== "object") {
+//       str += elem;
+//     } else {
+//       str += converToString(elem);
+//     }
+//   }
+//   return str;
+// }
+
+// console.log(converToString(arr));
+
+// Задача 5 js.Pm.FA.RMs
+
+// Дан многомерный массив произвольного уровня вложенности, например, такой:
+
+//   let arr = [1, [2, 7, 8],
+//     [3, 4],
+//     [5, [6, 7]]
+//   ];
+
+// function square(arr) {
+//   for (let i = 0; i < arr.length; i++) {
+//     if (typeof arr[i] !== "object") {
+//       arr[i] = arr[i] ** 2;
+//     } else {
+//       square(arr[i]);
+//     }
+//   }
+//   return arr;
+// }
+
+// console.log(square(arr));
+
+// function square(arr) {
+//   for (let elem of arr) {
+//     if (typeof elem !== "object") {
+//       elem = elem ** 2;
+//     } else {
+//       square(elem);
+//     }
+//   }
+//   console.log(arr);
+// }
+
+
+// Возведите все элементы - числа этого массива в квадрат.
+
+// 121
+
+// Задача 1 js.Pm.Enm.Mp
+
+// Дан массив с числами.Используя метод map извлеките из каждого элемента массива квадратный корень и запишите результат в
+// новый массив.
+
+// let arr = [1, 2, 3, 4, 5];
+
+// let result = arr.map((elem) => Math.sqrt(elem));
+
+// console.log(result);
+
+// Задача 2 js.Pm.Enm.Mp
+
+// Дан массив со строками.Используя метод map в конец значению каждого элемента массива добавьте символ '!'.
+
+// let arr = [`12`, `23`, `34`, `45`, `56`];
+// let result = arr.map((elem) => elem + `!`);
+// console.log(result);
+
+// Задача 3 js.Pm.Enm.Mp
+
+// Дан массив со строками.Используя метод map переверните символы каждой строки в обратном порядке.
+
+// let arr = [`12`, `23`, `34`, `45`, `56`];
+// let result = arr.map((elem) => elem.split(``).reverse().join(``));
+// console.log(result);
+
+
+
+// Задача 4 js.Pm.Enm.Mp
+
+// Дан следующий массив:
+
+//   let arr = ['123', '456', '789'];
+// let result = arr.map((elem) => elem.split(``));
+// console.log(result);
+
+
+// Используя метод map преобразуйте этот массив в следующий:
+
+//   let arr = [
+//     [1, 2, 3],
+//     [4, 5, 6],
+//     [7, 8, 9]
+//   ];
+
+// Задача 5 js.Pm.Enm.Mp
+
+// Дан массив с числами.Используя метод map запишите в каждый элемент массива значение этого элемента,
+//   умноженное на его порядковый номер в массиве.
+
+// let arr = [1, 2, 3, 4, 5];
+// let result = arr.map((elem, index) => elem * index);
+// console.log(result);

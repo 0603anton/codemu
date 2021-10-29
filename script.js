@@ -4383,3 +4383,481 @@ let arr2 = [2, 3, 4, 5];
 // let arr = [1, 2, 3, 4, 5];
 // let result = arr.map((elem, index) => elem * index);
 // console.log(result);
+
+// 122 js.Pm.Enm.Fe
+
+// № 1
+
+// let arr = [1, 2, 3, 4, 5];
+// let sum = 0;
+
+// arr.forEach((elem) => {
+//   sum += elem ** 2;
+// });
+
+// console.log(sum);
+
+// 123
+
+// js.Pm.Enm.Fi
+
+// № 1
+
+// let arr = [1, 2, 3, 4, -5];
+
+// console.log(arr.filter(elem => elem > 0));
+
+
+// №
+// 2
+// let arr = [1, 2, 3, 4, -5];
+
+// console.log(arr.filter(elem => elem < 0));
+
+
+// №
+// 3
+// let arr = [1, 2, 3, 4, -5, 10];
+
+// console.log(arr.filter(elem => elem > 0 && elem < 10));
+
+
+// №
+// 4
+// let arr = [`1111`, `22222`, `3222222222`, `4`, `-5`, `1111111111111111110`];
+// console.log(arr.filter(elem => elem.length > 5));
+
+// №
+// 5
+// let arr = [1, 2, 3, 4, -5, 10];
+
+// console.log(arr.filter((elem, index) => elem * index < 30));
+
+
+// №
+// 6
+
+// let arr = [1, 2, [3, 4], 5, [6, 7]];
+// let result = arr.filter(elem => typeof elem !== "object");
+// console.log(result);
+
+// № 7
+// let arr = [1, 2, 3, 4, -5, -10];
+
+// console.log(arr.filter((elem) => elem < 0).length);
+
+// 124
+// js.Pm.Enm.Ev№ 1
+// let arr = [2, 4, 6, 8];
+// console.log(arr.every(elem => elem > 0));
+
+
+// №
+// 2
+// let arr = [2, 4, 6, 8, 10];
+// console.log(arr.every((elem, index) => elem * index < 30));
+
+// 125
+// js.Pm.Enm.Sm
+
+// № 1
+// let arr = [2, 4, 6, 8];
+// console.log(arr.some(elem => elem > 0));
+
+
+// №
+// 2
+// let arr = [2, 4, 6, 8, 10];
+// console.log(arr.some((elem, index) => elem * index < 30));
+
+// 126
+
+// js.Pm.Osr.Sp
+
+// № 1
+
+// let arr = [1, 2, 3, 4, 5];
+
+// function func(num1, num2, num3, num4, num5) {
+//   return num1 + num2 + num3 + num4 + num5;
+// }
+
+// console.log(func(...arr));
+
+// №
+// 3
+
+// let arr = [1, 2, 3, 4, 5]
+// let min = Math.min(...arr);
+// console.log(min);
+
+// 130
+
+// js.Pm.Osr.SRAp
+
+// № 1
+
+// function sredneeSum(...nums) {
+//   let sum = 0;
+//   for (let elem of nums) {
+//     sum += elem;
+//   }
+//   return sum / nums.length;
+// }
+
+// console.log(sredneeSum(1, 2, 3, 4, 5));
+
+// №
+// 2
+
+// function unite(arr, arr1, arr2) {
+//   let result = [];
+//   result.push(arr, arr1, arr2);
+//   return result;
+// }
+
+// console.log(unite([1, 2, 3], [4, 5, 6], [7, 8, 9]));
+
+// №
+// 3
+
+// function merge(arr, arr1, arr2) {
+//   let tempArr = [];
+//   let result = [];
+//   tempArr.push(arr, arr1, arr2);
+//   for (let elem of tempArr) {
+//     for (let subElem of elem) {
+//       result.push(subElem);
+//     }
+//   }
+
+//   return result;
+// }
+
+// console.log(merge([1, 2, 3], [4, 5, 6], [7, 8, 9]));
+
+
+
+
+// console.log(inArray(1, [1, 2]));
+
+// function getNum(...arrs) {
+//   arr0 = arrs.shift();
+//   let result = [];
+
+//   for (let elem of arr0) {
+//     if (inArrs(elem, arrs)) {
+//       result.push(elem);
+//     }
+//   }
+//   return result;
+// }
+
+
+
+// function inArrs(elem, arrs) {
+//   for (let arr of arrs) {
+//     if (!inArr(elem, arr)) {
+//       return false;
+//     }
+//   }
+//   return true;
+// }
+
+// function inArr(elem, arr) {
+//   return arr.indexOf(elem) !== -1;
+// }
+
+// // console.log(inArrs(1, [
+// //   [1, 1],
+// //   [1, 1]
+// // ]));
+// //проверка посика во многих массивах
+
+// let result = getNum([1, 2, 3], [2, 3, 4], [4, 3, 2]);
+// console.log(result); // выведет [2, 3]
+
+// 132
+
+// js.Pm.Dst.Ar
+
+// № 1
+
+// let arr = ['Иван', 'Иванов', 'отдел разработки', 'программист', 2000];
+
+// let [name1, surname, department, position, salary] = arr;
+// console.log(name1);
+
+// №
+// 2
+
+// function func() {
+//   return ['Иван', 'Иванов', 'отдел разработки', 'программист', 2000];
+// }
+
+// let [name1, surname, department, position, salary] = func();
+// console.log(name1);
+
+// №
+// 3
+
+// let arr = ['Иван', 'Иванов', 'отдел разработки', 'программист', 2000];
+
+// let [, , department, position, ] = arr;
+// console.log(department);
+
+// №
+// 4
+
+
+// let arr = ['Иван', 'Иванов', 'отдел разработки', 'программист', 2000];
+
+// let [name1, surname, ...info] = arr;
+
+// console.log(info);
+
+// №
+// 5
+
+// Задача 5 js.Pm.Dst.Ar
+
+// let arr = ['Иван', 'Иванов', 'отдел разработки'];
+
+
+// let [name1, surname, department, position = `Junior`] = arr;
+// console.log(position);
+
+// №
+// 6
+// let arr = [];
+
+// function func() {
+//   return (new Date).getDate();
+// }
+
+// function funcYear() {
+//   return (new Date).getFullYear();
+// }
+
+// function funcMonth() {
+//   return (new Date).getMonth();
+// }
+
+
+// let [year = funcYear(), month = funcMonth(), day = func()] = arr;
+
+// console.log(year, month, day);
+
+// js.Pm.Dst.Ar
+
+// № 1
+
+// let arr = ['Иван', 'Иванов', 'отдел разработки', 'программист', 2000];
+
+// let [name1, surname, department, position, salary] = arr;
+// console.log(name1);
+
+// №
+// 2
+
+// function func() {
+//   return ['Иван', 'Иванов', 'отдел разработки', 'программист', 2000];
+// }
+
+// let [name1, surname, department, position, salary] = func();
+// console.log(name1);
+
+// №
+// 3
+
+// let arr = ['Иван', 'Иванов', 'отдел разработки', 'программист', 2000];
+
+// let [, , department, position, ] = arr;
+// console.log(department);
+
+// №
+// 4
+
+
+// let arr = ['Иван', 'Иванов', 'отдел разработки', 'программист', 2000];
+
+// let [name1, surname, ...info] = arr;
+
+// console.log(info);
+
+// №
+// 5
+
+// Задача 5 js.Pm.Dst.Ar
+
+// let arr = ['Иван', 'Иванов', 'отдел разработки'];
+
+
+// let [name1, surname, department, position = `Junior`] = arr;
+// console.log(position);
+
+// №
+// 6
+// let arr = [];
+
+// function func() {
+//   return (new Date).getDate();
+// }
+
+// function funcYear() {
+//   return (new Date).getFullYear();
+// }
+
+// function funcMonth() {
+//   return (new Date).getMonth();
+// }
+
+
+// let [year = funcYear(), month = funcMonth(), day = func()] = arr;
+
+// console.log(year, month, day);
+
+// 133
+
+// № 1
+
+// let options = {
+//   color: 'red',
+//   width: 400,
+//   height: 500,
+// };
+
+// let {
+//   color,
+//   width,
+//   height
+// } = options;
+
+// console.log(color);
+
+// №
+// 2
+
+
+// let options = {
+//   color: 'red',
+//   width: 400,
+//   height: 500,
+// };
+
+// let {
+//   color: c,
+//   width: w,
+//   height: h
+// } = options;
+
+// console.log(c);
+
+// №
+// 3
+
+// let options = {
+//   width: 400,
+//   height: 500,
+// };
+
+
+// let {
+//   color = `black`, width, height
+// } = options;
+
+// console.log(color);
+
+// №
+// 4
+
+// let options = {
+//   width: 400,
+//   height: 500,
+// };
+
+
+// let {
+//   color: c = `black`,
+//   width: w,
+//   height: h
+// } = options;
+
+// console.log(c, w, h);
+
+
+// 134
+
+// js.Pm.Dst.Fn
+
+// № 1
+
+// function func([name, surname, department, position, salary]) {
+//   console.log(name);
+//   console.log(surname);
+// }
+
+// console.log(func(['Иван', 'Иванов', 'отдел разработки', 'программист', 2000]));
+
+// №
+// 2
+
+// function func([name, surname, department]) {}
+
+// func(['Иван', 'Иванов', 'отдел разработки', 'программист', 2000]);
+
+// №
+// 3
+
+// function func([name, surname, department, position = `джуниор`]) {
+//   console.log(position);
+// }
+
+// func(['Иван', 'Иванов', 'отдел разработки']);
+
+// №
+// 4
+
+// function func(department, [name, surname],
+//   [year, month, day]
+// ) {
+//   console.log(day);
+// }
+
+// func('отдел разработки', ['Иван', 'Иванов'], [2018, 12, 31]);
+
+
+// №
+// 5
+
+// function func({
+//   color,
+//   width,
+//   height
+// }) {
+//   console.log(width);
+// }
+
+// func({
+//   color: 'red',
+//   width: 400,
+//   height: 500
+// });
+
+// №
+// 6
+
+
+// function func({
+//   width,
+//   height,
+//   color = `black`
+// }) {
+//   console.log(color);
+// }
+
+// func({
+//   // color: 'red',
+//   width: 400,
+//   height: 500
+// });

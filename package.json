@@ -1,0 +1,24 @@
+{
+  "name": "codemu",
+  "version": "1.0.0",
+  "description": "Study tasks from codemu site",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/0603anton/codemu.git"
+  },
+  "keywords": [
+    "codemu",
+    "js",
+    "study"
+  ],
+  "author": "0603anton",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/0603anton/codemu/issues"
+  },
+  "homepage": "https://github.com/0603anton/codemu#readme"
+}

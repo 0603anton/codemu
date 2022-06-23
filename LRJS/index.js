@@ -238,3 +238,84 @@ function isEmpty (obj){
 
 
 console.log(isEmpty (schedule))
+
+function makeUser(name, age) {
+  return {
+    name, // то же самое, что и name: name
+    age   // то же самое, что и age: age
+    // ...
+  };
+}
+
+console.log(makeUser(`anton`,32));
+
+// до вызова функции
+let menu = {
+  width: 200,
+  height: 300,
+  title: "My menu"
+};
+
+
+function multiplyNumeric(menu) {
+  for(let key in menu){
+  //  console.log( typeof menu[key])
+    if (typeof menu[key] === `number`){
+      menu[key] *= 2; 
+    } 
+  }
+  console.log(menu)
+}
+
+multiplyNumeric(menu);
+
+
+
+// Объектыы
+Создайте калькулятор
+важность: 5
+Создайте объект calculator (калькулятор) с тремя методами:
+
+read() (читать) запрашивает два значения и сохраняет их как свойства объекта.
+sum() (суммировать) возвращает сумму сохранённых значений.
+mul() (умножить) перемножает сохранённые значения и возвращает результат.
+
+
+let calculator = {
+  read(){
+    this.firstNumber = prompt(`Enter your first number`);
+    this.secondNumber = prompt(`Enter your second number`);
+  },
+  sum(){
+    return +this.firstNumber + +this.secondNumber;
+  },
+  mul(){
+    return this.secondNumber * this.firstNumber;
+  }
+
+};
+
+calculator.read();
+alert( calculator.sum() );
+alert( calculator.mul() );
+Запустить демо
+
+Открыть песочницу с тестами для задачи.
+
+
+let ladder = {
+  step: 0,
+  up() {
+    this.step++;
+      return this;
+
+  },
+  down() {
+    this.step--;
+  },
+  showStep: function() { // показывает текущую ступеньку
+    alert( this.step );
+  }
+};
+ 
+ladder.up().up();

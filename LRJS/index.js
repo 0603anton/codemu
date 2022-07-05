@@ -319,3 +319,28 @@ let ladder = {
 };
  
 ladder.up().up();
+
+
+Числа:
+
+let readNumber = function (){
+  let number = prompt(`Enter youtnumber please`);
+  if (!isFinite(number) || number == 0 || number == null){
+        readNumber();
+
+  } else{
+    return number;
+  }
+}
+
+
+console.log();
+
+let str = "anton";
+
+function ucFirst(str){
+  return str[0].toUpperCase() + str.slice(1);
+}
+console.log(ucFirst(str))
+
+console.log(isFinite(0))

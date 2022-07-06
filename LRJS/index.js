@@ -132,18 +132,18 @@ function checkAge(age) {
 Сделайте два варианта функции checkAge:
 
 Используя оператор ?
-Используя оператор ||
+  Используя оператор ||
 
-let age = 18;
+    let age = 18;
 function checkAge(age) {
-    return (age > 18) ? true:confirm('Родители разрешили?');
+  return (age > 18) ? true : confirm('Родители разрешили?');
 }
 console.log(checkAge(age));
 
 
 let age = 20;
 function checkAge(age) {
-    return (age > 18) || confirm('Родители разрешили?');
+  return (age > 18) || confirm('Родители разрешили?');
 }
 console.log(checkAge(age));
 
@@ -155,24 +155,24 @@ console.log(checkAge(age));
 
 // Пример вызовов:
 
-function min (a,b){
-  return a<b? a:b;
+function min(a, b) {
+  return a < b ? a : b;
 }
 console.log(min(2, 5));
 console.log(min(3, -1));
 console.log(min(1, 1));
 
 
-function pow (a,b){
+function pow(a, b) {
   if (b < 1) {
-  console.log(`Степень ${b} не поддерживается, используйте натуральное число`);
+    console.log(`Степень ${b} не поддерживается, используйте натуральное число`);
+  }
+  return a ** b;
 }
-  return a**b;
-}
-console.log(pow(1,-1));
-console.log(pow(3,2));
-console.log(pow(3,3));
-console.log(pow(1,100));
+console.log(pow(1, -1));
+console.log(pow(3, 2));
+console.log(pow(3, 3));
+console.log(pow(1, 100));
 
 
 Замените код Function Expression стрелочной функцией:
@@ -184,21 +184,21 @@ function ask(question, yes, no) {
 
 ask(
   "Вы согласны?",
-  function() { alert("Вы согласились."); },
-  function() { alert("Вы отменили выполнение."); }
+  function () { alert("Вы согласились."); },
+  function () { alert("Вы отменили выполнение."); }
 );
 
-function ask (a,b,c) {
-  if (confirm (a)){
+function ask(a, b, c) {
+  if (confirm(a)) {
     return b();
   } else {
     return c();
   }
 }
 
-ask(`ds согласны?`, 
-() => alert(`You are ok`),
-() => alert(`You are not ok`));
+ask(`ds согласны?`,
+  () => alert(`You are ok`),
+  () => alert(`You are not ok`));
 
 confirm()
 
@@ -229,15 +229,15 @@ let schedule = {};
 
 // alert( isEmpty(schedule) ); // false
 
-function isEmpty (obj){
-  for (let prop in obj){
-   return false;
+function isEmpty(obj) {
+  for (let prop in obj) {
+    return false;
   }
-  return true; 
-  }
+  return true;
+}
 
 
-console.log(isEmpty (schedule))
+console.log(isEmpty(schedule))
 
 function makeUser(name, age) {
   return {
@@ -247,7 +247,7 @@ function makeUser(name, age) {
   };
 }
 
-console.log(makeUser(`anton`,32));
+console.log(makeUser(`anton`, 32));
 
 // до вызова функции
 let menu = {
@@ -258,11 +258,11 @@ let menu = {
 
 
 function multiplyNumeric(menu) {
-  for(let key in menu){
-  //  console.log( typeof menu[key])
-    if (typeof menu[key] === `number`){
-      menu[key] *= 2; 
-    } 
+  for (let key in menu) {
+    //  console.log( typeof menu[key])
+    if (typeof menu[key] === `number`) {
+      menu[key] *= 2;
+    }
   }
   console.log(menu)
 }
@@ -274,30 +274,30 @@ multiplyNumeric(menu);
 // Объектыы
 Создайте калькулятор
 важность: 5
-Создайте объект calculator (калькулятор) с тремя методами:
+Создайте объект calculator(калькулятор) с тремя методами:
 
-read() (читать) запрашивает два значения и сохраняет их как свойства объекта.
-sum() (суммировать) возвращает сумму сохранённых значений.
-mul() (умножить) перемножает сохранённые значения и возвращает результат.
+read()(читать) запрашивает два значения и сохраняет их как свойства объекта.
+  sum()(суммировать) возвращает сумму сохранённых значений.
+    mul()(умножить) перемножает сохранённые значения и возвращает результат.
 
 
 let calculator = {
-  read(){
+  read() {
     this.firstNumber = prompt(`Enter your first number`);
     this.secondNumber = prompt(`Enter your second number`);
   },
-  sum(){
+  sum() {
     return +this.firstNumber + +this.secondNumber;
   },
-  mul(){
+  mul() {
     return this.secondNumber * this.firstNumber;
   }
 
 };
 
 calculator.read();
-alert( calculator.sum() );
-alert( calculator.mul() );
+alert(calculator.sum());
+alert(calculator.mul());
 Запустить демо
 
 Открыть песочницу с тестами для задачи.
@@ -307,28 +307,28 @@ let ladder = {
   step: 0,
   up() {
     this.step++;
-      return this;
+    return this;
 
   },
   down() {
     this.step--;
   },
-  showStep: function() { // показывает текущую ступеньку
-    alert( this.step );
+  showStep: function () { // показывает текущую ступеньку
+    alert(this.step);
   }
 };
- 
+
 ladder.up().up();
 
 
 Числа:
 
-let readNumber = function (){
+let readNumber = function () {
   let number = prompt(`Enter youtnumber please`);
-  if (!isFinite(number) || number == 0 || number == null){
-        readNumber();
+  if (!isFinite(number) || number == 0 || number == null) {
+    readNumber();
 
-  } else{
+  } else {
     return number;
   }
 }
@@ -338,9 +338,80 @@ console.log();
 
 let str = "anton";
 
-function ucFirst(str){
+function ucFirst(str) {
   return str[0].toUpperCase() + str.slice(1);
 }
 console.log(ucFirst(str))
 
 console.log(isFinite(0))
+
+Массивы
+
+let styles = ['Джаз', "блюз", "что-то", 'xnj-nj'];
+console.log(styles);
+styles.push('rock-n-roll');
+console.log(styles);
+let middle = Math.round(styles.length / 2);
+styles[middle] = 'Classic';
+console.log(styles);
+styles.shift();
+console.log(styles);
+styles.unshift(`Rap`, `Raggie`);
+console.log(styles);
+
+let arr = [];
+let sum = 0;
+
+function sumInput() {
+  let a = prompt(`enter`);
+  if (a === "" || a === null || !isFinite(a)) {
+    console.log(summ(arr));
+  } else {
+
+    arr.push(a)
+    sumInput();
+  }
+
+}
+function summ(arr) {
+  console.log(arr)
+  for (let elem of arr) {
+    sum += +elem;
+  }
+  return sum;
+}
+
+sumInput();
+
+// TODO
+Подмассив наибольшей суммы
+важность: 2
+На входе массив чисел, например: arr = [1, -2, 3, 4, -9, 6].
+
+  Задача: найти непрерывный подмассив в arr, сумма элементов в котором максимальна.
+
+Функция getMaxSubSum(arr) должна возвращать эту сумму.
+
+  Например:
+
+getMaxSubSum([-1, 2, 3, -9]) == 5(сумма выделенных элементов)
+getMaxSubSum([2, -1, 2, 3, -9]) == 6
+getMaxSubSum([-1, 2, 3, -9, 11]) == 11
+getMaxSubSum([-2, -1, 1, 2]) == 3
+getMaxSubSum([100, -9, 2, -3, 5]) == 100
+getMaxSubSum([1, 2, 3]) == 6(берём все)
+Если все элементы отрицательные – ничего не берём(подмассив пустой) и сумма равна «0»:
+
+getMaxSubSum([-1, -2, -3]) = 0
+Попробуйте придумать быстрое решение: O(n2), а лучше за О(n) операций.
+
+Открыть песочницу с тестами для задачи.
+
+function getMaxSubSum(arr) {
+  for (let elem of arr) {
+    if (elem > 0) {
+
+    }
+  }
+}
+

@@ -433,21 +433,144 @@ P.S.Подсказка: используйте split, чтобы разбить 
 let str = "background-color";
 
 function splitToArr(str) {
-  let newArr = str.split(`-`);
-  console.log(newArr);
-  return newArr;
-}
-
-function firstLetterCap(elem) {
-  return elem[0].toUpperCase + elem.slice(1);
+  return str.split(`-`);
 }
 
 function joinCamel(arr) {
-  arr.map(firstLetterCap(elem))
+  arr.join()
 }
 
-str.splitToArr
+let newArr = splitToArr(str);
+
+let capitalLetterArr = newArr.map((item, index) => {
+  if (index == 0) {
+    return item;
+  } else {
+    return item[0].toUpperCase() + item.slice(1);
+  }
+});
+
+console.log(capitalLetterArr)
+capitalLetterArr = capitalLetterArr.join(``);
 
 
+console.log(capitalLetterArr);
 
-splitToArr(str)
+Фильтрация по диапазону
+важность: 4
+Напишите функцию filterRange(arr, a, b), которая принимает массив arr, ищет в нём элементы между a и b и отдаёт массив этих элементов.
+
+Функция должна возвращать новый массив и не изменять исходный.
+
+  Например:
+
+let arr = [5, 3, 8, 1];
+
+// let filtered = ;
+
+// alert(filtered); // 3,1 (совпадающие значения)
+
+// alert(arr); // 5,3,8,1 (без изменений)
+// Открыть песочницу с тестами для задачи.
+
+function filterRange(arr, a, b) {
+
+  return arr.filter((item) => (item => a && item <= b))
+
+}
+
+console.log(filterRange(arr, 1, 4))
+
+Фильтрация по диапазону "на месте"
+важность: 4
+Напишите функцию filterRangeInPlace(arr, a, b), которая принимает массив arr и удаляет из него все значения кроме тех, которые находятся между a и b.То есть, проверка имеет вид a ≤ arr[i] ≤ b.
+
+Функция должна изменять принимаемый массив и ничего не возвращать.
+
+  Например:
+
+let arr = [5, 3, 8, 1];
+
+// filterRangeInPlace(arr, 1, 4); // удалены числа вне диапазона 1..4
+
+// alert(arr); // [3, 1]
+// Открыть песочницу с тестами для задачи.
+
+function filterRangeInPlace(arr, a, b) {
+  arr.map((item => {
+
+    if ((item => a && item <= b)) {
+
+      arr.splice(arr.indexOf(item), 1);
+    }
+  }))
+}
+console.log(filterRangeInPlace(arr, 1, 4))
+console.log(arr)
+
+Сортировать в порядке по убыванию
+важность: 4
+let arr = [5, 2, 1, -10, 8];
+
+// ... ваш код для сортировки по убыванию
+
+arr.sort((a, b) => b - a);
+
+console.log(arr); // 8, 5, 2, 1, -10
+
+Скопировать и отсортировать массив
+важность: 5
+У нас есть массив строк arr.Нужно получить отсортированную копию, но оставить arr неизменённым.
+
+Создайте функцию copySorted(arr), которая будет возвращать такую копию.
+
+let arr = ["HTML", "JavaScript", "CSS"];
+
+function copySorted(arr) {
+  return arr.slice().sort(); // можно использовать spread, но он не копирует разреженные массивы, оставляет undefined
+}
+
+let sorted = copySorted(arr);
+
+console.log(sorted)
+console.log(arr)
+alert(sorted); // CSS, HTML, JavaScript
+alert(arr); // HTML, JavaScript, CSS (без изменений)
+
+
+Создать расширяемый калькулятор
+// TODO
+важность: 5
+Создайте функцию конструктор Calculator, которая создаёт «расширяемые» объекты калькулятора.
+
+Задание состоит из двух частей.
+
+  Во - первых, реализуйте метод calculate(str), который принимает строку типа "1 + 2" в формате «ЧИСЛО оператор ЧИСЛО» (разделено пробелами) и возвращает результат.Метод должен понимать плюс + и минус -.
+
+Пример использования:
+
+let calc = new Calculator;
+
+alert(calc.calculate("3 + 7")); // 10
+
+
+function Calculator(str) {
+  this.str = str,
+
+}
+
+
+Трансформировать в массив имён
+важность: 5
+У вас есть массив объектов user, и в каждом из них есть user.name.Напишите код, который преобразует их в массив имён.
+
+  Например:
+
+let vasya = { name: "Вася", age: 25 };
+let petya = { name: "Петя", age: 30 };
+let masha = { name: "Маша", age: 28 };
+
+let users = [vasya, petya, masha];
+
+let names = users.map((item) => item.name);
+console.log(names); // Вася, Петя, Маша

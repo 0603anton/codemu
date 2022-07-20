@@ -800,3 +800,15 @@ function getCommonDivisor(num1, num2) {
   }
 }
 
+Случайный элемент из массива на JavaScript
+
+function getRandomInt(min, max) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+function randomElem(arr) {
+  return arr[getRandomInt(0, arr.length - 1)]
+}
+
+let arr = [1, 2, 3, 4, 5];
+console.log(randomElem(arr));

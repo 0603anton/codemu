@@ -814,7 +814,7 @@ let arr = [1, 2, 3, 4, 5];
 console.log(randomElem(arr));
 
 function func() {
-	console.log('!');
+  console.log('!');
 }
 func(); // выведет '!'
 console.log(func)
@@ -849,58 +849,58 @@ let arr = [
 ];
 
 
-for (let func of arr){
+for (let func of arr) {
   console.log(func());
 }
 console.log(arr[2]())
 
 №1⊗jsPmFAFO
 
-Сделайте объект с тремя функциями. Пусть первая возвращает через return число 1, вторая - число 2, третья - число 3. С помощью созданных функций выведите в консоль сумму возвращаемых чисел.
+Сделайте объект с тремя функциями.Пусть первая возвращает через return число 1, вторая - число 2, третья - число 3. С помощью созданных функций выведите в консоль сумму возвращаемых чисел.
 
 №2⊗jsPmFAFO
 
 Переберите созданный объект циклом и выведите результаты работы функций в консоль.
 
 let obj = {
-	func1: function() {return 1},
-  func2: function() {return 2},
-	func3: function() {return 3},
+  func1: function () { return 1 },
+  func2: function () { return 2 },
+  func3: function () { return 3 },
 };
 
-for (let elem in obj){
+for (let elem in obj) {
   console.log(obj[elem]())
 }
 
 №3⊗jsPmFAFO
 
-Сделайте объект с тремя функциями, каждая из которых будет принимать параметром массив с числами. Сделайте так, чтобы первая функция возвращала сумму элементов массива, вторая функция - сумму квадратов, а третья - сумму кубов.
+Сделайте объект с тремя функциями, каждая из которых будет принимать параметром массив с числами.Сделайте так, чтобы первая функция возвращала сумму элементов массива, вторая функция - сумму квадратов, а третья - сумму кубов.
 
 let obj = {
-  getSum: function(arr){
+  getSum: function (arr) {
     let sum = 0;
-    for (let elem of arr){
-      sum+= elem;
+    for (let elem of arr) {
+      sum += elem;
     }
     return sum;
   },
-    getSquareSum: function(arr){
+  getSquareSum: function (arr) {
     let sum = 0;
-    for (let elem of arr){
-      sum+= Math.pow(elem,2);
+    for (let elem of arr) {
+      sum += Math.pow(elem, 2);
     }
     return sum;
   },
-    getCubeSum: function(arr){
+  getCubeSum: function (arr) {
     let sum = 0;
-    for (let elem of arr){
-      sum+= Math.pow(elem,3);
+    for (let elem of arr) {
+      sum += Math.pow(elem, 3);
     }
     return sum;
   },
 }
 
-console.log(obj[`getSum`]([1,2,3]))
+console.log(obj[`getSum`]([1, 2, 3]))
 
 
 №2⊗jsPmFAPFAP
@@ -908,7 +908,7 @@ console.log(obj[`getSum`]([1,2,3]))
 Сделайте функцию test, параметрами принимающую 3 функции и возвращающую сумму результатов переданных функций.
 
 function test(func1, func2, func3) {
-  return func1()+func2()+func3();
+  return func1() + func2() + func3();
 }
 
 // №3⊗jsPmFAPFAP
@@ -935,7 +935,7 @@ let func1 = function () {
   return 1;
 }
 let func2 = function () {
-return 2;
+  return 2;
 }
 let func3 = function () {
   return 3;
@@ -943,12 +943,233 @@ let func3 = function () {
 
 console.log(test(func1, func2, func3));
 
-let func = function func (num,num1) {
-	return num + num1;
+let func = function func(num, num1) {
+  return num + num1;
 };
 
 test(func);
 
 function test(func) {
-	console.log(func(2,3));
+  console.log(func(2, 3));
 }
+
+№9⊗jsPmFAPFAP
+
+Пусть функция test первым параметром принимает число, а вторым и третьим параметрами - функции, также параметром принимающие числа.
+
+Пусть функция test возвращает сумму результатов переданных функций:
+
+function test(num, func1, func2) {
+  return func1(num) + func2(num);
+}
+// Вызовите функцию test, первым параметром передав число 3, вторым параметром функцию, возводящую число в квадрат, а третьим - функцию, возводящую число в куб. Выведите результат работы в консоль.
+
+console.log(test(3, function (num) {
+  return Math.pow(num, 2)
+}, function (num) {
+  return Math.pow(num, 3)
+}))
+
+№10⊗jsPmFAPFAP
+
+Не подсматривая в мой код реализуйте такую же функцию test самостоятельно.
+
+№11⊗jsPmFAPFAP
+
+Вызовите созданную вами функцию test, передав ей параметром массив с числами.Сделайте так, чтобы функция вернула массив с кубами этих чисел.
+
+function test(arr, func) {
+  for (let i = 0; i < arr.length; i++) {
+    arr[i] = func(arr[i])
+  }
+  return arr;
+}
+
+let result = test([1, 2, 3], function (num) {
+  return Math.pow(num, 3);
+});
+console.log(result)
+
+№1⊗jsPmFANF
+
+Сделайте функцию func, которая параметрами будет принимать два числа, а возвращать сумму квадрата первого числа с кубом второго числа.Сделайте для этого вспомогательную функцию square, возводящую число в квадрат, и вспомогательную функцию cube, возводящую число в куб.
+
+function func(num1, num2) {
+  function square(num) {
+    return Math.pow(num, 2)
+  }
+
+  function cube(num) {
+    return Math.pow(num, 3)
+  }
+
+  return square(num1) + cube(num2);
+}
+
+console.log(func(2, 2));
+
+function test(num) {
+	function func(localNum) {
+		localNum = 2; // меняем переменную num
+	}
+	
+	func(num); // передаем параметр
+  console.log(num)
+  // console.log(localNum)
+}
+
+test(1); // передаем параметром число
+
+Функция, возвращающая функцию в JavaScript
+
+function func1 (){
+  return function func2(){
+    return 1;
+  }
+}
+
+console.log(func1()())
+
+№2⊗jsPmFAFRF
+
+Сделайте функцию func, которая будучи вызвана вот так: func()()()()(), вернет '!'.
+
+function func1 (){
+  return function func2(){
+    return function func3(){
+      return function func4(){
+        return function func5 (){
+          return `!`;
+        }
+      }
+    }
+  }
+}
+
+console.log(func1()()()()())
+
+
+№3⊗jsPmFAFRF
+
+Сделайте функцию func, которая будучи вызвана вот так: func(2)(3)(4), вернет сумму переданных в параметры чисел.
+
+function func1 (num){
+  return function func2(num1){
+    return num + num1;
+  }
+}
+
+console.log(func1(1)(2))
+
+
+№4⊗jsPmFAFRF
+
+Сделайте функцию func, которая будучи вызвана вот так: func(2)(3)(4)(5)(), вернет массив переданных в параметры чисел.
+
+function func1 (num1){
+  return function func2(num2){
+    return function func3(num3){
+      return function func4(num4){
+        return function func5 (){
+          return num1 + num2 + num3+ num4;
+        }
+      }
+    }
+  }
+}
+
+console.log(func1(2)(3)(4)(5)())
+
+Замыкания
+
+№1⊗jsPmFACls
+
+Самостоятельно, не подсматривая в мой код, реализуйте счетчик вызова функции, работающий на замыканиях.
+
+function clousure (){
+  let number =1;
+  return function counter (){
+    
+    console.log(number++);
+  }
+}
+
+let result = clousure();
+result();
+result();
+result();
+result();
+
+№2⊗jsPmFACls
+
+Пусть функция в замыкании хранит число 10. Сделайте так, чтобы каждый вызов функции уменьшал это число на 1 и выводил в консоль уменьшенное число.
+
+function closure (){
+  let counter = 10;
+  return function countdown (){
+    console.log(counter--);
+  }
+}
+let backCountdown = closure();
+console.log(backCountdown);
+backCountdown();
+backCountdown();
+backCountdown();
+backCountdown();
+backCountdown();
+backCountdown();
+
+№3⊗jsPmFACls
+
+Модифицируйте предыдущую задачу так, чтобы отсчет доходил до 0, а затем каждый последующий вызов функции выводил в консоль сообщение о том, что отсчет окончен.
+
+function closure (){
+  let counter = 10;
+  return function countdown (){
+    if (counter>=0){
+    console.log(counter--);
+    } else{
+      console.log(`Больше не считаем`);
+    }
+
+  }
+}
+let backCountdown = closure();
+let backCountdown2 = closure();
+
+console.log(backCountdown);
+backCountdown();
+backCountdown2();
+backCountdown2();
+backCountdown2();
+backCountdown();
+backCountdown();
+backCountdown();
+backCountdown();
+backCountdown();
+backCountdown();
+backCountdown();
+backCountdown();
+backCountdown();
+backCountdown();
+backCountdown();
+backCountdown();
+backCountdown();
+
+let counter = 0;
+		
+function test() {
+	return function() {
+		console.log(counter);
+		counter++;
+	};
+};
+
+let func = test;
+
+let func1 = func();
+let func2 = func();
+func1();
+func2();
+func1();
+func2();

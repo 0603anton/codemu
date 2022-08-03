@@ -1173,3 +1173,41 @@ func1();
 func2();
 func1();
 func2();
+
+№12⊗jsPmFAIIFE
+
+Допишите следующий код так, чтобы его запуск алертом выводил '!':
+
+(function() {
+	return function (){
+    return function (){
+
+      console.log(`!`)
+            return `!`
+    }
+  }
+})()()();
+
+console.log(first)
+№13⊗jsPmFAIIFE
+
+Допишите следующий код так, чтобы его запуск выводил сумму переданных параметрами чисел:
+
+(function(a) {
+	return function (b) {
+    console.log(a+b)
+  }
+})(1)(2);
+№14⊗jsPmFAIIFE
+
+Допишите следующий код так, чтобы его запуск выводил сумму переданных параметрами чисел:
+
+(function(a) {
+	return function (b){
+    return function (c){
+
+      console.log(a+b+c)
+
+    }
+  }
+})(1)(2)(3);

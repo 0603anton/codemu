@@ -925,14 +925,98 @@ console.log(sumOfDigits(0))
 
 Дан многомерный объект произвольного уровня вложенности, например, такой:
 
-{a: 1, b: {c: 2, d: 3, e: 4}, f: {g: 5, j: 6, k: {l: 7, m: {n: 8, o: 9}}}}
-С помощью рекурсии выведите все примитивные элементы этого объекта в консоль.
+let obj = {a: 1, b: {c: 2, d: 3, e: 4}, f: {g: 5, j: 6, k: {l: 7, m: {n: 8, o: 9}}}};
+// С помощью рекурсии выведите все примитивные элементы этого объекта в консоль.
+
+function objectRecursion(obj) {
+  for (let elem in obj){
+    if (typeof obj[elem] == `object`){
+      objectRecursion(obj[elem])
+    } else{
+      console.log(obj[elem])
+    }
+  }
+}
+
+objectRecursion(obj)
 
 №2⊗jsPmFARS
 
 Дан многомерный массив произвольного уровня вложенности, например, такой:
 
-[1, [2, 7, 8], [3, 4, [5, [6, 7]]]]
-Напишите код, который развернет наш многомерный массив в одномерный. Для приведенного выше массива это будет выглядеть вот так:
+let arr = [1, [2, 7, 8], [3, 4, [5, [6, 7]]]];
+// Напишите код, который развернет наш многомерный массив в одномерный. Для приведенного выше массива это будет выглядеть вот так:
 
-[1, 2, 7, 8, 3, 4, 5, 6, 7]
+// [1, 2, 7, 8, 3, 4, 5, 6, 7]
+let flatArr = [];
+function innerArrToFlat (arr){
+
+  for (let elem of arr){
+    if (typeof elem == `object`){
+      innerArrToFlat(elem)
+    } else{
+      flatArr.push(elem);
+    }
+  }
+  return flatArr;
+}
+
+
+console.log(innerArrToFlat (arr))
+
+№3⊗jsPmFARS
+
+Дан многомерный объект произвольного уровня вложенности, например, такой:
+
+let obj={a: 1, b: {c: 2, d: 3, e: 4}, f: {g: 5, j: 6, k: {l: 7, m: {n: 8, o: 9}}}}
+// С помощью рекурсии найдите сумму элементов этого объекта.
+
+function sumOfElements (obj){
+  let sum = 0;
+  for (let elem in obj){
+    if (typeof obj[elem] == `object`){
+      sum+= sumOfElements(obj[elem])
+    } else{
+      sum+= obj[elem]
+    }
+  }
+  return sum;
+}
+
+console.log(sumOfElements (obj))
+№4⊗jsPmFARS
+
+Дан многомерный массив произвольного уровня вложенности, содержащий внутри себя строки, например, такой:
+
+let arr = ['a', ['b', 'c', 'd'], ['e', 'f', ['g', ['j', 'k']]]]
+// С помощью рекурсии слейте элементы этого массива в одну строку:
+
+// 'abcdefgjk'
+function arrToStr (arr){
+  let str = ``;
+  for (let elem of arr){
+    if (typeof elem == `object`){
+      str+= arrToStr (elem)
+    } else {
+      str += elem;
+    }
+  }
+  return str;
+}
+console.log(arrToStr (arr));
+
+let arr = [1, [2, 7, 8], [3, 4, [5, [6, 7]]]];
+
+function elemToPow (arr){
+  for (let i = 0; i < arr.length; i++) {
+    if (typeof arr[i] == `object`){
+      elemToPow (arr[i])
+    } else{
+      arr[i] = arr[i]**2;
+    }
+  }
+  return arr;
+}
+
+console.log(elemToPow (arr))
+

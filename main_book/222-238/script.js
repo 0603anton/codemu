@@ -141,3 +141,52 @@ const date1 = new Date(2000,8,1);
 const date2 = new Date(2010,1,15);
 const diff = date2 - date1;
 console.log((diff / (1000 * 60 * 60 * 24 *365)));
+
+let date = new Date(2018, 1, 35);
+console.log(date); // какая дата будет?
+let date = new Date(2018, 13, 1);
+console.log(date); // какая дата будет?
+
+function getDaysAmount (year,month){
+  let date = new Date(year, month, 0);
+return date.getDate();
+}
+
+console.log(getDaysAmount (2025,2))
+
+
+№1⊗jsPmTmLE
+
+Сделайте функцию isLeap, которая параметром будет принимать год и возвращать true, если этого год високосный, и false - если нет.
+
+function isLeap (year){
+  let date = new Date(year, 2, 0);
+return date.getDate() == 29;
+}
+
+console.log(isLeap (2000))
+
+№1⊗jsPmTmDCCh
+
+Сделайте функцию checkDate, которая будет выполнять описанную проверку. Пусть функция возвращает true, если дата корректна и false, если нет. Пример работы этой функции для 31 января и 32 января:
+
+function checkDate (year,month,day){
+  let date = new Date(year, month, day);
+  return (date.getFullYear() == year && date.getMonth() == month && date.getDate() == day);
+}
+
+console.log(checkDate(2025, 0, 31)); // выведет true
+console.log(checkDate(2025, 0, 32)); // выведет false
+
+
+let now  = new Date(); // получаем текущий момент
+let date = new Date(now.getFullYear(), 11, 31); // получаем нашу дату
+console.log(date.getDay())
+
+№2⊗jsPmTmTMG
+
+Определите, какой день недели будет 1 числа текущего месяца.
+
+let now = new Date();
+let data = new Date(now.getFullYear(), now.getMonth(), 1);
+console.log(data.getDay())

@@ -190,3 +190,171 @@ console.log(date.getDay())
 let now = new Date();
 let data = new Date(now.getFullYear(), now.getMonth(), 1);
 console.log(data.getDay())
+№3⊗jsPmTmTMG
+
+Определите, какой день недели будет 31 декабря следующего года.
+let now = new Date();
+let data = new Date(now.getFullYear() + 1, 11, 31);
+console.log(data.getDay())
+
+№4⊗jsPmTmTMG
+
+Определите, какой день недели будет через год в такую же дату, как сегодня.
+
+let now = new Date();
+let data = new Date(now.getFullYear() + 1, now.getMonth(), now.getDate());
+console.log(data.getDay())
+
+№5⊗jsPmTmTMG
+
+Определите, какой день недели был год назад в такую же дату, как сегодня.
+
+let now = new Date();
+let data = new Date(now.getFullYear() - 1, now.getMonth(), now.getDate());
+console.log(data.getDay())
+№6⊗jsPmTmTMG
+
+Вопрос: не будет ли проблемы, если текущий месяц январь? Ведь он имеет номер 0, и при вычитании из него единицы мы получим минус первый месяц.
+
+№7⊗jsPmTmTMG
+
+Определите, какой день недели был месяц назад в такой же день месяца, как сегодня.
+
+let now = new Date();
+let data = new Date(now.getFullYear(), now.getMonth() -1, now.getDate());
+console.log(data.getDay())
+
+№8⊗jsPmTmTMG
+
+Определите, сколько дней между 1 января и 10 сентября текущего года.
+let now = new Date();
+let data1 = new Date(now.getFullYear(), 0, 1);
+let data2= new Date(now.getFullYear(), 9, 10);
+let diff = data2 - data1;
+console.log(diff / (1000*60*60*24))
+
+№9⊗jsPmTmTMG
+
+Определите, сколько дней между 20 числом текущего месяца и 10 числом следующего.
+
+let now = new Date();
+let data1 = new Date(now.getFullYear(), now.getMonth(), 20);
+let data2= new Date(now.getFullYear(), now.getMonth() +1, 10);
+let diff = data2 - data1;
+console.log(diff / (1000*60*60*24))
+
+№10⊗jsPmTmTMG
+
+Определите, сколько часов прошло между вчерашним полднем и текущим моментом времени.
+
+let now = new Date();
+let data1 = new Date(now.getFullYear(), now.getMonth(), now.getDate()-1, 12);
+// let data2= new Date(now.getFullYear(), now.getMonth(), now.getDate()+1, 12);
+let diff = now - data1;
+console.log(diff / (1000*60*60 ))
+
+№11⊗jsPmTmTMG
+
+Определите, сколько часов прошло между началом дня и текущим моментом времени.
+let now = new Date();
+let data1 = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 0,0,0);
+let diff = now - data1;
+console.log(diff / (1000*60*60 ))
+
+№12⊗jsPmTmTMG
+
+Определите, сколько часов осталось до конца дня.
+
+let now = new Date();
+let data1 = new Date(now.getFullYear(), now.getMonth(), now.getDate()+1);
+let diff = data1 -now;
+console.log(diff / (1000*60*60 ))
+
+
+поиск всех воскресений с 1 числом
+let now  = new Date();
+let year = now.getFullYear();
+
+for (let month = 0; month <= 11; month++) {
+	let date = new Date(year, month, 1);
+	
+	if (date.getDay() == 0) {
+		console.log(year + '-' + month + '-1');
+	}
+}
+
+№13⊗jsPmTmTMG
+
+Рассмотрите промежуток от 2000 года до текущего года. Определите, сколько раз 1 января в этом промежутке попадало на выходной день, то есть на субботу или на воскресенье.
+let now  = new Date();
+for (let year = 2000; year < now.getFullYear(); year ++){
+  let date = new Date(year, 0,1);
+  if (date.getDay() == 6 ||date.getDay() == 7) {
+    console.log(year);
+  }
+}
+
+Практика на получение моментов времени в JavaScript
+№1⊗jsPmTmTMT
+let now  = new Date();
+let time = new Date (now.getFullYear(),now.getMonth(),now.getDate(),0,0,0);
+let diff = time - now;
+console.log(diff / (1000))
+Определите, сколько секунд прошло с начала дня до настоящего момента времени.
+
+№2⊗jsPmTmTMT
+
+Определите, сколько секунд осталось до конца дня.
+
+№1⊗jsPmTmTMT
+let now  = new Date();
+let time = new Date (now.getFullYear(),now.getMonth(),now.getDate(),23,59,59);
+let diff = time - now;
+console.log(diff / (1000*60*60))
+
+№3⊗jsPmTmTMT
+
+Определите, сколько дней осталось до нового года.
+let now  = new Date();
+let time = new Date (now.getFullYear(),11,31,23,59,59);
+let diff = time - now;
+console.log(diff / (1000*60*60*24))
+№4⊗jsPmTmTMT
+
+Определите, сколько пятниц 13-е в текущем году.
+let now  = new Date();
+
+for (let month = 0; month<12; month++){
+let time = new Date (now.getFullYear(),month,13);
+if (time.getDay() == 5){
+  console.log(month)
+}
+}
+
+№5⊗jsPmTmTMT
+
+Определите, какой год был 3 месяца назад.
+
+let now  = new Date();
+let time = new Date (now.getFullYear(),now.getMonth()-3,1);
+console.log(time.getFullYear())
+
+№6⊗jsPmTmTMT
+
+Определите, какой день недели будет в последнем дне текущего месяца.
+
+let now  = new Date();
+let time = new Date (now.getFullYear(),now.getMonth()+1, 0);
+console.log(time.getDay())
+
+№7⊗jsPmTmTMT
+
+Напишите код, который будет определять, високосный ли текущий год.
+
+№8⊗jsPmTmTMT
+
+Напишите код, который будет находить предыдущий високосный год.
+
+№9⊗jsPmTmTMT
+
+Напишите код, который будет находить следующий високосный год.

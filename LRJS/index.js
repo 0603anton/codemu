@@ -710,3 +710,91 @@ let range = {
 for (let elem of range) {
   console.log(elem);
 }
+
+MAP and SET
+
+Фильтрация уникальных элементов массива
+важность: 5
+Допустим, у нас есть массив arr.
+
+Создайте функцию unique(arr), которая вернёт массив уникальных, не повторяющихся значений массива arr.
+
+Например:
+
+function unique(arr) {
+  let set = new Set();
+  arr.map((elem) =>{
+    set.add(elem);
+  });
+  return set;
+}
+
+let values = ["Hare", "Krishna", "Hare", "Krishna",
+  "Krishna", "Krishna", "Hare", "Hare", ":-O"
+];
+
+alert( unique(values) ); // Hare,Krishna,:-O
+P.S. Здесь мы используем строки, но значения могут быть любого типа.
+
+P.P.S. Используйте Set для хранения уникальных значений.
+
+
+Анаграммы – это слова, у которых те же буквы в том же количестве, но они располагаются в другом порядке.
+
+Например:
+
+nap - pan
+ear - are - era
+cheaters - hectares - teachers
+Напишите функцию aclean(arr), которая возвращает массив слов, очищенный от анаграмм.
+
+Например:
+
+let arr = ["nap", "teachers", "cheaters", "PAN", "ear", "era", "hectares"];
+
+// let test = Array.from(arr[0]);
+// console.log(test)
+// TODO
+
+function aclean (arr){
+let newArr = arr.map((elem) =>{
+  return Array.from(elem);
+})
+let sortedArr = newArr.map(function (splitElem){ return splitElem.sort().join(``).toLowerCase()})
+console.log(sortedArr)
+return Array.from(new Set (sortedArr))
+}
+
+// Всё в целом решилось конечно, но зачем то зря использовал, такой сложный путь для разбиения на массиывы, можно бюыло сращу всё в ловер кейс и далее как я делал, просто методами строк имассивов в конце уникольно через Set или заполнить Map при заполнении он бы перезаписывал одинаковые ключи
+
+console.log(aclean(arr) ) // "nap,teachers,ear" или "PAN,cheaters,era"
+console.log(arr) // "nap,teachers,ear" или "PAN,cheaters,era"
+
+
+let map = new Map();
+
+map.set("name", "John");
+
+let keys = map.keys();
+
+// Error: keys.push is not a function
+// Ошибка: keys.push -- это не функция
+keys.push("more");
+
+Перебираемые ключи
+важность: 5
+Мы хотели бы получить массив ключей map.keys() в переменную и далее работать с ними, например, применить метод .push.
+
+Но это не выходит:
+
+let map = new Map();
+
+map.set("name", "John");
+
+// let keys = map.keys();
+
+let keys = Array.from(map.keys());
+
+// Error: keys.push is not a function
+// Ошибка: keys.push -- это не функция
+keys.push("more");

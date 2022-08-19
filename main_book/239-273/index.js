@@ -137,3 +137,69 @@
 // document.querySelector(`#elem`).addEventListener(`click`, func1);
 // document.querySelector(`#elem`).addEventListener(`click`, func2);
 // document.querySelector(`#elem`).addEventListener(`click`, func3);
+
+// №1⊗jsPmDmDEH
+
+// Дана кнопка. По двойному клику по ней выведите какое-нибудь сообщение.
+// const button = document.querySelector(`#button1`);
+// button.addEventListener(`dblclick`, () => {
+//   console.log(`db click`);
+// });
+
+// №2⊗jsPmDmDEH
+
+// Дана кнопка. По наведению на нее выведите какое-нибудь сообщение.
+
+// button.addEventListener(`mouseenter`, () => {
+//   console.log(`mouseenter`);
+// });
+// №3⊗jsPmDmDEH
+
+// Дана кнопка. По уходу курсора с нее выведите какое-нибудь сообщение.
+
+// button.addEventListener(`mouseleave`, () => {
+//   console.log(`mouseleave`);
+// });
+// №4⊗jsPmDmDEH
+
+// Дана кнопка. По наведению на нее выведите одно сообщение, а по уходу с нее - другое.
+
+// const button = document.querySelector(`#button1`);
+// button.addEventListener(`mouseenter`, ()=>{
+//   console.log(`mouseenter`)
+// })
+
+// №1⊗jsPmDmET
+
+// Дан абзац и кнопка. По клику на кнопку прочитайте текст абзаца и выведите его в консоль.
+const paragraph1 = document.querySelector(`#elem0`);
+const paragraph2 = document.querySelector(`#elem1`);
+const button = document.querySelector(`#button1`);
+// button.addEventListener(`click`, () => {
+//   console.log(paragraph.textContent);
+// });
+
+// №2⊗jsPmDmET
+
+// Дан абзац и кнопка. По клику на кнопку запишите в абзац новый текст.
+
+// button.addEventListener(`click`, () => {
+//   paragraph.textContent = `new Text`;
+// });
+// №3⊗jsPmDmET
+
+// Даны два абзаца, содержащие своим текстом какие-то числа, и кнопка. По нажатию на кнопку выведите на экран сумму хранящихся чисел.
+button.addEventListener(`click`, () => {
+  console.log(+paragraph1.textContent + +paragraph2.textContent);
+});
+// №4⊗jsPmDmET
+
+// Даны три абзаца с числами, див, и кнопка. По нажатию на кнопку запишите в текст дива сумму чисел.
+
+// №5⊗jsPmDmET
+
+// Дан абзац с числом и кнопка. По нажатию на кнопку прибавьте к значению абзаца единицу и запишите полученное число обратно.
+
+// №6⊗jsPmDmET
+
+// Дан абзац с текстом и кнопка. По нажатию на кнопку запишите в конец текста абзаца восклицательный знак.

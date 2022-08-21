@@ -189,17 +189,36 @@ const button = document.querySelector(`#button1`);
 // №3⊗jsPmDmET
 
 // Даны два абзаца, содержащие своим текстом какие-то числа, и кнопка. По нажатию на кнопку выведите на экран сумму хранящихся чисел.
-button.addEventListener(`click`, () => {
-  console.log(+paragraph1.textContent + +paragraph2.textContent);
-});
+// button.addEventListener(`click`, () => {
+//   console.log(+paragraph1.textContent + +paragraph2.textContent);
+// });
 // №4⊗jsPmDmET
 
 // Даны три абзаца с числами, див, и кнопка. По нажатию на кнопку запишите в текст дива сумму чисел.
 
+// let elem1 = document.querySelector(`#elem0`);
+// let elem2 = document.querySelector(`#elem1`);
+// let elem3 = document.querySelector(`#elem2`);
+// const out = document.querySelector(`.out`);
+// document.querySelector(`#button1`).addEventListener(`click`, () => {
+//   out.textContent =
+//     Number(elem1.textContent) +
+//     Number(elem1.textContent) +
+//     Number(elem1.textContent);
+// });
+
 // №5⊗jsPmDmET
 
 // Дан абзац с числом и кнопка. По нажатию на кнопку прибавьте к значению абзаца единицу и запишите полученное число обратно.
+// let elem1 = document.querySelector(`#elem0`);
+// document.querySelector(`#button1`).addEventListener(`click`, () => {
+//   elem1.textContent = Number(elem1.textContent) + 1;
+// });
 
 // №6⊗jsPmDmET
 
 // Дан абзац с текстом и кнопка. По нажатию на кнопку запишите в конец текста абзаца восклицательный знак.
+let elem1 = document.querySelector(`#elem0`);
+document.querySelector(`#button1`).addEventListener(`click`, () => {
+  elem1.textContent += `!`;
+});

@@ -456,3 +456,63 @@
 // input0.addEventListener(`blur`, pow);
 // input1.addEventListener(`blur`, pow);
 // input2.addEventListener(`blur`, pow);
+
+// №1⊗jsPmDmEGG
+
+// Даны абзацы и кнопка. По нажатию на кнопку найдите все абзацы, переберите из циклом и установите текст каждого абзаца в значение 'text'.
+
+// let elems = document.querySelectorAll(`.www`);
+// let butt = document.querySelector(`#button1`);
+// butt.addEventListener(`click`, () => {
+//   for (const elem of elems) {
+//     elem.textContent = `text`;
+//   }
+// });
+// №2⊗jsPmDmEGG
+
+// Даны абзацы с текстом и кнопка. По нажатию на кнопку запишите в конец текста каждого абзаца его порядковый номер.
+
+// let elems = document.querySelectorAll(`.www`);
+// let butt = document.querySelector(`#button1`);
+// let i = 0;
+// butt.addEventListener(`click`, () => {
+//   for (const elem of elems) {
+//     elem.textContent = `text ` + i++;
+//   }
+// });
+
+// №3⊗jsPmDmEGG
+
+// Даны инпуты с числами, абзац и кнопка. По нажатию на кнопку найдите сумму чисел из инпутов и запишите эту сумму в текст абзаца.
+// let elems = document.querySelectorAll(`.elemIn`);
+// let butt = document.querySelector(`#button1`);
+// let i = 0;
+// butt.addEventListener(`click`, () => {
+//   for (const elem of elems) {
+//     i += Number(elem.value);
+//   }
+//   console.log(i);
+// });
+
+№1⊗jsPmDmLNH
+
+Дана следующая функция:
+
+function func() {
+	this.value = Number(this.value) + 1;
+}
+
+// let elems = document.querySelectorAll(`.elemIn`);
+// let butt = document.querySelector(`#button1`);
+// let i = 0;
+// butt.addEventListener(`click`, () => {
+//   for (const elem of elems) {
+//     i += Number(elem.value);
+//   }
+//   console.log(i);
+// });
+Даны также инпуты. Сделайте так, чтобы по потери фокуса в любом из наших инпутов выполнялась приведенная выше функция.
+
+№2⊗jsPmDmLNH
+
+Даны абзацы с числами. Сделайте так, чтобы по клику на любой абзац его число в нем возводилось в квадрат.

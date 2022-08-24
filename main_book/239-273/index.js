@@ -494,25 +494,428 @@
 //   console.log(i);
 // });
 
-№1⊗jsPmDmLNH
+// №1⊗jsPmDmLNH
 
-Дана следующая функция:
+// Дана следующая функция:
 
-function func() {
-	this.value = Number(this.value) + 1;
-}
+// function func() {
+//   this.value = Number(this.value) + 1;
+// }
 
 // let elems = document.querySelectorAll(`.elemIn`);
-// let butt = document.querySelector(`#button1`);
-// let i = 0;
-// butt.addEventListener(`click`, () => {
-//   for (const elem of elems) {
-//     i += Number(elem.value);
-//   }
-//   console.log(i);
+// // let butt = document.querySelector(`#button1`);
+// for (let elem of elems) {
+//   elem.addEventListener(`blur`, func);
+// }
+
+// Даны также инпуты. Сделайте так, чтобы по потери фокуса в любом из наших инпутов выполнялась приведенная выше функция.
+
+// №2⊗jsPmDmLNH
+
+// Даны абзацы с числами. Сделайте так, чтобы по клику на любой абзац его число в нем возводилось в квадрат.
+// function func() {
+//   this.textContent = Number(this.textContent) ** 2;
+// }
+
+// let elems = document.querySelectorAll(`.elem`);
+// // let butt = document.querySelector(`#button1`);
+// for (let elem of elems) {
+//   elem.addEventListener(`click`, func);
+// }
+
+// №1⊗jsPmDmLAH
+
+// Дан следующий код:
+
+// <div>1</div>
+// <div>2</div>
+// <div>3</div>
+// <div>4</div>
+// <div>5</div>
+// let divs = document.querySelectorAll("div");
+
+// for (let div of divs) {
+//   div.addEventListener("click", function () {
+//     this.textContent++;
+//   });
+// }
+
+// function func() {
+//   this.textContent++;
+// }
+// Сделайте функцию-обработчик анонимной.
+// №1⊗jsPmDmHU
+
+// Дана ссылка. По нажатию на эту ссылку добавьте в конец ее текста содержимое ее атрибута href в круглых скобках. Сделайте так, чтобы это добавление происходило лишь по первому нажатию.
+
+// let link = document.querySelector(`a`);
+// link.addEventListener(`click`, function () {
+//   this.textContent += this.href;
 // });
-Даны также инпуты. Сделайте так, чтобы по потери фокуса в любом из наших инпутов выполнялась приведенная выше функция.
 
-№2⊗jsPmDmLNH
+// №2⊗jsPmDmHU
 
-Даны абзацы с числами. Сделайте так, чтобы по клику на любой абзац его число в нем возводилось в квадрат.
+// Дана кнопка, значением которой служит число 1. Сделайте так, чтобы по клику на эту кнопку ее значение каждый раз увеличивалось на единицу. После того, как значение кнопки достигнет 10 - отвяжите обработчик события, чтобы кнопка больше не реагировала на нажатие.
+// let button = document.querySelector(`#button1`);
+// let func = function () {
+//   this.value = Number(this.value) + 1;
+//   console.log(this.value);
+//   if (this.value > 9) {
+//     button.removeEventListener(`click`, func);
+//   }
+// };
+// button.addEventListener(`click`, func);
+
+// №1⊗jsPmDmLHU
+
+// Даны абзацы. По нажатию на любой из абзацев добавьте ему в конец восклицательный знак. Сделайте так, чтобы это добавление происходило лишь по первому нажатию.
+// function func() {
+//   this.textContent += `!`;
+//   this.removeEventListener(`click`, func);
+// }
+
+// let p = document.querySelectorAll(`.elem`);
+// for (let elem of p) {
+//   elem.addEventListener(`click`, func);
+// }
+
+// Получение
+// Изучите теорию по следующим ссылкам:
+
+// getAttribute
+
+// №1⊗jsPmDmAVM
+
+// Дан элемент:
+
+// let elem = document.querySelector(`#elem`);
+// console.log(elem.getAttribute(`value`));
+
+// №2⊗jsPmDmAVM
+
+// Дан элемент:
+// let elem = document.querySelector(`#elem`);
+// console.log(elem.getAttribute(`class`));
+// <input id="elem" class="www zzz">
+// Получите значение его атрибута class.
+
+// Установка
+// Изучите теорию по следующим ссылкам:
+
+// setAttribute
+
+// №3⊗jsPmDmAVM
+
+// Дан элемент:
+
+// <input id="elem">
+// Установите его атрибут value в значение 'text'.
+
+// let elem = document.querySelector(`#elem`);
+// elem.setAttribute(`value`, `text`);
+
+// №4⊗jsPmDmAVM
+
+// Дан элемент:
+
+// <input id="elem">
+// Установите ему атрибут class в значение 'valid'.
+// elem.setAttribute(`class`, `valid`);
+
+// Удаление
+// Изучите теорию по следующим ссылкам:
+
+// removeAttribute
+
+// №5⊗jsPmDmAVM
+
+// Дан элемент:
+
+// <input id="elem" value="text">
+// Удалите у него атрибут value.
+// let elem = document.querySelector(`#elem`);
+// elem.removeAttribute(`value`);
+
+// Проверка
+// Изучите теорию по следующим ссылкам:
+
+// hasAttribute
+
+// №6⊗jsPmDmAVM
+
+// Дан элемент:
+
+// <input id="elem" value="text">
+// Проверьте наличие у него атрибута value.
+// let elem = document.querySelector(`#elem`);
+// console.log(elem.hasAttribute(`value`));
+// Изучите теорию по следующим ссылкам:
+
+// classList
+
+// №1⊗jsPmDmCCM
+
+// Дан элемент:
+
+// <p id="elem" class="www ggg zzz"></p>
+// // Узнайте количество его классов.
+
+// №2⊗jsPmDmCCM
+// let elem = document.querySelector(`#elem`);
+// console.log(elem.classList.length);
+// Дан элемент:
+
+// <p id="elem" class="www ggg zzz"></p>
+// Переберите в цикле его классы.
+// for (let el of elem.classList) {
+//   console.log(el);
+// }
+// Добавление классов
+// Изучите теорию по следующим ссылкам:
+
+// classList.add
+
+// №3⊗jsPmDmCCM
+
+// Дан элемент:
+
+// <p id="elem" class="www ggg zzz"></p>
+// Добавьте ему класс xxx.
+// elem.classList.add(`xxx`);
+
+// Удаление классов
+// Изучите теорию по следующим ссылкам:
+
+// classList.remove
+
+// №4⊗jsPmDmCCM
+
+// Дан элемент:
+
+// <p id="elem" class="www ggg zzz"></p>
+// Удалите у него класс www и класс zzz.
+// elem.classList.remove(`www`, `zzz`);
+// Проверка классов
+// Изучите теорию по следующим ссылкам:
+
+// classList.contains
+
+// №5⊗jsPmDmCCM
+
+// Дан элемент:
+
+// <p id="elem" class="www ggg zzz"></p>
+// Проверьте наличие у него класса ggg.
+// console.log(elem.classList.contains(`ggg`));
+// Чередование классов
+// Изучите теорию по следующим ссылкам:
+
+// classList.toggle
+
+// №6⊗jsPmDmCCM
+
+// Дан элемент. Добавьте ему класс www, если его нет и удалите - если есть.
+// elem.classList.toggle(`xxx`);
+// №1⊗jsPmDmASS
+
+// Дан див и кнопка. По клику на кнопку добавьте диву ширину, высоту и границу.
+// let div = document.querySelector(`div`);
+// let butt = document.querySelector(`#button`);
+// butt.addEventListener(`click`, function () {
+//   div.style.width = `400px`;
+//   div.style.height = `400px`;
+//   div.style.border = `1px solid black`;
+// });
+
+// №2⊗jsPmDmASS
+
+// Дан див с текстом и кнопка. По клику на кнопку установите диву размер шрифта в 20px, а также верхнюю границу и фон.
+// let div = document.querySelector(`div`);
+// let butt = document.querySelector(`#button`);
+// butt.addEventListener(`click`, function () {
+//   div.style.width = `400px`;
+//   div.style.height = `400px`;
+//   div.style.border = `1px solid black`;
+//   div.style.fontSize = `20px`;
+//   div.style.background = `red`;
+// });
+
+// Изучите теорию по следующим ссылкам:
+
+// firstElementChild lastElementChild children
+
+// №1⊗jsPmDmPRS
+
+// Дан элемент #elem:
+
+// let elem = document.querySelector(`.element`);
+// let child = elem.firstElementChild;
+// console.log(elem.firstElementChild);
+// child.style.background = `red`;
+// Найдите первого потомка этого элемента и сделайте его текст красного цвета.
+
+// №2⊗jsPmDmPRS
+
+// Дан элемент #elem:
+
+// <ul id="elem">
+// 	<li>text</li>
+// 	<li>text</li>
+// 	<li>text</li>
+// 	<li>text</li>
+// 	<li>text</li>
+// </ul>
+// Найдите последнего потомка этого элемента и сделайте его текст красного цвета.
+
+// let elem = document.querySelector(`.element`);
+// let child = elem.lastElementChild;
+// console.log(elem.lastElementChild);
+// child.style.background = `red`;
+
+// №3⊗jsPmDmPRS
+
+// Дан элемент #elem:
+
+// <ul id="elem">
+// 	<li>text</li>
+// 	<li>text</li>
+// 	<li>text</li>
+// 	<li>text</li>
+// 	<li>text</li>
+// </ul>
+// Найдите всех потомков этого элемента и добавьте им в конец текст '!'.
+// let elem = document.querySelector(`.element`);
+// let children = elem.children;
+// console.log(children);
+// for (let elem of children) {
+//   elem.textContent += `!`;
+// }
+
+// Родители элементов
+// Изучите теорию по следующим ссылкам:
+
+// parentElement
+
+// №4⊗jsPmDmPRS
+
+// Дан элемент #elem:
+
+// <div>
+// 	<ul>
+// 		<li>text</li>
+// 		<li>text</li>
+// 		<li id="elem">text</li>
+// 		<li>text</li>
+// 		<li>text</li>
+// 	</ul>
+// </div>
+// Найдите его родителя и задайте ему красную границу.
+
+// let elem = document.querySelector(`#elem`);
+// elem.parentElement.style.border = `2px solid red`;
+
+// №5⊗jsPmDmPRS
+
+// Дан элемент #elem:
+
+// <div>
+// 	<ul>
+// 		<li>text</li>
+// 		<li>text</li>
+// 		<li id="elem">text</li>
+// 		<li>text</li>
+// 		<li>text</li>
+// 	</ul>
+// </div>
+// Найдите его родителя родителя и задайте ему красную границу.
+
+// Поиск всех родителей
+// Изучите теорию по следующим ссылкам:
+
+// closest
+
+// №6⊗jsPmDmPRS
+
+// Дан элемент:
+
+// <header>
+// 	<div>
+// 		<p>
+// 			<span id="elem"></span>
+// 		</p>
+// 	</div>
+// </header>
+// Найдите ближайшего родителя этого элемента, являющегося тегом div.
+// let elem = document.querySelector(`#elem`);
+// elem.closest(`div`);
+// console.log(elem.closest(`div`));
+// №7⊗jsPmDmPRS
+
+// Дан элемент:
+
+// <header>
+// 	<div class="www">
+// 		<p class="www">
+// 			<span id="elem"></span>
+// 		</p>
+// 	</div>
+// </header>
+// Найдите ближайшего родителя этого элемента, являющегося элементом с классом www.
+
+// let elem = document.querySelector(`#elem`);
+// elem.closest(`.www`);
+// console.log(elem.closest(`.www`));
+// Поиск соседей
+// Изучите теорию по следующим ссылкам:
+
+// previousElementSibling nextElementSibling
+
+// №8⊗jsPmDmPRS
+
+// Дан элемент #elem:
+
+// <ul>
+// 	<li>text</li>
+// 	<li>text</li>
+// 	<li id="elem">text</li>
+// 	<li>text</li>
+// 	<li>text</li>
+// </ul>
+// Найдите его соседа сверху и добавьте ему в конец текст '!'.
+
+// №9⊗jsPmDmPRS
+
+// Дан элемент #elem:
+
+// <ul>
+// 	<li>text</li>
+// 	<li>text</li>
+// 	<li id="elem">text</li>
+// 	<li>text</li>
+// 	<li>text</li>
+// </ul>
+// Найдите его соседа снизу и добавьте ему в конец текст '!'.
+
+// №10⊗jsPmDmPRS
+
+// Дан элемент #elem:
+
+// <ul>
+// 	<li>text</li>
+// 	<li>text</li>
+// 	<li id="elem">text</li>
+// 	<li>text</li>
+// 	<li>text</li>
+// </ul>
+// Найдите его соседа снизу его соседа снизу (следующий элемент за соседним) и добавьте ему в конец текст '!'.
+
+// №11⊗jsPmDmPRS
+
+// Дан элемент #elem:
+
+// Поменяйте местами текст его соседа сверху и текст его соседа снизу.
+// let elem = document.querySelector(`#elem`);
+// let dooo = elem.nextElementSibling.textContent;
+// let posle = elem.previousElementSibling.textContent;
+// elem.nextElementSibling.textContent = posle;
+// elem.previousElementSibling.textContent = dooo;

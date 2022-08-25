@@ -919,3 +919,155 @@
 // let posle = elem.previousElementSibling.textContent;
 // elem.nextElementSibling.textContent = posle;
 // elem.previousElementSibling.textContent = dooo;
+
+// №1⊗jsPmDmDA
+
+// Дан следующий код:
+
+{
+  /* <div id="elem" data-text="str">text</div> */
+}
+// Сделайте так, чтобы по клику на див в конец его текста добавилось содержимое его атрибута data-text.
+
+// const elem = document.querySelector(`#elem`);
+// elem.addEventListener(`click`, () => {
+//   elem.textContent = elem.dataset.text;
+// });
+
+// №2⊗jsPmDmDA
+
+// Даны дивы, содержащие в атрибуте data-num свой порядковый номер:
+
+// Сделайте так, чтобы по клику на любой из дивов ему в конец записывался его порядковый номер.
+// let divs = document.getElementsByTagName(`div`);
+// console.log(divs);
+// for (let elem of divs) {
+//   elem.addEventListener(`click`, function () {
+//     this.textContent += this.dataset.num;
+//   });
+// }
+// №3⊗jsPmDmDA
+
+// Дана кнопка. Сделайте так, чтобы эта кнопка считала количество кликов по ней, записывая их в какой-нибудь пользовательский атрибут. Пусть по двойному клику на эту кнопку на экран выводится, сколько кликов по этой кнопке было сделано.
+
+// let butt = document.querySelector(`#button1`);
+// let counter = 0;
+// butt.addEventListener(`click`, function () {
+//   counter++;
+//   this.dataset.count = counter;
+// });
+// butt.addEventListener(`dblclick`, function () {
+//   console.log(this.dataset.count);
+// });
+
+// №4⊗jsPmDmDA
+
+// Дан инпут:
+
+// <input id="elem" data-length="5">
+// В этом инпуте в атрибуте data-length содержится количество символов, которое нужно ввести в инпут. Сделайте так, чтобы по потери фокуса, если количество введенных символов не совпадает с заданным, выводилось сообщение об этом.
+
+// let input = document.querySelector(`#elem`);
+// input.addEventListener(`blur`, function () {
+//   if (Number(this.dataset.length) !== this.value.length) {
+//     alert(`amount of letters is incorrect`);
+//   }
+// });
+
+// №5⊗jsPmDmDA
+
+// Дан инпут:
+
+// <input id="elem" data-min="5" data-max="10">
+// В этом инпуте атрибуты data-min и data-max содержат диапазон. Сделайте так, чтобы по потери фокуса, если количество введенных символов не попадает в этот диапазон, выводилось сообщение об этом.
+// let input = document.querySelector(`#elem`);
+// input.addEventListener(`blur`, function () {
+//   console.log(this.value.length);
+//   console.log(this.dataset.max);
+//   if (
+//     this.value.length >= Number(this.dataset.max) ||
+//     this.value.length <= Number(this.dataset.min)
+//   ) {
+//     alert(`amount of letters is incorrect`);
+//   }
+// });
+
+// №6⊗jsPmDmDA
+
+// Дан следующий код:
+
+// Сделайте так, чтобы по клику на див в конец его текста добавлялась стоимость покупки, равная цене, умноженной на количество. */}
+
+// let input = document.querySelector(`#elem`);
+// input.addEventListener(`click`, function () {
+//   let totalPrice = this.dataset.productPrice * this.dataset.productAmount;
+//   this.textContent += totalPrice;
+// });
+// №7⊗jsPmDmDA
+
+// Даны абзацы. Переберите их циклом и каждому абзацу в атрибут data-num запишите порядковый номер этого абзаца. Используйте метод setAttribute.
+
+// const elems = document.getElementsByTagName(`div`);
+// let i = 0;
+// for (let el of elems) {
+//   el.setAttribute(`data-num`, i);
+//   i++;
+// }
+
+// №1⊗jsPmDmNds
+
+// Напишите код, который покажет разницу между lastChild и lastElementChild.
+// let elem = document.querySelector("#elem");
+// console.log(elem.lastChild); // комментарий
+// console.log(elem.lastElementChild); // тег span
+
+// // №2⊗jsPmDmNds
+
+// // Напишите код, который покажет разницу между nextSibling и nextElementSibling.
+// console.log(elem.nextSibling); // комментарий
+// console.log(elem.nextElementSibling); // тег span
+
+// // №3⊗jsPmDmNds
+
+// // Напишите код, который покажет разницу между previousSibling и previousElementSibling.
+// console.log(elem.previousSibling); // комментарий
+// console.log(elem.previousElementSibling); // тег span
+
+// №4⊗jsPmDmNds
+
+// Дан див:
+
+// Переберите циклом все узлы этого дива и выведите их в консоль.
+// let elem = document.querySelector("#elem");
+// let children = elem.childNodes;
+// for (let el of children) {
+//   if (el.nodeType == 3) {
+//     console.log(el.data);
+//   }
+// }
+
+// №1⊗jsPmDmCdg
+
+// Дан список с годами:
+
+// Получите года, сумма цифр которых равна 6. Найдите сумму полученных годов.
+
+// let years = document.getElementsByTagName(`li`);
+// let sumIsSix = [];
+// console.log(years);
+// for (let elem of years) {
+//   console.log(elem.textContent);
+//   let strToArr = elem.textContent.split("");
+//   let sum = strToArr.reduce(function (currentSum, currentNumber) {
+//     return currentSum + +currentNumber;
+//   }, 0);
+//   if (sum == 6) {
+//     sumIsSix.push(Number(elem.textContent));
+//   }
+// }
+// console.log(sumIsSix);
+// let totalSum = 0;
+// for (let year of sumIsSix) {
+//   totalSum += year;
+// }
+// console.log(totalSum);

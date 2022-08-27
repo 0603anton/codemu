@@ -798,3 +798,69 @@ let keys = Array.from(map.keys());
 // Error: keys.push is not a function
 // Ошибка: keys.push -- это не функция
 keys.push("more");
+
+
+let user = {
+  name: "John",
+  age: 30
+};
+console.log(Object.entries(user))
+// цикл по ключам и значениям
+for (let [key, value] of Object.entries(user)) {
+  console.log(`${key}:${value}`); // name:John, затем age:30
+}
+
+const map1 = new Map();
+
+map1.set('a', 1);
+map1.set('b', 2);
+map1.set('c', 3);
+
+console.log(map1.get(`a`));
+
+
+Деструктурирующее присваивание
+важность: 5
+У нас есть объект:
+
+let user = {
+  name: "John",
+  years: 30
+};
+Напишите деструктурирующее присваивание, которое:
+
+свойство name присвоит в переменную name.
+свойство years присвоит в переменную age.
+свойство isAdmin присвоит в переменную isAdmin (false, если нет такого свойства)
+Пример переменных после вашего присваивания:
+
+let user = { name: "John", years: 30 };
+
+// ваш код должен быть с левой стороны:
+// ... = user
+let [name,years:age,isAdmin= false]  = user;
+alert( name ); // John
+alert( age ); // 30
+alert( isAdmin ); // false
+
+Максимальная зарплата
+
+let salaries = {
+  "John": 100,
+  "Pete": 300,
+  "Mary": 250
+};
+
+function topSalary(salaries){
+let maxName = null;
+let maxSalary = 0;
+for (const [name,salary] of Object.entries(salaries)) {
+  if (maxSalary < salary){
+    maxName = name;
+    maxSalary = salary;
+  }
+
+}
+  return `${maxName}: ${maxSalary}`
+}
+console.log(topSalary(salaries));

@@ -798,28 +798,3 @@ let keys = Array.from(map.keys());
 // Error: keys.push is not a function
 // Ошибка: keys.push -- это не функция
 keys.push("more");
-
-Object.keys, values, entries
-Есть объект salaries с произвольным количеством свойств, содержащих заработные платы.
-
-Напишите функцию sumSalaries(salaries), которая возвращает сумму всех зарплат с помощью метода Object.values и цикла for..of.
-
-Если объект salaries пуст, то результат должен быть 0.
-let salaries = {
-  "John": 100,
-  "Pete": 300,
-  "Mary": 250
-};
-function sumSalaries(salaries) {
-//  if (Object.keys(salaries).length === 0){
-//   return 0;
-//  }
-//  не нужная проверка т.к. всё равно бы вернулся 0 сум мы хадекларировали как 0ж
-
-let sum =0;
-for (let elem of Object.values(salaries)){
-sum += elem;
-}
-return sum;
-}
-console.log ( sumSalaries(salaries) ); // 650

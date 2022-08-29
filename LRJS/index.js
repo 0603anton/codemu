@@ -798,3 +798,59 @@ let keys = Array.from(map.keys());
 // Error: keys.push is not a function
 // Ошибка: keys.push -- это не функция
 keys.push("more");
+
+Date and Time
+
+console.log(new Date(Date.parse(`2012-02-20T15:12:00`)));
+
+alert(Date.parse(2012-02-20-03-12));
+
+Покажите день недели
+важность: 5
+Напишите функцию getWeekDay(date), показывающую день недели в коротком формате: «ПН», «ВТ», «СР», «ЧТ», «ПТ», «СБ», «ВС».
+
+Например:
+
+
+let date = new Date(2012, 0, 3);  //
+let week = ['вс', 'пн', 'вт', 'ср', 'чт', 'пт', 'сб'];
+
+function getWeekDay(date) {
+  return week[date.getDay()];
+} 
+alert( getWeekDay(date) );        // нужно вывести "ВТ"
+
+День недели в европейской нумерации
+важность: 5
+В Европейских странах неделя начинается с понедельника (день номер 1), затем идёт вторник (номер 2) и так до воскресенья (номер 7). Напишите функцию getLocalDay(date), которая возвращает «европейский» день недели для даты date.
+
+let date = new Date(2022, 7, 30);  // 3 января 2012 года
+console.log( getLocalDay(date) );       // вторник, нужно показать 2
+function getLocalDay (date){
+  let day = date.getDay();
+  if (day == 0){
+    return 7;
+  } else {
+    return day;
+}}
+// Открыть песочницу с тестами для задачи.
+
+
+Какой день месяца был много дней назад?
+важность: 4
+Создайте функцию getDateAgo(date, days), возвращающую число, которое было days дней назад от даты date.
+
+К примеру, если сегодня двадцатое число, то getDateAgo(new Date(), 1) вернёт девятнадцатое и getDateAgo(new Date(), 2) – восемнадцатое.
+
+Функция должна надёжно работать при значении days=365 и больших значениях:
+
+let date = new Date(2015, 0, 2);
+
+alert( getDateAgo(date, 1) ); // 1, (1 Jan 2015)
+alert( getDateAgo(date, 2) ); // 31, (31 Dec 2014)
+alert( getDateAgo(date, 365) ); // 2, (2 Jan 2014)
+// P.S. Функция не должна изменять переданный ей объект date.
+function getDateAgo(date, ago){
+  let result = new Date(date.getFullYear(),date.getMonth(), date.getDate() - ago);
+  return result;
+}

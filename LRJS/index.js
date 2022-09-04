@@ -1107,3 +1107,72 @@ const b = {
 const c = Object.assign({}, a, {age: 20});
 
 // c = {name: "Vanya", age: 20, job: "driver"};
+
+// TODO
+Объект счётчика
+важность: 5
+Здесь объект счётчика создан с помощью функции-конструктора.
+
+Будет ли он работать? Что покажет?
+
+function Counter() {
+  let count = 0;
+
+  this.up = function() {
+    return ++count;
+  };
+  this.down = function() {
+    return --count;
+  };
+}
+
+let counter = new Counter();
+
+alert( counter.up() ); // ?
+alert( counter.up() ); // ?
+alert( counter.down() ); // ?
+
+// TODO
+
+Функция в if
+Посмотрите на код. Какой будет результат у вызова на последней строке?
+
+let phrase = "Hello";
+
+if (true) {
+  let user = "John";
+
+  function sayHi() {
+    alert(`${phrase}, ${user}`);
+  }
+}
+
+sayHi();
+
+//  TODO - пробегись по codemu
+Сумма с помощью замыканий
+важность: 4
+Напишите функцию sum, которая работает таким образом: sum(a)(b) = a+b.
+
+Да, именно таким образом, используя двойные круглые скобки (не опечатка).
+
+Например:
+
+
+function sum (a){
+  return function (b){
+    return a+b;
+  }
+}
+
+console.log(sum(1)(2));
+console.log(sum(5)(-1));
+
+
+Фильтрация с помощью функции
+
+function inBetween(a,b){
+  return function (x){
+    return x>=a && x<=b;
+  }
+}

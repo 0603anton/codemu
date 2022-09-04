@@ -988,7 +988,8 @@ function factorial(n){
 
 console.log(factorial(4))
 
-Числа Фибоначчи
+Числа Фибоначчи 
+// TODO - реши с заменой переменныйи, каждое следующее число фибоначи сумма 2х прошлых
 важность: 5
 Последовательность чисел Фибоначчи определяется формулой Fn = Fn-1 + Fn-2. То есть, следующее число получается как сумма двух предыдущих.
 
@@ -1045,15 +1046,12 @@ let list = {
   }
 };
 // Напишите функцию printList(list), которая выводит элементы списка по одному.
+// TODO
 
 function printList(list){
-  for ( let elem in list){
-
-    if (typeof list[`elem`] != `number`){
-      printList(elem)
-    } else {
-      console.log(list[`elem`]);
-    }
+  console.log(list.value);
+  if (list.next){
+    printList(list.next)
   }
 }
 printList(list)
@@ -1061,3 +1059,51 @@ printList(list)
 Сделайте два варианта решения: используя цикл и через рекурсию.
 
 Как лучше: с рекурсией или без?
+
+Остаточные параметры и оператор расширения
+
+function sum (a,b,...rest){
+  console.log(rest);
+  return a+b;
+}
+
+console.log(sum(1,2,3,55555))
+
+
+
+
+function concat2(...arrs) { 
+  return [].concat(...arrs);
+}
+
+  console.log(concat2(1, 2, [3, 4], [[5]]));
+// => [1, 2, 3, 4, [5]]
+
+// TODO
+// http://disq.us/url?url=http%3A%2F%2Fcssdeck.com%2Flabs%2Fdentq2no%3AosHxSNLvWRJQq9kH7QAOStixIMY&cuid=1192968 -крутое преобразование в flat arr
+
+function toString (...args){
+  return args.toString().split(',');
+}
+console.log(toString (1, 'a', [3, 4], [[5]], [[6]], [[[7]]]));
+
+Еще полезно знать про объекты, если я хочу передать новый объект, содержащий все предыдущие поля, и поменять одно, можно сделать так:
+
+const a = {
+    name: "Vanya",
+    age: 30,
+    job: "driver",
+};
+
+const b = {
+   ...a,
+   age: 40,
+};
+
+// b = {name: "Vanya", age: 40, job: "driver"};
+
+Работает как Object.assign
+
+const c = Object.assign({}, a, {age: 20});
+
+// c = {name: "Vanya", age: 20, job: "driver"};
